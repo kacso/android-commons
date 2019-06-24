@@ -23,6 +23,13 @@ dependencies {
     implementation _kotlin_.coroutines
 
     implementation javaTime
+
+    testImplementation _test_.junit_api
+    testImplementation _test_.mockito_core
+    testImplementation _test_.mockito_android
+    testImplementation _test_.mockito_kotlin
+    testRuntimeOnly _test_.junit_engine
+    testRuntimeOnly _test_.junit_platform_launcher
 }
 
 sourceCompatibility = "8"

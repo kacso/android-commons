@@ -46,11 +46,11 @@ dependencies {
     implementation retrofit.adapter_rxjava2
     implementation retrofit.logging_interceptor
 
-    testImplementation test.junit_api
-    testRuntimeOnly test.junit_engine
-    testRuntimeOnly test.junit_platform_launcher
-    androidTestImplementation test.runner
-    androidTestImplementation test.espresso
+    testImplementation _test_.junit_api
+    testRuntimeOnly _test_.junit_engine
+    testRuntimeOnly _test_.junit_platform_launcher
+    androidTestImplementation _test_.runner
+    androidTestImplementation _test_.espresso
 
     implementation project (":network")
 }
