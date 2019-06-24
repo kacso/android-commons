@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "hr.dsokac.androidcommons"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation _kotlin_.stdlib
+    implementation androidx.appCompat
+    implementation androidx.coreKtx
+    implementation androidx.constraintLayout
+    implementation material
+
+    implementation rxjava.rxjava
+    implementation rxjava.rxandroid
+    implementation rxjava.rxkotlin
+    implementation _kotlin_.coroutines
+    implementation _kotlin_.coroutines_android
+
+    implementation retrofit.retrofit
+    implementation retrofit.converter_gson
+    implementation retrofit.adapter_rxjava2
+    implementation retrofit.logging_interceptor
+
+    testImplementation test.junit_api
+    testRuntimeOnly test.junit_engine
+    testRuntimeOnly test.junit_platform_launcher
+    androidTestImplementation test.runner
+    androidTestImplementation test.espresso
+
+    implementation project (":network")
+}

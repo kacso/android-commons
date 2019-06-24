@@ -1,0 +1,29 @@
+apply plugin: 'kotlin'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'hr.dsokac.androidcommons'
+version = '0.0.1'
+ext.versionCode = 1
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation _kotlin_.stdlib
+
+    implementation rxjava.rxjava
+    implementation rxjava.rxandroid
+    implementation rxjava.rxkotlin
+
+    implementation retrofit.retrofit
+    implementation retrofit.converter_gson
+    implementation retrofit.adapter_rxjava2
+    implementation retrofit.logging_interceptor
+
+    implementation _kotlin_.coroutines
+
+    implementation javaTime
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

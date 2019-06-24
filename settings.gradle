@@ -1,0 +1,2 @@
+include ':app', ':security', ':network'
+rootProject.name='AndroidCommons'
