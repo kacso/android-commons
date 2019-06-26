@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/security" />
+            <option value="$PROJECT_DIR$/serialization" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

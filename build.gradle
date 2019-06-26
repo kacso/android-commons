@@ -59,6 +59,8 @@ buildscript {
                 rxjava: "io.reactivex.rxjava2:rxjava:2.2.9",
                 rxkotlin : "io.reactivex.rxjava2:rxkotlin:2.3.0"
         ]
+
+        gson = "com.google.code.gson:gson:2.8.5"
     }
 
     repositories {
