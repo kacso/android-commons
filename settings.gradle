@@ -1,2 +1,2 @@
-include ':app', ':security', ':network', ':serialization'
+include ':app', ':security', ':network', ':serialization', ':preferences'
 rootProject.name='AndroidCommons'
