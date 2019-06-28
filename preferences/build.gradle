@@ -30,6 +30,11 @@ android {
         }
     }
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -45,6 +50,9 @@ dependencies {
     testRuntimeOnly _test_.junit_platform_launcher
     androidTestImplementation _test_.runner
     androidTestImplementation _test_.espresso
+    testImplementation _test_.robolectric
+    testImplementation _test_.junit
+    testRuntimeOnly _test_.junit_vintage
 }
 
 sourceCompatibility = "8"

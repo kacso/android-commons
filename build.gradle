@@ -17,7 +17,7 @@ buildscript {
                 junit_engine           : "org.junit.jupiter:junit-jupiter-engine:5.4.2",
                 junit_platform_launcher: "org.junit.platform:junit-platform-launcher:1.4.2",
                 junit                  : "junit:junit:4.12",
-                junit_vintage          : "org.junit.vintage:junit-vintage-engine::5.4.2",
+                junit_vintage          : "org.junit.vintage:junit-vintage-engine:5.4.2",
                 mockito_kotlin         : "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0",
                 mockito_core           : "org.mockito:mockito-core:2.28.2",
                 mockito_android        : "org.mockito:mockito-android:2.28.2",
