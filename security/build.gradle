@@ -27,6 +27,11 @@ android {
         }
     }
 
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -39,6 +44,8 @@ dependencies {
     testImplementation _test_.mockito_kotlin
     testRuntimeOnly _test_.junit_engine
     testRuntimeOnly _test_.junit_platform_launcher
+    testImplementation _test_.robolectric
+    testImplementation _test_.mock_web_server
 
 
     implementation rxjava.rxjava
@@ -54,6 +61,7 @@ dependencies {
 
     implementation project(":network")
     implementation project(":preferences")
+    implementation project(":test")
 }
 
 sourceCompatibility = "8"

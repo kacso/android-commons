@@ -3,9 +3,11 @@ package hr.dsokac.androidcommons.security.network.managers
 import hr.dsokac.androidcommons.network.interceptors.NetworkExceptionInterceptor
 import hr.dsokac.androidcommons.security.network.services.OAuth2Service
 import hr.dsokac.androidcommons.security.network.services.RxOAuth2Service
+import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -63,6 +65,7 @@ class OAuth2NetworkManager(
             .addConverterFactory(
                 GsonConverterFactory.create()
             )
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
     }
 
     private val retrofit by lazy {

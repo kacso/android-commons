@@ -18,12 +18,12 @@ import hr.dsokac.androidcommons.security.repositories.impl.RxOAuth2Repository
  * @author Danijel Sokač
  */
 object SecurityRepositoryFactory {
-    private var oAuth2Repository: IOAuth2Repository? = null
-    private var rxOAuth2Repository: IRxOAuth2Repository? = null
+    private var oAuth2Repositories: MutableMap<String, IOAuth2Repository> = HashMap()
+    private var rxOAuth2Repositories: MutableMap<String, IRxOAuth2Repository> = HashMap()
 
     /**
      * Obtain instance of [IOAuth2Repository]. This method will ensure that there is
-     * always only one instance of [IOAuth2Repository] created.
+     * always only one instance of [IOAuth2Repository] created for same [baseUrl].
      *
      * @param baseUrl basic part of authorization server URL. For example: https://192.168.112:8080/security/
      * @param authorizationKey key which will identify app requests on authorization server
@@ -44,8 +44,11 @@ object SecurityRepositoryFactory {
         readTimeoutSecs: Long = READ_TIMEOUT_SECS,
         networkExceptionInterceptor: NetworkExceptionInterceptor? = null
     ): IOAuth2Repository {
-        if (oAuth2Repository == null) {
-            oAuth2Repository = OAuth2Repository(
+        var rep = oAuth2Repositories[baseUrl]
+        if (rep != null) {
+            return rep
+        } else {
+            rep = OAuth2Repository(
                 authorizationKey = authorizationKey,
                 sharedPrefs = SharedPrefsFactory.getSharedPrefs(context, SECURITY_PREFS),
                 service = OAuth2NetworkManager(
@@ -55,8 +58,10 @@ object SecurityRepositoryFactory {
                     networkExceptionInterceptor
                 ).restService
             )
+            oAuth2Repositories[baseUrl] = rep
+
+            return rep
         }
-        return oAuth2Repository!!
     }
 
     /**
@@ -82,8 +87,11 @@ object SecurityRepositoryFactory {
         readTimeoutSecs: Long = READ_TIMEOUT_SECS,
         networkExceptionInterceptor: NetworkExceptionInterceptor? = null
     ): IRxOAuth2Repository {
-        if (rxOAuth2Repository == null) {
-            rxOAuth2Repository = RxOAuth2Repository(
+        var rep = rxOAuth2Repositories[baseUrl]
+        if (rep != null) {
+            return rep
+        } else {
+            rep = RxOAuth2Repository(
                 authorizationKey = authorizationKey,
                 sharedPrefs = SharedPrefsFactory.getSharedPrefs(context, SECURITY_PREFS),
                 service = OAuth2NetworkManager(
@@ -93,7 +101,9 @@ object SecurityRepositoryFactory {
                     networkExceptionInterceptor
                 ).rxService
             )
+            rxOAuth2Repositories[baseUrl] = rep
+
+            return rep
         }
-        return rxOAuth2Repository!!
     }
 }

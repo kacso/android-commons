@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/preferences" />
             <option value="$PROJECT_DIR$/security" />
             <option value="$PROJECT_DIR$/serialization" />
+            <option value="$PROJECT_DIR$/test" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
