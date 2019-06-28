@@ -50,8 +50,9 @@ buildscript {
                 core_test : "androidx.arch.core:core-testing:2.1.0-beta01"
         ]
         firebase = [
-                ml  : "com.google.firebase:firebase-ml-vision:20.0.0",
-                core: "com.google.firebase:firebase-core:16.0.9"
+                ml         : "com.google.firebase:firebase-ml-vision:20.0.0",
+                core       : "com.google.firebase:firebase-core:17.0.0",
+                crashlytics: "com.crashlytics.sdk.android:crashlytics:2.9.8"
         ]
         retrofit = [
                 retrofit           : "com.squareup.retrofit2:retrofit:2.6.0",
