@@ -1,6 +1,8 @@
 package hr.dsokac.androidcommons.security.factories
 
 import android.content.Context
+import android.util.Log
+import hr.dsokac.androidcommons.extensions.logging.log
 import hr.dsokac.androidcommons.network.interceptors.NetworkExceptionInterceptor
 import hr.dsokac.androidcommons.preferences.factories.SharedPrefsFactory
 import hr.dsokac.androidcommons.security.CONNECT_TIMEOUT_SECS
@@ -18,6 +20,7 @@ import hr.dsokac.androidcommons.security.repositories.impl.RxOAuth2Repository
  * @author Danijel Sokač
  */
 object SecurityRepositoryFactory {
+    private const val LOG_TAG = "SecurityRepositoryFactory"
     private var oAuth2Repositories: MutableMap<String, IOAuth2Repository> = HashMap()
     private var rxOAuth2Repositories: MutableMap<String, IRxOAuth2Repository> = HashMap()
 
@@ -46,8 +49,10 @@ object SecurityRepositoryFactory {
     ): IOAuth2Repository {
         var rep = oAuth2Repositories[baseUrl]
         if (rep != null) {
+            log(Log.VERBOSE, LOG_TAG, "Reusing oAuth2Repository")
             return rep
         } else {
+            log(Log.VERBOSE, LOG_TAG, "Creating new oAuth2Repository")
             rep = OAuth2Repository(
                 authorizationKey = authorizationKey,
                 sharedPrefs = SharedPrefsFactory.getSharedPrefs(context, SECURITY_PREFS),
@@ -89,8 +94,10 @@ object SecurityRepositoryFactory {
     ): IRxOAuth2Repository {
         var rep = rxOAuth2Repositories[baseUrl]
         if (rep != null) {
+            log(Log.VERBOSE, LOG_TAG, "Reusing rxOAuth2Repository")
             return rep
         } else {
+            log(Log.VERBOSE, LOG_TAG, "Creating new RxOAuth2Repository")
             rep = RxOAuth2Repository(
                 authorizationKey = authorizationKey,
                 sharedPrefs = SharedPrefsFactory.getSharedPrefs(context, SECURITY_PREFS),

@@ -1,5 +1,6 @@
 package hr.dsokac.androidcommons.security.network.interceptors
 
+import hr.dsokac.androidcommons.extensions.logging.log
 import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.security.AUTHORIZATION_HEADER
 import hr.dsokac.androidcommons.security.repositories.IOAuth2Repository
@@ -23,36 +24,39 @@ class OAuth2Interceptor(
     private val authRepo: IOAuth2Repository,
     private val unauthorizedCodes: List<Int> = listOf(401, 403)
 ) : Interceptor {
+    companion object {
+        const val LOG_TAG = "OAuth2Interceptor"
+    }
 
     @Synchronized
     override fun intercept(chain: Interceptor.Chain): Response {
-//        log("OAuth2Interceptor", "Intercepting request")
+        log(LOG_TAG, "Intercepting request")
         if (authRepo.getAccessToken().isNullOrEmpty()) throw Unauthorized()
 
-//        log("OAuth2Interceptor", "Access token exist")
+        log(LOG_TAG, "Access token exist")
         val request = chain.request()
 
         var response = chain.proceed(setHeaders(request))
 
-//        log("OAuth2Interceptor", "Request returned ${response.code()}")
+        log(LOG_TAG, "Request returned ${response.code()}")
         if (unauthorizedCodes.contains(response.code())) {
             val refreshToken = authRepo.getRefreshToken()
 
             if (!refreshToken.isNullOrEmpty()) {
                 runBlocking {
                     try {
-//                    log("OAuth2Interceptor", "Refreshing token")
+                        log(LOG_TAG, "Refreshing token")
                         authRepo.refreshToken()
                     } catch (e: Throwable) {
-//                    log("OAuth2Interceptor", "Refresh token failed with following exception...")
-//                    e.log()
+                        log(LOG_TAG, "Refresh token failed with following exception...")
+                        e.log()
                         throw Unauthorized()
                     }
                 }
 
                 response = chain.proceed(setHeaders(request))
             } else {
-//                log("OAuth2Interceptor", "Refresh token is empty. Throwing UnauthorizedException.")
+                log(LOG_TAG, "Refresh token is empty. Throwing UnauthorizedException.")
                 throw Unauthorized()
             }
         }
@@ -68,7 +72,6 @@ class OAuth2Interceptor(
         if (!token.isNullOrEmpty()) {
             r = request.newBuilder().addHeader(AUTHORIZATION_HEADER, "$tokenType $token").build()
         }
-//        log("OAuth2Interceptor", "Settings Auth header to $tokenType $token")
         return r
     }
 }

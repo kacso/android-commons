@@ -1,5 +1,7 @@
 package hr.dsokac.androidcommons.security.repositories.impl
 
+import android.util.Log
+import hr.dsokac.androidcommons.extensions.logging.log
 import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.preferences.ISharedPrefs
 import hr.dsokac.androidcommons.security.ACCESS_TOKEN_PREFS_KEY
@@ -17,6 +19,10 @@ open class RxOAuth2Repository(
     private val service: RxOAuth2Service,
     private val authorizationKey: String
 ) : IRxOAuth2Repository {
+    companion object {
+        const val LOG_TAG = "RxOAuth2Repository"
+    }
+
     override fun getAccessToken(): String? = sharedPrefs.read(ACCESS_TOKEN_PREFS_KEY, null as String?)
 
     override fun getRefreshToken(): String? = sharedPrefs.read(REFRESH_TOKEN_PREFS_KEY, null as String?)
@@ -31,6 +37,7 @@ open class RxOAuth2Repository(
 
     override fun saveUsername(username: String) {
         sharedPrefs.write(USERNAME_PREFS_KEY, username)
+        log(LOG_TAG, "Username $username saved")
     }
 
     override fun clearSession() {
@@ -38,6 +45,7 @@ open class RxOAuth2Repository(
         sharedPrefs.removeKey(REFRESH_TOKEN_PREFS_KEY)
         sharedPrefs.removeKey(TOKEN_TYPE_PREFS_KEY)
         sharedPrefs.removeKey(USERNAME_PREFS_KEY)
+        log(LOG_TAG, "Session cleared")
     }
 
     override fun getUsername(): String? = sharedPrefs.read(USERNAME_PREFS_KEY, null as String?)
@@ -49,6 +57,12 @@ open class RxOAuth2Repository(
                 save(it.accessToken!!, it.refreshToken!!, it.tokenType!!)
                 saveUsername(username)
             }
+            .doOnSuccess {
+                log(LOG_TAG, "Login finished successfully")
+            }
+            .doOnError {
+                log(Log.WARN, LOG_TAG, "Login failed")
+            }
             .ignoreElement()
     }
 
@@ -58,17 +72,30 @@ open class RxOAuth2Repository(
             .map {
                 save(it.accessToken!!, it.refreshToken!!, it.tokenType!!)
             }
+            .doOnSuccess {
+                log(LOG_TAG, "Token refreshed successfully")
+            }
+            .doOnError {
+                log(Log.WARN, LOG_TAG, "Refresh token failed")
+            }
             .ignoreElement()
     }
 
     @Throws(NullPointerException::class, IOException::class)
     override fun logout(): Completable {
         return service.logout(getAccessToken()!!)
-            .map { clearSession() }
+            .map {
+                log(LOG_TAG, "Logout completed successfully.")
+                log(LOG_TAG, "Clearing session...")
+                clearSession()
+            }
             .onErrorResumeNext {
                 if (it is Unauthorized) {
+                    log(LOG_TAG, "Logout failed with Unauthorized.")
+                    log(LOG_TAG, "Clearing session...")
                     Single.just(clearSession())
                 } else {
+                    log(Log.WARN, LOG_TAG, "Logout failed.")
                     Single.error(it)
                 }
             }

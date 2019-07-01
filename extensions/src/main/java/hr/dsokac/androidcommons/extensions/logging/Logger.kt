@@ -2,6 +2,14 @@ package hr.dsokac.androidcommons.extensions.logging
 
 import android.util.Log
 
+/**
+ * Default implementation of [ILogger].
+ * It will log messages in logcat in case that app is in debug mode ([isDebug] is set to true)
+ *
+ * @property isDebug is debug mode enabled
+ *
+ * @author Danijel Sokač
+ */
 open class Logger(private val isDebug: Boolean) : ILogger {
     override fun log(logLevel: Int, tag: String, message: String) {
         runCatching {
@@ -22,7 +30,9 @@ open class Logger(private val isDebug: Boolean) : ILogger {
 
     override fun log(throwable: Throwable) {
         runCatching {
-            Log.e(throwable.javaClass.name, throwable.message ?: "Empty message")
+            if (isDebug) {
+                Log.e(throwable.javaClass.name, throwable.message ?: "Empty message")
+            }
         }
     }
 }
