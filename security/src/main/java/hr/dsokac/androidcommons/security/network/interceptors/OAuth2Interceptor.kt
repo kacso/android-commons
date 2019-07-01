@@ -1,6 +1,6 @@
 package hr.dsokac.androidcommons.security.network.interceptors
 
-import hr.dsokac.androidcommons.extensions.logging.log
+import hr.dsokac.androidcommons.logger.log
 import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.security.AUTHORIZATION_HEADER
 import hr.dsokac.androidcommons.security.repositories.IOAuth2Repository

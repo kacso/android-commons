@@ -2,7 +2,7 @@ package hr.dsokac.androidcommons.security.factories
 
 import android.content.Context
 import android.util.Log
-import hr.dsokac.androidcommons.extensions.logging.log
+import hr.dsokac.androidcommons.logger.log
 import hr.dsokac.androidcommons.network.interceptors.NetworkExceptionInterceptor
 import hr.dsokac.androidcommons.preferences.factories.SharedPrefsFactory
 import hr.dsokac.androidcommons.security.CONNECT_TIMEOUT_SECS

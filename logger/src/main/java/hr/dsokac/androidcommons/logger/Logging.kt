@@ -1,4 +1,4 @@
-package hr.dsokac.androidcommons.extensions.logging
+package hr.dsokac.androidcommons.logger
 
 import android.util.Log
 

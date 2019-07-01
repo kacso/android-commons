@@ -1,7 +1,7 @@
 package hr.dsokac.androidcommons.security.repositories.impl
 
 import android.util.Log
-import hr.dsokac.androidcommons.extensions.logging.log
+import hr.dsokac.androidcommons.logger.log
 import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.preferences.ISharedPrefs
 import hr.dsokac.androidcommons.security.ACCESS_TOKEN_PREFS_KEY

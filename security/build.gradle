@@ -62,7 +62,7 @@ dependencies {
     implementation project(":network")
     implementation project(":preferences")
     implementation project(":test")
-    implementation project(":extensions")
+    implementation project(':logger')
 }
 
 sourceCompatibility = "8"
