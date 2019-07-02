@@ -1,5 +1,6 @@
 package hr.dsokac.androidcommons.security.network.managers
 
+import hr.dsokac.androidcommons.logger.log
 import hr.dsokac.androidcommons.network.interceptors.NetworkExceptionInterceptor
 import hr.dsokac.androidcommons.security.network.services.OAuth2Service
 import hr.dsokac.androidcommons.security.network.services.RxOAuth2Service
@@ -39,7 +40,7 @@ class OAuth2NetworkManager(
         }
 
         val httpLoggingInterceptor = HttpLoggingInterceptor {
-            //            log(it)
+            log("HTTP", it)
         }
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         httpBuilder.addInterceptor(httpLoggingInterceptor)

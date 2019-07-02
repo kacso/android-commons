@@ -1,10 +1,12 @@
 package hr.dsokac.androidcommons.ui.activities
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import hr.dsokac.androidcommons.R
+import hr.dsokac.androidcommons.extensions.getCurrentLocale
+import hr.dsokac.androidcommons.extensions.getSystemLocale
+import hr.dsokac.androidcommons.logger.log
 import hr.dsokac.androidcommons.network.managers.AppNetworkManager
 import io.reactivex.android.schedulers.AndroidSchedulers
 import kotlinx.android.synthetic.main.activity_network.*
@@ -24,10 +26,10 @@ class NetworkActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     Toast.makeText(this, "Request successful", Toast.LENGTH_LONG).show()
-                    Log.d("Network", it.string())
+                    log("Network", it.string())
                 }, {
                     Toast.makeText(this, "Request failed", Toast.LENGTH_LONG).show()
-                    Log.d("Network", "" + it.message)
+                    log("Network", "" + it.message)
                 })
         }
 
@@ -39,12 +41,12 @@ class NetworkActivity : AppCompatActivity() {
                     runOnUiThread {
                         Toast.makeText(this@NetworkActivity, "Request successful", Toast.LENGTH_LONG).show()
                     }
-                    Log.d("Network", it.string())
+                    log("Network", it.string())
                 }.onFailure {
                     runOnUiThread {
                         Toast.makeText(this@NetworkActivity, "Request failed", Toast.LENGTH_LONG).show()
                     }
-                    Log.d("Network", "" + it.message)
+                    log("Network", "" + it.message)
                 }
             }
         }
@@ -54,10 +56,10 @@ class NetworkActivity : AppCompatActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     Toast.makeText(this, "Request successful", Toast.LENGTH_LONG).show()
-                    Log.d("Network", it.string())
+                    log("Network", it.string())
                 }, {
                     Toast.makeText(this, "Request failed", Toast.LENGTH_LONG).show()
-                    Log.d("Network", "" + it.message)
+                    log("Network", "" + it.message)
                 })
         }
 
@@ -69,15 +71,18 @@ class NetworkActivity : AppCompatActivity() {
                     runOnUiThread {
                         Toast.makeText(this@NetworkActivity, "Request successful", Toast.LENGTH_LONG).show()
                     }
-                    Log.d("Network", it.string())
+                    log("Network", it.string())
                 }.onFailure {
                     runOnUiThread {
                         Toast.makeText(this@NetworkActivity, "Request failed", Toast.LENGTH_LONG).show()
                     }
-                    Log.d("Network", "" + it.printStackTrace())
-                    Log.d("Network", "" + it.message)
+                    log("Network", "" + it.printStackTrace())
+                    log("Network", "" + it.message)
                 }
             }
         }
+
+        currentLocale.text = getCurrentLocale().language
+        systemLocale.text = getSystemLocale().language
     }
 }

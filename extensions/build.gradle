@@ -1,29 +1,37 @@
-apply plugin: 'com.android.application'
-
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'hr.dsokac.androidcommons'
+version = '0.0.1'
+ext.versionCode = 1
 android {
     compileSdkVersion 28
+
+
     defaultConfig {
-        applicationId "hr.dsokac.androidcommons"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
     }
 }
 
@@ -31,28 +39,19 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation _kotlin_.stdlib
     implementation androidx.appCompat
-    implementation androidx.coreKtx
-    implementation androidx.constraintLayout
-    implementation material
-
-    implementation rxjava.rxjava
-    implementation rxjava.rxandroid
-    implementation rxjava.rxkotlin
-    implementation _kotlin_.coroutines
-    implementation _kotlin_.coroutines_android
-
-    implementation retrofit.retrofit
-    implementation retrofit.converter_gson
-    implementation retrofit.adapter_rxjava2
-    implementation retrofit.logging_interceptor
 
     testImplementation _test_.junit_api
+    testImplementation _test_.mockito_core
+    testImplementation _test_.mockito_android
+    testImplementation _test_.mockito_kotlin
     testRuntimeOnly _test_.junit_engine
     testRuntimeOnly _test_.junit_platform_launcher
     androidTestImplementation _test_.runner
     androidTestImplementation _test_.espresso
+    testImplementation _test_.robolectric
+    testImplementation _test_.junit
+    testRuntimeOnly _test_.junit_vintage
 
-    implementation project (":network")
-    implementation project (":logger")
-    implementation project (":extensions")
+
+    implementation javaTime
 }
