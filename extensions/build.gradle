@@ -4,9 +4,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'hr.dsokac.androidcommons'
-version = '0.0.1'
-ext.versionCode = 1
+version = lib.version
+group = lib.group
+ext.versionCode = lib.versionCode
+
 android {
     compileSdkVersion 28
 
