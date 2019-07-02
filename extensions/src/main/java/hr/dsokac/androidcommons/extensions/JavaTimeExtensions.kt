@@ -17,7 +17,7 @@ import org.threeten.bp.*
  *
  * @return [LocalDate] representing this [Instant]
  */
-fun Instant.toLocalDate(zoneId: ZoneId = ZoneId.systemDefault()) = atZone(zoneId).toLocalDate()
+fun Instant.toLocalDate(zoneId: ZoneId = ZoneId.systemDefault()): LocalDate = atZone(zoneId).toLocalDate()
 
 /**
  * Converts [Instant] to [LocalDateTime] using [zoneId]
@@ -26,7 +26,7 @@ fun Instant.toLocalDate(zoneId: ZoneId = ZoneId.systemDefault()) = atZone(zoneId
  *
  * @return [LocalDateTime] representing this [Instant]
  */
-fun Instant.toLocalDateTime(zoneId: ZoneId = ZoneId.systemDefault()) = atZone(zoneId).toLocalDateTime()
+fun Instant.toLocalDateTime(zoneId: ZoneId = ZoneId.systemDefault()): LocalDateTime = atZone(zoneId).toLocalDateTime()
 
 /**
  * Converts [Instant] to [LocalTime] using [zoneId]
@@ -35,7 +35,7 @@ fun Instant.toLocalDateTime(zoneId: ZoneId = ZoneId.systemDefault()) = atZone(zo
  *
  * @return [LocalTime] representing this [Instant]
  */
-fun Instant.toLocalTime(zoneId: ZoneId = ZoneId.systemDefault()) = atZone(zoneId).toLocalTime()
+fun Instant.toLocalTime(zoneId: ZoneId = ZoneId.systemDefault()): LocalTime = atZone(zoneId).toLocalTime()
 
 /**
  * Converts [LocalDate] to point to first day of a month

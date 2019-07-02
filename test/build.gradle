@@ -40,6 +40,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation _kotlin_.stdlib
     implementation _test_.robolectric
+
+    implementation lifecycle.extensions
 }
 
 sourceCompatibility = "8"
