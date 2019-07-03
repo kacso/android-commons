@@ -60,6 +60,7 @@ open class OAuth2Repository(
             log(LOG_TAG, "Login finished successfully")
         }.onFailure {
             log(Log.WARN, LOG_TAG, "Login failed")
+            throw it
         }
     }
 
@@ -74,6 +75,7 @@ open class OAuth2Repository(
             log(LOG_TAG, "Token refreshed successfully")
         }.onFailure {
             log(Log.WARN, LOG_TAG, "Refresh token failed")
+            throw it
         }
     }
 

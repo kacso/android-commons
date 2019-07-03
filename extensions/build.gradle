@@ -54,6 +54,7 @@ dependencies {
     testRuntimeOnly _test_.junit_vintage
     testImplementation lifecycle.core_test
     testImplementation project(":test")
+    testImplementation _test_.mockk
 
 
     implementation javaTime
