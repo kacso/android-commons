@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Divider">
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">#1a000000</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="Divider.Vertical" parent="Divider">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">2dp</item>
+    </style>
+
+    <style name="FilledButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">12dp</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <!--Text-->
+    <style name="Text">
+        <item name="android:fontFamily">?android:fontFamily
+        </item>  <!--Required because of an issue on Android 6 when texAllCaps property is turned on-->
+        <item name="android:textSize">?textSizeMedium</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+    </style>
+
+    <style name="Text.Strong" parent="Text">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Input" parent="Text">
+        <item name="android:textColor">?android:textColorSecondary</item>
+    </style>
+
+    <style name="Text.Title" parent="Text">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textSize">?textSizeLarge</item>
+    </style>
+
+    <style name="Text.Title.Strong" parent="Text.Title">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.ListItems" parent="Text">
+        <item name="android:textSize">?textSizeSmall</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="android:textColorHint">?android:textColorSecondary</item>
+    </style>
+
+    <style name="Text.ListItems.Strong" parent="Text.ListItems">
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.AsEditText" parent="Text.ListItems">
+        <item name="android:background">?attr/editTextBackground</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMediumInverse</item>
+    </style>
+
+    <style name="FullScreenDialogStyle">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="NoTitleDialogStyle">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+</resources>

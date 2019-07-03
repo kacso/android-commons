@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dialog_title_session_expired">Session expired</string>
+    <string name="dialog_msg_session_expired">Your session has expired, please re-enter your credentials.</string>
+    <string name="dialog_confirm_session_expired">Go to login</string>
+</resources>

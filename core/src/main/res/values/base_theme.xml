@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base material components application theme. -->
+    <style name="BaseMaterialTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="fadeOutColor">#8c8e90</item>
+        <item name="textSizeSmall">14sp</item>
+        <item name="textSizeMedium">16sp</item>
+        <item name="textSizeLarge">18sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Base material components application theme without action bar. -->
+    <style name="BaseMaterialTheme.NoActionBar" parent="BaseMaterialTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>

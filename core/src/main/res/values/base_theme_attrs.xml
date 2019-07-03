@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="fadeOutColor" format="reference|color"/>
+    <attr name="textSizeSmall" format="reference|dimension"/>
+    <attr name="textSizeMedium" format="reference|dimension"/>
+    <attr name="textSizeLarge" format="reference|dimension"/>
+</resources>
