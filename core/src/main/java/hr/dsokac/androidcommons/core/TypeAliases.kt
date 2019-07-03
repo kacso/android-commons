@@ -2,4 +2,4 @@ package hr.dsokac.androidcommons.core
 
 typealias Action = () -> Unit
 
-typealias Result = (Any) -> Unit
+typealias Result<T> = (T) -> Unit
