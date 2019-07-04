@@ -6,6 +6,7 @@ import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.LiveData
 import com.google.android.material.snackbar.Snackbar
 import hr.dsokac.androidcommons.core.BaseApplication
 import hr.dsokac.androidcommons.core.R
@@ -13,10 +14,14 @@ import hr.dsokac.androidcommons.core.SNACKBAR_ELEVATION
 import hr.dsokac.androidcommons.core.dialogs.AbstractProgressDialog
 import hr.dsokac.androidcommons.core.dialogs.DialogMessage
 import hr.dsokac.androidcommons.core.dialogs.ProgressDialog
+import hr.dsokac.androidcommons.core.models.ErrorHolder
+import hr.dsokac.androidcommons.core.models.MessageHolder
+import hr.dsokac.androidcommons.core.mvvm.viewmodels.IBaseViewModel
 import hr.dsokac.androidcommons.core.views.BaseView
 import hr.dsokac.androidcommons.extensions.getSystemLocale
 import hr.dsokac.androidcommons.extensions.goBack
 import hr.dsokac.androidcommons.extensions.toUserDefinedLocaleContext
+import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.permissions.manager.ActivityPermissionManager
 import hr.dsokac.androidcommons.permissions.manager.IPermissionManager
 import java.lang.ref.WeakReference
@@ -28,6 +33,8 @@ import java.util.*
  *
  * It is advisable that all activities in project extend this class.
  *
+ * In case that you are implementing this class, make sure to implement [IBaseViewModel] within your activity.
+ *
  * @author Danijel Sokač
  */
 abstract class BaseActivity : AppCompatActivity(), BaseView {
@@ -37,6 +44,11 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
          */
         var currentView: BaseActivity? = null
     }
+
+    /**
+     * View model associated with this activity
+     */
+    protected abstract val viewModel: IBaseViewModel
 
     protected open val progressDialog: AbstractProgressDialog by lazy {
         ProgressDialog.newInstance()
@@ -53,6 +65,8 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         super.onCreate(savedInstanceState)
         currentView = this
         setContentView(getLayout())
+
+        initViewModelListeners()
     }
 
     override fun onResume() {
@@ -142,39 +156,28 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     }
 
     /**
-     * By default, it will just call [showError] function with extracted [error] resources
-     */
-    override fun showError(error: Int) {
-        showError(getString(error))
-    }
-
-    /**
      * By default, it will display [error] in [Snackbar] with duration set to [Snackbar.LENGTH_LONG]
      */
-    override fun showError(error: String) {
-        if (isActive()) {
-            val snackbar = Snackbar.make(getContentHolder(), error, Snackbar.LENGTH_LONG)
+    override fun onError(error: ErrorHolder) {
+        if (!isActive()) return
+        if (error.cause is Unauthorized) {
+            redirectToLogin()
+        } else {
+            val snackbar = Snackbar.make(getContentHolder(), error.toString(this), Snackbar.LENGTH_LONG)
             snackbar.view.elevation = SNACKBAR_ELEVATION
             snackbar.show()
         }
-    }
-
-    /**
-     * By default, it will just call [showMessage] function with extracted [msg] resources
-     */
-    override fun showMessage(msg: Int) {
-        showMessage(getString(msg))
     }
 
     /**
      * By default, it will display [msg] in [Snackbar] with duration set to [Snackbar.LENGTH_LONG]
      */
-    override fun showMessage(msg: String) {
-        if (isActive()) {
-            val snackbar = Snackbar.make(getContentHolder(), msg, Snackbar.LENGTH_LONG)
-            snackbar.view.elevation = SNACKBAR_ELEVATION
-            snackbar.show()
-        }
+    override fun showMessage(msg: MessageHolder) {
+        if (!isActive()) return
+        val snackbar = Snackbar.make(getContentHolder(), msg.toString(this), Snackbar.LENGTH_LONG)
+        snackbar.view.elevation = SNACKBAR_ELEVATION
+        snackbar.show()
+
     }
 
     override fun redirectToLogin(forceRedirect: Boolean) {
@@ -211,6 +214,21 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
             finish()
         } else {
             throw IllegalAccessException("Application is not extending BaseApplication. Make sure that you added proper application into manifest or override redirectToLogin function")
+        }
+    }
+
+    /**
+     * Function which will start observing [LiveData] objects from [IBaseViewModel]
+     */
+    protected open fun initViewModelListeners() {
+        viewModel.getError().observe(this, ::onError)
+        viewModel.getMessage().observe(this, ::showMessage)
+        viewModel.getIsProgressActive().observe(this) {
+            if (it) {
+                showProgress()
+            } else {
+                hideProgress()
+            }
         }
     }
 }

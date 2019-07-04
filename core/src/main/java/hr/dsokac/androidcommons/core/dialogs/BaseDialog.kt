@@ -8,9 +8,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.LiveData
 import hr.dsokac.androidcommons.core.BaseApplication
 import hr.dsokac.androidcommons.core.activities.BaseActivity
+import hr.dsokac.androidcommons.core.models.ErrorHolder
+import hr.dsokac.androidcommons.core.models.MessageHolder
+import hr.dsokac.androidcommons.core.mvvm.viewmodels.IBaseViewModel
 import hr.dsokac.androidcommons.core.views.BaseView
+import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.permissions.manager.FragmentPermissionManager
 import hr.dsokac.androidcommons.permissions.manager.IPermissionManager
 import java.lang.ref.WeakReference
@@ -20,6 +25,10 @@ import java.lang.ref.WeakReference
  * common tasks in Dialog.
  *
  * It is advisable that all dialogs in project extend this class.
+ *
+ * In case that you are implementing this class, make sure to implement [IBaseViewModel] within your dialog.
+ *
+ * @author Danijel Sokač
  */
 abstract class BaseDialog : DialogFragment(), BaseView {
     protected open val progressDialog: AbstractProgressDialog by lazy {
@@ -35,6 +44,11 @@ abstract class BaseDialog : DialogFragment(), BaseView {
      */
     @Suppress("MemberVisibilityCanBePrivate")
     protected lateinit var rootView: View
+
+    /**
+     * View model associated with this dialog
+     */
+    protected abstract val viewModel: IBaseViewModel
 
     /**
      * This method is being used in order to inflate view for dialog
@@ -90,34 +104,26 @@ abstract class BaseDialog : DialogFragment(), BaseView {
     }
 
     /**
-     * By default, it will just call [showError] function with extracted [error] resources
-     */
-    override fun showError(error: Int) {
-        showError(getString(error))
-    }
-
-    /**
      * By default, it will display [error] in [Toast] with duration set to [Toast.LENGTH_LONG]
      */
-    override fun showError(error: String) {
+    override fun onError(error: ErrorHolder) {
         context?.apply {
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+            if (!isVisible) return@apply
+            if (error.cause is Unauthorized) {
+                redirectToLogin()
+            } else {
+                Toast.makeText(this, error.toString(this), Toast.LENGTH_LONG).show()
+            }
         }
-    }
-
-    /**
-     * By default, it will just call [showMessage] function with extracted [msg] resources
-     */
-    override fun showMessage(msg: Int) {
-        showMessage(getString(msg))
     }
 
     /**
      * By default, it will display [msg] in [Toast] with duration set to [Toast.LENGTH_LONG]
      */
-    override fun showMessage(msg: String) {
+    override fun showMessage(msg: MessageHolder) {
         context?.apply {
-            Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+            if (!isVisible) return@apply
+            Toast.makeText(this, msg.toString(this), Toast.LENGTH_LONG).show()
         }
     }
 
@@ -129,5 +135,20 @@ abstract class BaseDialog : DialogFragment(), BaseView {
 
     override fun backPressed() {
         dismissAllowingStateLoss()
+    }
+
+    /**
+     * Function which will start observing [LiveData] objects from [IBaseViewModel]
+     */
+    protected open fun initViewModelListeners() {
+        viewModel.getError().observe(this, ::onError)
+        viewModel.getMessage().observe(this, ::showMessage)
+        viewModel.getIsProgressActive().observe(this) {
+            if (it) {
+                showProgress()
+            } else {
+                hideProgress()
+            }
+        }
     }
 }

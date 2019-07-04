@@ -1,7 +1,8 @@
 package hr.dsokac.androidcommons.core.views
 
 import android.content.Context
-import androidx.annotation.StringRes
+import hr.dsokac.androidcommons.core.models.ErrorHolder
+import hr.dsokac.androidcommons.core.models.MessageHolder
 
 /**
  * Interface which defines basic functionalities that each view should implement
@@ -22,30 +23,16 @@ interface BaseView {
     /**
      * Display error message to the user
      *
-     * @param error     reference to string resources of error message
+     * @param error     [ErrorHolder] which contains info about error
      */
-    fun showError(@StringRes error: Int)
-
-    /**
-     * Display error message to the user
-     *
-     * @param error     string to be shown as error
-     */
-    fun showError(error: String)
+    fun onError(error: ErrorHolder)
 
     /**
      * Display any message to the user
      *
-     * @param msg     string resources of message to be displayed
+     * @param msg     [MessageHolder] which contains info about error
      */
-    fun showMessage(@StringRes msg: Int)
-
-    /**
-     * Display any message to the user
-     *
-     * @param msg     string to be displayed
-     */
-    fun showMessage(msg: String)
+    fun showMessage(msg: MessageHolder)
 
     /**
      * Redirect user to login.

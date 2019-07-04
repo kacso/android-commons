@@ -41,6 +41,8 @@ dependencies {
     implementation _kotlin_.stdlib
     implementation androidx.appCompat
     implementation lifecycle.extensions
+    implementation lifecycle.viewmodel
+    implementation lifecycle.livedata
     implementation javaTime
     implementation material
     implementation androidx.constraintLayout
@@ -63,4 +65,5 @@ dependencies {
     implementation project(":extensions")
     implementation project(":logger")
     implementation project(":permissions")
+    implementation project(":network")
 }
