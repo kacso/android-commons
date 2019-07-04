@@ -14,7 +14,8 @@ buildscript {
                 constraintLayout: "androidx.constraintlayout:constraintlayout:2.0.0-beta2",
                 coreKtx         : "androidx.core:core-ktx:1.1.0-rc01",
                 fragmentKtx     : "androidx.fragment:fragment-ktx:1.1.0-rc01",
-                paging          : "androidx.paging:paging-runtime-ktx:2.1.0"
+                paging          : "androidx.paging:paging-runtime-ktx:2.1.0",
+                paging_test     : "androidx.paging:paging-common-ktx:2.1.0"
         ]
         _test_ = [
                 runner                 : "androidx.test:runner:1.2.0",

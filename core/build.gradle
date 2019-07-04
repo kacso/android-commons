@@ -46,6 +46,7 @@ dependencies {
     implementation javaTime
     implementation material
     implementation androidx.constraintLayout
+    implementation androidx.paging
 
     testImplementation _test_.junit_api
     testImplementation _test_.mockito_core
