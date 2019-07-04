@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import hr.dsokac.androidcommons.core.BaseApplication
 import hr.dsokac.androidcommons.core.activities.BaseActivity
 import hr.dsokac.androidcommons.core.models.ErrorHolder
@@ -48,7 +49,7 @@ abstract class BaseDialog : DialogFragment(), BaseView {
     /**
      * View model associated with this dialog
      */
-    protected abstract val viewModel: IBaseViewModel
+    protected open val viewModel: IBaseViewModel? = null
 
     /**
      * This method is being used in order to inflate view for dialog
@@ -81,6 +82,7 @@ abstract class BaseDialog : DialogFragment(), BaseView {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         rootView = inflater.inflate(getLayout(), container, false)
+        initViewModelListeners()
         return rootView
     }
 
@@ -141,14 +143,20 @@ abstract class BaseDialog : DialogFragment(), BaseView {
      * Function which will start observing [LiveData] objects from [IBaseViewModel]
      */
     protected open fun initViewModelListeners() {
-        viewModel.getError().observe(this, ::onError)
-        viewModel.getMessage().observe(this, ::showMessage)
-        viewModel.getIsProgressActive().observe(this) {
-            if (it) {
-                showProgress()
-            } else {
-                hideProgress()
-            }
+        viewModel?.apply {
+            getError().observe(this@BaseDialog, Observer {
+                onError(it)
+            })
+            getMessage().observe(this@BaseDialog, Observer {
+                showMessage(it)
+            })
+            getIsProgressActive().observe(this@BaseDialog, Observer {
+                if (it) {
+                    showProgress()
+                } else {
+                    hideProgress()
+                }
+            })
         }
     }
 }

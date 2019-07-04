@@ -7,6 +7,7 @@ import androidx.annotation.LayoutRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import hr.dsokac.androidcommons.core.BaseApplication
 import hr.dsokac.androidcommons.core.R
@@ -221,14 +222,18 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
      * Function which will start observing [LiveData] objects from [IBaseViewModel]
      */
     protected open fun initViewModelListeners() {
-        viewModel.getError().observe(this, ::onError)
-        viewModel.getMessage().observe(this, ::showMessage)
-        viewModel.getIsProgressActive().observe(this) {
+        viewModel.getError().observe(this, Observer {
+            onError(it)
+        })
+        viewModel.getMessage().observe(this, Observer {
+            showMessage(it)
+        })
+        viewModel.getIsProgressActive().observe(this, Observer {
             if (it) {
                 showProgress()
             } else {
                 hideProgress()
             }
-        }
+        })
     }
 }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import hr.dsokac.androidcommons.core.SNACKBAR_ELEVATION
 import hr.dsokac.androidcommons.core.activities.BaseActivity
@@ -129,14 +130,18 @@ abstract class BaseFragment : Fragment(), BaseView {
      * Function which will start observing [LiveData] objects from [IBaseViewModel]
      */
     protected open fun initViewModelListeners() {
-        viewModel.getError().observe(this, ::onError)
-        viewModel.getMessage().observe(this, ::showMessage)
-        viewModel.getIsProgressActive().observe(this) {
+        viewModel.getError().observe(this, Observer {
+            onError(it)
+        })
+        viewModel.getMessage().observe(this, Observer {
+            showMessage(it)
+        })
+        viewModel.getIsProgressActive().observe(this, Observer {
             if (it) {
                 showProgress()
             } else {
                 hideProgress()
             }
-        }
+        })
     }
 }
