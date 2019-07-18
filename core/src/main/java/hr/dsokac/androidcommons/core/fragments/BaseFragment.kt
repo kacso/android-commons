@@ -45,7 +45,7 @@ abstract class BaseFragment : Fragment(), BaseView {
         ProgressDialog.newInstance()
     }
 
-    open val permissionManager: IPermissionManager by lazy {
+    protected open val permissionManager: IPermissionManager by lazy {
         FragmentPermissionManager(WeakReference(this))
     }
 
@@ -55,15 +55,15 @@ abstract class BaseFragment : Fragment(), BaseView {
     protected abstract val viewModel: IBaseViewModel
 
     /**
-     * This method is being used in order to inflate view for fragment
+     * Reference to layout resource of current fragment.
      *
-     * @return reference to layout resource of current activity
+     * This method is being used in order to inflate view for fragment.
      */
-    @LayoutRes
-    protected abstract fun getLayout(): Int
+    @get:LayoutRes
+    protected abstract val layoutRes: Int
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        rootView = inflater.inflate(getLayout(), container, false)
+        rootView = inflater.inflate(layoutRes, container, false)
         initViewModelListeners()
         return rootView
     }

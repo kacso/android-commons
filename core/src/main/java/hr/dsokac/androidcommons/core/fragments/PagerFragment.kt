@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.base_fragment_pager.view.*
  */
 abstract class PagerFragment : BaseFragment(), PagerView {
 
-    override fun getLayout(): Int = R.layout.base_fragment_pager
+    override val layoutRes: Int = R.layout.base_fragment_pager
 
     /**
      * Returns ViewPager which will display data.

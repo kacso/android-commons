@@ -54,7 +54,7 @@ abstract class ListFragment<T> : BaseFragment() {
         }
     }
 
-    override fun getLayout(): Int = R.layout.fragment_list
+    override val layoutRes: Int = R.layout.fragment_list
 
     /**
      * If [SwipeRefreshLayout] is defined, use his progress indicator, otherwise call super

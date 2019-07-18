@@ -55,7 +55,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         ProgressDialog.newInstance()
     }
 
-    open val permissionManager: IPermissionManager by lazy {
+    protected open val permissionManager: IPermissionManager by lazy {
         ActivityPermissionManager(WeakReference(this))
     }
 
@@ -65,7 +65,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         }
         super.onCreate(savedInstanceState)
         currentView = this
-        setContentView(getLayout())
+        setContentView(layoutRes)
 
         initViewModelListeners()
     }
@@ -129,12 +129,13 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     }
 
     /**
-     * This method is being used in order to set content view for current activity
+     * Reference to layout resource of current activity.
      *
-     * @return reference to layout resource of current activity
+     * This value is being used in order to set content view for current activity
+     *
      */
-    @LayoutRes
-    abstract fun getLayout(): Int
+    @get:LayoutRes
+    protected abstract val layoutRes: Int
 
     /**
      * Gets root view of current activity.
@@ -142,7 +143,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
      *
      * @return root view of activity
      */
-    abstract fun getContentHolder(): View
+    protected abstract fun getContentHolder(): View
 
     override fun showProgress() {
         if (!progressDialog.isShown()) {
