@@ -24,7 +24,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -57,3 +62,8 @@ dependencies {
 
 sourceCompatibility = "8"
 targetCompatibility = "8"
+
+afterEvaluate {
+    assembleDebug.dependsOn testDebugUnitTest
+    assembleRelease.dependsOn testReleaseUnitTest
+}

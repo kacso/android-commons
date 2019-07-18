@@ -16,7 +16,12 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -55,4 +60,9 @@ dependencies {
     implementation project (":network")
     implementation project (":logger")
     implementation project (":extensions")
+}
+
+afterEvaluate {
+    assembleDebug.dependsOn testDebugUnitTest
+    assembleRelease.dependsOn testReleaseUnitTest
 }

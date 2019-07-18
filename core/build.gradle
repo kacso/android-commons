@@ -23,7 +23,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -67,4 +72,9 @@ dependencies {
     implementation project(":logger")
     implementation project(":permissions")
     implementation project(":network")
+}
+
+afterEvaluate {
+    assembleDebug.dependsOn testDebugUnitTest
+    assembleRelease.dependsOn testReleaseUnitTest
 }

@@ -23,7 +23,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -52,4 +57,9 @@ dependencies {
     testImplementation _test_.robolectric
     testImplementation _test_.junit
     testRuntimeOnly _test_.junit_vintage
+}
+
+afterEvaluate {
+    assembleDebug.dependsOn testDebugUnitTest
+    assembleRelease.dependsOn testReleaseUnitTest
 }

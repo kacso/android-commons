@@ -23,7 +23,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
         release {
+            testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -53,4 +58,9 @@ dependencies {
     testRuntimeOnly _test_.junit_vintage
 
     implementation firebase.crashlytics
+}
+
+afterEvaluate {
+    assembleDebug.dependsOn testDebugUnitTest
+    assembleRelease.dependsOn testReleaseUnitTest
 }
