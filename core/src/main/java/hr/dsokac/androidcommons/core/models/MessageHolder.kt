@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.annotation.StringRes
 
 open class MessageHolder(
-    @StringRes val errorRes: Int? = null,
+    @StringRes val messageRes: Int? = null,
     val message: String? = null
 ) {
     override fun toString(): String {
@@ -12,8 +12,8 @@ open class MessageHolder(
     }
 
     open fun toString(context: Context): String {
-        return if (errorRes != null) {
-            context.getString(errorRes)
+        return if (messageRes != null) {
+            context.getString(messageRes)
         } else {
             message ?: ""
         }

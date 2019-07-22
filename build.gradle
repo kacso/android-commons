@@ -55,7 +55,7 @@ buildscript {
         lifecycle = [
                 extensions: "androidx.lifecycle:lifecycle-extensions:2.1.0-beta01",
                 viewmodel : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-rc01",
-                livedata : "androidx.lifecycle:lifecycle-livedata-ktx:2.1.0-rc01",
+                livedata  : "androidx.lifecycle:lifecycle-livedata-ktx:2.1.0-rc01",
                 core_test : "androidx.arch.core:core-testing:2.1.0-beta01"
         ]
         firebase = [
@@ -77,6 +77,10 @@ buildscript {
         ]
 
         gson = "com.google.code.gson:gson:2.8.5"
+
+        playServices = [
+                location: "com.google.android.gms:play-services-location:17.0.0"
+        ]
     }
 
     repositories {
@@ -85,11 +89,12 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.1'
+        classpath 'com.android.tools.build:gradle:3.4.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$_kotlin_.version"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 

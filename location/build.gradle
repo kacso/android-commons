@@ -11,6 +11,7 @@ ext.versionCode = lib.versionCode
 android {
     compileSdkVersion 28
 
+
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 28
@@ -19,12 +20,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath true
-            }
-        }
     }
 
     buildTypes {
@@ -39,27 +34,36 @@ android {
         }
     }
 
-    testOptions {
-        unitTests {
-            all {
-                useJUnitPlatform()
-            }
-        }
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation _kotlin_.stdlib
-    implementation _test_.robolectric
+    implementation lifecycle.livedata
+    implementation playServices.location
 
-    implementation lifecycle.extensions
-}
+    implementation rxjava.rxjava
+    implementation rxjava.rxandroid
+    implementation rxjava.rxkotlin
 
-sourceCompatibility = "8"
-targetCompatibility = "8"
+    implementation _kotlin_.coroutines
 
-afterEvaluate {
-    assembleDebug.dependsOn testDebugUnitTest
-    assembleRelease.dependsOn testReleaseUnitTest
+    implementation project(":logger")
+    implementation project(":permissions")
+    implementation project(":core")
+
+    testImplementation _test_.junit_api
+    testImplementation _test_.mockito_core
+    testImplementation _test_.mockito_android
+    testImplementation _test_.mockito_kotlin
+    testRuntimeOnly _test_.junit_engine
+    testRuntimeOnly _test_.junit_platform_launcher
+    androidTestImplementation _test_.runner
+    androidTestImplementation _test_.espresso
+    testImplementation _test_.robolectric
+    testImplementation _test_.junit
+    testRuntimeOnly _test_.junit_vintage
+    testImplementation lifecycle.core_test
+    testImplementation project(":test")
+    testImplementation _test_.mockk
 }
