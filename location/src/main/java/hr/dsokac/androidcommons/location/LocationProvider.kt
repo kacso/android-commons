@@ -5,11 +5,12 @@ import android.content.Context
 import android.location.Location
 import androidx.annotation.RequiresPermission
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.location.*
-import hr.dsokac.androidcommons.core.livedata.ObserverAwareLiveData
 import hr.dsokac.androidcommons.data.ErrorHolder
 import hr.dsokac.androidcommons.data.Resource
 import hr.dsokac.androidcommons.location.exceptions.LocationDisabledException
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Use this class to retrieve real-time location updates.
@@ -24,7 +25,22 @@ class LocationProvider(
     private val locationRequest: LocationRequest = LocationRequest.create()
 ) {
     private val provider = FusedLocationProviderClient(context)
-    private val locationLd = ObserverAwareLiveData<Resource<Location>>()
+    private val locationLd: MutableLiveData<Resource<Location>> = object : MutableLiveData<Resource<Location>>() {
+        private var started = AtomicBoolean(false)
+        override fun onActive() {
+            super.onActive()
+            if (started.compareAndSet(false, true)) {
+                provider.requestLocationUpdates(locationRequest, locationCallback, null)
+            }
+        }
+
+        override fun onInactive() {
+            super.onInactive()
+            if (started.compareAndSet(true, false)) {
+                provider.removeLocationUpdates(locationCallback)
+            }
+        }
+    }
 
     private val locationCallback = object : LocationCallback() {
         override fun onLocationResult(res: LocationResult?) {
@@ -45,18 +61,6 @@ class LocationProvider(
                 )
             }
         }
-    }
-
-    init {
-        locationLd.addActiveStatusObserver(object : ObserverAwareLiveData.ActiveStatusObserver {
-            override fun onActive() {
-                provider.requestLocationUpdates(locationRequest, locationCallback, null)
-            }
-
-            override fun onInactive() {
-                provider.removeLocationUpdates(locationCallback)
-            }
-        })
     }
 
     /**
