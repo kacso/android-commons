@@ -1,4 +1,4 @@
-package hr.dsokac.androidcommons.core.models
+package hr.dsokac.androidcommons.data
 
 /**
  * Sealed class representing properties which each resource will have.

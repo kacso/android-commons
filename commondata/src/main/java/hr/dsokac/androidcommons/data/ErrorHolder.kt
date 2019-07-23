@@ -1,4 +1,4 @@
-package hr.dsokac.androidcommons.core.models
+package hr.dsokac.androidcommons.data
 
 import android.content.Context
 import androidx.annotation.StringRes

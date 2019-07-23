@@ -48,13 +48,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation _kotlin_.stdlib
     implementation androidx.appCompat
-    implementation lifecycle.extensions
-    implementation lifecycle.viewmodel
-    implementation lifecycle.livedata
-    implementation javaTime
-    implementation material
-    implementation androidx.constraintLayout
-    implementation androidx.paging
 
     testImplementation _test_.junit_api
     testImplementation _test_.mockito_core
@@ -70,12 +63,6 @@ dependencies {
     testImplementation lifecycle.core_test
     testImplementation project(":test")
     testImplementation _test_.mockk
-
-    implementation project(":extensions")
-    implementation project(":logger")
-    implementation project(":permissions")
-    implementation project(":network")
-    implementation project(":commondata")
 }
 
 afterEvaluate {

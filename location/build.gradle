@@ -51,6 +51,7 @@ dependencies {
     implementation project(":logger")
     implementation project(":permissions")
     implementation project(":core")
+    implementation project(":commondata")
 
     testImplementation _test_.junit_api
     testImplementation _test_.mockito_core

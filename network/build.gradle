@@ -1,11 +1,49 @@
-apply plugin: 'kotlin'
-
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+
 
 apply plugin: 'com.github.dcendents.android-maven'
 version = lib.version
 group = lib.group
 ext.versionCode = lib.versionCode
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+
+        release {
+            testCoverageEnabled true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            all {
+                useJUnitPlatform()
+            }
+        }
+    }
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -22,17 +60,22 @@ dependencies {
 
     implementation _kotlin_.coroutines
 
+    implementation lifecycle.livedata
+
     testImplementation _test_.junit_api
     testImplementation _test_.mockito_core
     testImplementation _test_.mockito_android
     testImplementation _test_.mockito_kotlin
     testRuntimeOnly _test_.junit_engine
     testRuntimeOnly _test_.junit_platform_launcher
+
+    implementation project(":commondata")
 }
 
 sourceCompatibility = "8"
 targetCompatibility = "8"
 
 afterEvaluate {
-    assemble.dependsOn test
+    assembleDebug.dependsOn testDebugUnitTest
+    assembleRelease.dependsOn testReleaseUnitTest
 }

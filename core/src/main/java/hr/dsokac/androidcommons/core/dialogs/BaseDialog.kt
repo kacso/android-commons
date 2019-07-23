@@ -12,10 +12,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import hr.dsokac.androidcommons.core.BaseApplication
 import hr.dsokac.androidcommons.core.activities.BaseActivity
-import hr.dsokac.androidcommons.core.models.ErrorHolder
-import hr.dsokac.androidcommons.core.models.MessageHolder
 import hr.dsokac.androidcommons.core.mvvm.viewmodels.IBaseViewModel
 import hr.dsokac.androidcommons.core.views.BaseView
+import hr.dsokac.androidcommons.data.ErrorHolder
+import hr.dsokac.androidcommons.data.MessageHolder
 import hr.dsokac.androidcommons.network.exceptions.Unauthorized
 import hr.dsokac.androidcommons.permissions.manager.FragmentPermissionManager
 import hr.dsokac.androidcommons.permissions.manager.IPermissionManager

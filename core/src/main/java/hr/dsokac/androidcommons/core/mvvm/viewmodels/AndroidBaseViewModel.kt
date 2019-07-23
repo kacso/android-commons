@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import hr.dsokac.androidcommons.core.models.ErrorHolder
-import hr.dsokac.androidcommons.core.models.MessageHolder
+import hr.dsokac.androidcommons.data.ErrorHolder
+import hr.dsokac.androidcommons.data.MessageHolder
 
 abstract class AndroidBaseViewModel(application: Application) : AndroidViewModel(application), IBaseViewModel {
     protected val error: MutableLiveData<ErrorHolder> = MutableLiveData()

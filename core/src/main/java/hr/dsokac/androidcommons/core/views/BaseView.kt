@@ -1,8 +1,8 @@
 package hr.dsokac.androidcommons.core.views
 
 import android.content.Context
-import hr.dsokac.androidcommons.core.models.ErrorHolder
-import hr.dsokac.androidcommons.core.models.MessageHolder
+import hr.dsokac.androidcommons.data.ErrorHolder
+import hr.dsokac.androidcommons.data.MessageHolder
 
 /**
  * Interface which defines basic functionalities that each view should implement

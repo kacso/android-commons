@@ -7,8 +7,8 @@ import androidx.annotation.RequiresPermission
 import androidx.lifecycle.LiveData
 import com.google.android.gms.location.*
 import hr.dsokac.androidcommons.core.livedata.ObserverAwareLiveData
-import hr.dsokac.androidcommons.core.models.ErrorHolder
-import hr.dsokac.androidcommons.core.models.Resource
+import hr.dsokac.androidcommons.data.ErrorHolder
+import hr.dsokac.androidcommons.data.Resource
 import hr.dsokac.androidcommons.location.exceptions.LocationDisabledException
 
 /**

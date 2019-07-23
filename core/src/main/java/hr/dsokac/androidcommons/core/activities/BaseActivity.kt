@@ -15,10 +15,10 @@ import hr.dsokac.androidcommons.core.SNACKBAR_ELEVATION
 import hr.dsokac.androidcommons.core.dialogs.AbstractProgressDialog
 import hr.dsokac.androidcommons.core.dialogs.DialogMessage
 import hr.dsokac.androidcommons.core.dialogs.ProgressDialog
-import hr.dsokac.androidcommons.core.models.ErrorHolder
-import hr.dsokac.androidcommons.core.models.MessageHolder
 import hr.dsokac.androidcommons.core.mvvm.viewmodels.IBaseViewModel
 import hr.dsokac.androidcommons.core.views.BaseView
+import hr.dsokac.androidcommons.data.ErrorHolder
+import hr.dsokac.androidcommons.data.MessageHolder
 import hr.dsokac.androidcommons.extensions.getSystemLocale
 import hr.dsokac.androidcommons.extensions.goBack
 import hr.dsokac.androidcommons.extensions.toUserDefinedLocaleContext
