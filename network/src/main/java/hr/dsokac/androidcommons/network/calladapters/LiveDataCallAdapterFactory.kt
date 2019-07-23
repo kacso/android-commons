@@ -9,6 +9,11 @@ import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 
+/**
+ * Retrofit CallAdapter factory used to enable [LiveData] return type of [ApiResponse]
+ *
+ * @param networkExceptionFactory Implementation of [INetworkExceptionFactory] which will handle network errors
+ */
 class LiveDataCallAdapterFactory(
     private val networkExceptionFactory: INetworkExceptionFactory
 ) : Factory() {

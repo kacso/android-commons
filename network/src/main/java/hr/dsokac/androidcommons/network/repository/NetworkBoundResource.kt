@@ -12,6 +12,13 @@ import hr.dsokac.androidcommons.network.models.ApiErrorResponse
 import hr.dsokac.androidcommons.network.models.ApiResponse
 import hr.dsokac.androidcommons.network.models.ApiSuccessResponse
 
+/**
+ * Abstract class which implements network retrieval and DB caching by using local database as
+ * single source of truth as recommended by Google.
+ *
+ * @param ResultType Type of the [Resource] data
+ * @param RequestType Type of the API response
+ */
 abstract class NetworkBoundResource<ResultType, RequestType>
 @MainThread constructor() {
 
@@ -77,24 +84,64 @@ abstract class NetworkBoundResource<ResultType, RequestType>
         }
     }
 
+    /**
+     * Called when network request fails with an [NetworkException].
+     * Override this function in case that you need to extract server response and share it with view.
+     * By default, function will only mask this error into [ErrorHolder]
+     *
+     * @return [ErrorHolder] containing error and messages for view
+     */
     protected open fun onFetchFailed(error: NetworkException): ErrorHolder {
         return ErrorHolder(cause = error)
     }
 
+    /**
+     * Get requested data as [LiveData]
+     */
     fun asLiveData() = result as LiveData<Resource<ResultType>>
 
+    /**
+     * Called when network request completes with success.
+     * Here you can process response additionally if needed.
+     * By default, function will return [ApiSuccessResponse.body]
+     *
+     * @return Response from the server as [RequestType]
+     */
     @WorkerThread
     protected open fun processResponse(response: ApiSuccessResponse<RequestType>) = response.body
 
+    /**
+     * Save server response to the DB
+     *
+     * @param item server response
+     */
     @WorkerThread
     protected abstract fun saveCallResult(item: RequestType)
 
+    /**
+     * Determine if network request should be performed or data from DB is valid to use.
+     * By default, only if [data] is null, request will be performed
+     *
+     * @param data Current version of data from local database. Null if there is no data.
+     *
+     * @return True is network request should be performed, false otherwise
+     */
     @MainThread
-    protected abstract fun shouldFetch(data: ResultType?): Boolean
+    protected fun shouldFetch(data: ResultType?): Boolean = data == null
 
+    /**
+     * Read data from local database
+     *
+     * @return [LiveData] which emit [ResultType]
+     */
     @MainThread
     protected abstract fun loadFromDb(): LiveData<ResultType>
 
+    /**
+     * Perform network call which will retrieve data
+     *
+     * @return [LiveData] of [ApiResponse] containing network response
+     */
     @MainThread
     protected abstract fun createCall(): LiveData<ApiResponse<RequestType>>
 }

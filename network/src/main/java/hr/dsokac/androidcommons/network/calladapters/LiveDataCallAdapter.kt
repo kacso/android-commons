@@ -12,15 +12,17 @@ import java.lang.reflect.Type
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
- * A Retrofit adapter that converts the Call into a LiveData of ApiResponse.
- * @param <R>
+ * A Retrofit adapter that converts the Call into a [LiveData] of [ApiResponse].
+ * @param R type of response
+ * @param responseType  value type that this adapter uses when converting the HTTP response body to a Java
+ *                      object.
+ * @param networkExceptionFactory Implementation of [INetworkExceptionFactory] which will handle network errors
  *
  * */
 class LiveDataCallAdapter<R>(
     private val responseType: Type,
     private val networkExceptionFactory: INetworkExceptionFactory
-) :
-    CallAdapter<R, LiveData<ApiResponse<R>>> {
+) : CallAdapter<R, LiveData<ApiResponse<R>>> {
 
     override fun responseType() = responseType
 
