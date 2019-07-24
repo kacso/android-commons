@@ -8,7 +8,7 @@ import okhttp3.Response
 
 /**
  * OkHttp interceptor which which throws appropriate exceptions base on HTTP status code if there was ony error
- * during network call. Otherwise, sergver response is returned.
+ * during network call. Otherwise, server response is returned.
  *
  * @property networkExceptionFactory Factory used to generate appropriate [NetworkException] in case of an error
  *

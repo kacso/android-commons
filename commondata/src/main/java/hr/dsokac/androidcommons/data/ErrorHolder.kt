@@ -19,4 +19,19 @@ open class ErrorHolder(
             message ?: ""
         }
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (other == null) return false
+        if (other !is ErrorHolder) return false
+
+        if (errorRes != other.errorRes || message != other.message
+            || cause != other.cause
+        ) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return errorRes.hashCode() + message.hashCode() + cause.hashCode()
+    }
 }

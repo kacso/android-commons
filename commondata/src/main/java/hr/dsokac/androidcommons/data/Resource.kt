@@ -26,4 +26,17 @@ sealed class Resource<T>(
      */
     class Error<T>(error: ErrorHolder, data: T? = null) : Resource<T>(data, error)
 
+    override fun equals(other: Any?): Boolean {
+        if (other == null) return false
+        if (other !is Resource<*>) return false
+        if (other.javaClass != javaClass) return false
+
+        if (data != other.data || error != other.error) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return data.hashCode() + error.hashCode()
+    }
 }

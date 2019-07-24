@@ -53,7 +53,7 @@ dependencies {
     implementation rxjava.rxandroid
     implementation rxjava.rxkotlin
 
-    implementation retrofit.retrofit
+    api retrofit.retrofit
     implementation retrofit.converter_gson
     implementation retrofit.adapter_rxjava2
     implementation retrofit.logging_interceptor
@@ -68,8 +68,6 @@ dependencies {
     testImplementation _test_.mockito_kotlin
     testRuntimeOnly _test_.junit_engine
     testRuntimeOnly _test_.junit_platform_launcher
-
-    implementation project(":commondata")
 }
 
 sourceCompatibility = "8"

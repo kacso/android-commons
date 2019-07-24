@@ -1,4 +1,4 @@
-package hr.dsokac.androidcommons.network.repository
+package hr.dsokac.androidcommons.core.repository
 
 import androidx.annotation.MainThread
 import androidx.annotation.WorkerThread
@@ -127,7 +127,7 @@ abstract class NetworkBoundResource<ResultType, RequestType>
      * @return True is network request should be performed, false otherwise
      */
     @MainThread
-    protected fun shouldFetch(data: ResultType?): Boolean = data == null
+    protected open fun shouldFetch(data: ResultType?): Boolean = data == null
 
     /**
      * Read data from local database
