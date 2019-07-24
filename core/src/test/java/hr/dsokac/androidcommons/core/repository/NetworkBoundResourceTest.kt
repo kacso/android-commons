@@ -1,6 +1,5 @@
 package hr.dsokac.androidcommons.core.repository
 
-import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
@@ -14,17 +13,16 @@ import hr.dsokac.androidcommons.network.exceptions.RequestFailedException
 import hr.dsokac.androidcommons.network.models.ApiResponse
 import hr.dsokac.androidcommons.network.models.ApiSuccessResponse
 import hr.dsokac.androidcommons.network.utils.ApiUtil
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import hr.dsokac.androidcommons.test.extensions.InstantTaskExecutorExtension
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicReference
 
+@ExtendWith(InstantTaskExecutorExtension::class)
 class NetworkBoundResourceTest {
-    @get:Rule
-    val instantExecutorRule = InstantTaskExecutorRule()
-
     private lateinit var handleSaveCallResult: (Foo) -> Unit
 
     private lateinit var handleShouldMatch: (Foo?) -> Boolean
@@ -37,7 +35,7 @@ class NetworkBoundResourceTest {
 
     private val fetchedOnce = AtomicBoolean(false)
 
-    @Before
+    @BeforeEach
     fun init() {
         networkBoundResource = object : NetworkBoundResource<Foo, Foo>() {
             override fun saveCallResult(item: Foo) {

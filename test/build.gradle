@@ -52,6 +52,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation _kotlin_.stdlib
     implementation _test_.robolectric
+    implementation _test_.junit_engine
+    implementation _test_.junit_platform_launcher
+    implementation _test_.junit_api
 
     implementation lifecycle.extensions
 }
