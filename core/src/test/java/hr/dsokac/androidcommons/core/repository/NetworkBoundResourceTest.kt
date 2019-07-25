@@ -14,6 +14,7 @@ import hr.dsokac.androidcommons.network.models.ApiResponse
 import hr.dsokac.androidcommons.network.models.ApiSuccessResponse
 import hr.dsokac.androidcommons.network.utils.ApiUtil
 import hr.dsokac.androidcommons.test.extensions.InstantTaskExecutorExtension
+import hr.dsokac.androidcommons.test.models.Foo
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -176,6 +177,4 @@ class NetworkBoundResourceTest {
         verify(observer).onChanged(Resource.Success(dbValue2))
         verifyNoMoreInteractions(observer)
     }
-
-    private data class Foo(var value: Int)
 }

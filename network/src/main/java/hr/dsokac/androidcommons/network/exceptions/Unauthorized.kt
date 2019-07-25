@@ -11,5 +11,5 @@ import retrofit2.HttpException
  * @author Danijel Sokač
  */
 open class Unauthorized(val httpException: HttpException? = null) :
-    NetworkException("Unauthorized", httpException?.response(), httpException)
+    NetworkException(httpException?.response()?.errorBody()?.string(), httpException?.response(), httpException)
 

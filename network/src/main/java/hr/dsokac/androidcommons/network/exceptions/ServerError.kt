@@ -11,4 +11,4 @@ import retrofit2.HttpException
  * @author Danijel Sokač
  */
 open class ServerError(val httpException: HttpException? = null) :
-    NetworkException("Internal server error", httpException?.response(), httpException)
+    NetworkException(httpException?.response()?.errorBody()?.string(), httpException?.response(), httpException)

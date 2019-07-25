@@ -11,4 +11,4 @@ import retrofit2.HttpException
  * @author Danijel Sokač
  */
 open class BadRequest(val httpException: HttpException? = null) :
-    NetworkException("Bad request", httpException?.response(), httpException)
+    NetworkException(httpException?.response()?.errorBody()?.string(), httpException?.response(), httpException)

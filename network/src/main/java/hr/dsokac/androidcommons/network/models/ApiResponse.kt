@@ -22,7 +22,7 @@ sealed class ApiResponse<T> {
         ): ApiResponse<T> {
             return if (response.isSuccessful) {
                 val body = response.body()
-                if (body == null) {
+                if (body == null || response.code() == 204) {
                     ApiEmptyResponse()
                 } else {
                     ApiSuccessResponse(
@@ -40,7 +40,19 @@ sealed class ApiResponse<T> {
 /**
  * separate class for HTTP 204 responses so that we can make ApiSuccessResponse's body non-null.
  */
-class ApiEmptyResponse<T> : ApiResponse<T>()
+class ApiEmptyResponse<T> : ApiResponse<T>() {
+    //All empty responses are considered equal
+    override fun equals(other: Any?): Boolean {
+        if (other == null) return false
+        if (other !is ApiEmptyResponse<*>) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return 1
+    }
+}
 
 data class ApiSuccessResponse<T>(
     val body: T,
@@ -50,6 +62,32 @@ data class ApiSuccessResponse<T>(
         body = body,
         headers = headers?.toMap() ?: emptyMap()
     )
+
+    override fun equals(other: Any?): Boolean {
+        if (other == null) return false
+        if (other !is ApiSuccessResponse<*>) return false
+
+        if (body != other.body || headers != other.headers) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return body.hashCode() + headers.hashCode()
+    }
 }
 
-data class ApiErrorResponse<T>(val error: NetworkException) : ApiResponse<T>()
+data class ApiErrorResponse<T>(val error: NetworkException) : ApiResponse<T>() {
+    override fun equals(other: Any?): Boolean {
+        if (other == null) return false
+        if (other !is ApiErrorResponse<*>) return false
+
+        if (error != other.error) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        return error.hashCode()
+    }
+}
