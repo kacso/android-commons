@@ -71,7 +71,7 @@ dependencies {
 
     implementation project(":network")
     implementation project(":preferences")
-    implementation project(":test")
+    testImplementation project(":test")
     implementation project(':logger')
 }
 

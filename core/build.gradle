@@ -76,7 +76,6 @@ dependencies {
     implementation project(":permissions")
     implementation project(":network")
     implementation project(":commondata")
-    implementation project(":test")
 }
 
 afterEvaluate {
