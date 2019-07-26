@@ -70,7 +70,7 @@ dependencies {
     testRuntimeOnly _test_.junit_platform_launcher
     testImplementation _test_.mock_web_server
 
-    implementation project(":test")
+    testImplementation project(":test")
 }
 
 sourceCompatibility = "8"
