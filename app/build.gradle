@@ -37,7 +37,11 @@ dependencies {
     implementation _kotlin_.stdlib
     implementation androidx.appCompat
     implementation androidx.coreKtx
+    implementation androidx.fragmentKtx
     implementation androidx.constraintLayout
+    implementation lifecycle.extensions
+    implementation lifecycle.viewmodel
+    implementation lifecycle.livedata
     implementation material
 
     implementation rxjava.rxjava
@@ -57,12 +61,19 @@ dependencies {
     androidTestImplementation _test_.runner
     androidTestImplementation _test_.espresso
 
-    implementation project (":network")
+    implementation project (":core")
+    implementation project (":commondata")
     implementation project (":logger")
     implementation project (":extensions")
+    implementation project (":permissions")
+    implementation project (":network")
+    implementation project (":location")
+    implementation project (":security")
+    implementation project (":serialization")
+    implementation project (":preferences")
 }
 
 afterEvaluate {
     assembleDebug.dependsOn testDebugUnitTest
-    assembleRelease.dependsOn testReleaseUnitTest
+//    assembleRelease.dependsOn testReleaseUnitTest
 }

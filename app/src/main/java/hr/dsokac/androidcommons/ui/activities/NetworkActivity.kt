@@ -1,5 +1,7 @@
 package hr.dsokac.androidcommons.ui.activities
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,12 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class NetworkActivity : AppCompatActivity() {
+    companion object {
+        fun getIntent(context: Context): Intent {
+            val intent = Intent(context, NetworkActivity::class.java)
+            return intent
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

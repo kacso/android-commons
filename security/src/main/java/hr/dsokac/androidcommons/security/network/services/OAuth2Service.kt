@@ -25,7 +25,7 @@ interface OAuth2Service {
      * @return [OAuth2LoginResponse] or throws [NetworkException] in case of an error
      */
     @FormUrlEncoded
-    @POST("oauth/token")
+    @POST("token")
     suspend fun login(
         @Field("username") username: String,
         @Field("password") password: String,
@@ -44,7 +44,7 @@ interface OAuth2Service {
      * @return [OAuth2LoginResponse] or throws [NetworkException] in case of an error
      */
     @FormUrlEncoded
-    @POST("oauth/token")
+    @POST("token")
     suspend fun refreshToken(
         @Field("refresh_token") refreshToken: String,
         @Field("grant_type") grantType: String = "refresh_token",
