@@ -14,6 +14,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        buildConfigField "String", "AUTH_ENDPOINT", "\"http://192.168.0.106:8080/auth/\""
+        buildConfigField "String", "APP_ENDPOINT", "\"http://192.168.0.106:8080/mobile/\""
+        buildConfigField "String", "AUTHORIZATION_KEY", "\"Basic VGVzdDoxMjM0\""
     }
     buildTypes {
         debug {

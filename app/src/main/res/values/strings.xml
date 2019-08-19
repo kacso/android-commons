@@ -6,4 +6,5 @@
     <string name="error_no_internet">No internet connection. Please connect to the Internet and try again.</string>
     <string name="error_wrong_credentials">Wrong username and/or password</string>
     <string name="error_unexpected">Unexpected error occurred, please try again later.</string>
+    <string name="dialog_msg_session_expired">Overrided message</string>
 </resources>
