@@ -55,6 +55,9 @@ dependencies {
     implementation material
     implementation androidx.constraintLayout
     implementation androidx.paging
+    implementation _kotlin_.coroutines
+    implementation _kotlin_.coroutines_android
+    testImplementation _kotlin_.coroutines_test
 
     testImplementation _test_.junit_api
     testImplementation _test_.mockito_core

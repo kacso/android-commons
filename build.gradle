@@ -34,10 +34,11 @@ buildscript {
         ]
 
         _kotlin_ = [
-                version           : "1.3.40",
+                version           : "1.3.41",
                 stdlib            : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.40",
-                coroutines        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1",
-                coroutines_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1"
+                coroutines        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.2",
+                coroutines_android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.2",
+                coroutines_test   : "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.2"
         ]
 
         room = [
@@ -56,6 +57,7 @@ buildscript {
                 extensions: "androidx.lifecycle:lifecycle-extensions:2.1.0-rc01",
                 viewmodel : "androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0-rc01",
                 livedata  : "androidx.lifecycle:lifecycle-livedata-ktx:2.1.0-rc01",
+                runtime   : "androidx.lifecycle:lifecycle-runtime-ktx:2.1.0-rc01",
                 core_test : "androidx.arch.core:core-testing:2.1.0-rc01"
         ]
         firebase = [
@@ -89,7 +91,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$_kotlin_.version"
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         // NOTE: Do not place your application dependencies here; they belong

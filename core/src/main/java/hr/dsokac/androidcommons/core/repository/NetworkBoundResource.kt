@@ -1,9 +1,9 @@
 package hr.dsokac.androidcommons.core.repository
 
 import androidx.annotation.MainThread
-import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import hr.dsokac.androidcommons.core.R
 import hr.dsokac.androidcommons.data.ErrorHolder
 import hr.dsokac.androidcommons.data.Resource
 import hr.dsokac.androidcommons.network.exceptions.NetworkException
@@ -11,6 +11,9 @@ import hr.dsokac.androidcommons.network.models.ApiEmptyResponse
 import hr.dsokac.androidcommons.network.models.ApiErrorResponse
 import hr.dsokac.androidcommons.network.models.ApiResponse
 import hr.dsokac.androidcommons.network.models.ApiSuccessResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * Abstract class which implements network retrieval and DB caching by using local database as
@@ -18,15 +21,15 @@ import hr.dsokac.androidcommons.network.models.ApiSuccessResponse
  *
  * @param ResultType Type of the [Resource] data
  * @param RequestType Type of the API response
+ * @param scope [CoroutineScope] on which background work will be done. By default, scope with [Dispatchers.IO] is used
  */
 abstract class NetworkBoundResource<ResultType, RequestType>
-@MainThread constructor() {
+@MainThread constructor(private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)) {
 
     private val result = MediatorLiveData<Resource<ResultType>>()
 
-    init {
+    private fun init() {
         result.value = Resource.Loading()
-        @Suppress("LeakingThis")
         val dbSource = loadFromDb()
         result.addSource(dbSource) { data ->
             result.removeSource(dbSource)
@@ -40,10 +43,9 @@ abstract class NetworkBoundResource<ResultType, RequestType>
         }
     }
 
-    @MainThread
     private fun setValue(newValue: Resource<ResultType>) {
         if (result.value != newValue) {
-            result.value = newValue
+            result.postValue(newValue)
         }
     }
 
@@ -58,7 +60,9 @@ abstract class NetworkBoundResource<ResultType, RequestType>
             result.removeSource(dbSource)
             when (response) {
                 is ApiSuccessResponse -> {
-                    saveCallResult(processResponse(response))
+                    scope.launch {
+                        saveCallResult(processResponse(response))
+                    }
                     // we specially request a new live data,
                     // otherwise we will get immediately last cached value,
                     // which may not be updated with latest results received from network.
@@ -92,13 +96,16 @@ abstract class NetworkBoundResource<ResultType, RequestType>
      * @return [ErrorHolder] containing error and messages for view
      */
     protected open fun onFetchFailed(error: NetworkException): ErrorHolder {
-        return ErrorHolder(cause = error)
+        return ErrorHolder(errorRes = R.string.error_network_request_failed, cause = error)
     }
 
     /**
      * Get requested data as [LiveData]
      */
-    fun asLiveData() = result as LiveData<Resource<ResultType>>
+    fun asLiveData(): LiveData<Resource<ResultType>> {
+        init()
+        return result
+    }
 
     /**
      * Called when network request completes with success.
@@ -107,16 +114,15 @@ abstract class NetworkBoundResource<ResultType, RequestType>
      *
      * @return Response from the server as [RequestType]
      */
-    @WorkerThread
-    protected open fun processResponse(response: ApiSuccessResponse<RequestType>) = response.body
+    protected open suspend fun processResponse(response: ApiSuccessResponse<RequestType>) =
+        response.body
 
     /**
      * Save server response to the DB
      *
      * @param item server response
      */
-    @WorkerThread
-    protected abstract fun saveCallResult(item: RequestType)
+    protected abstract suspend fun saveCallResult(item: RequestType)
 
     /**
      * Determine if network request should be performed or data from DB is valid to use.
@@ -126,7 +132,6 @@ abstract class NetworkBoundResource<ResultType, RequestType>
      *
      * @return True is network request should be performed, false otherwise
      */
-    @MainThread
     protected open fun shouldFetch(data: ResultType?): Boolean = data == null
 
     /**
@@ -134,7 +139,6 @@ abstract class NetworkBoundResource<ResultType, RequestType>
      *
      * @return [LiveData] which emit [ResultType]
      */
-    @MainThread
     protected abstract fun loadFromDb(): LiveData<ResultType>
 
     /**
@@ -142,6 +146,5 @@ abstract class NetworkBoundResource<ResultType, RequestType>
      *
      * @return [LiveData] of [ApiResponse] containing network response
      */
-    @MainThread
     protected abstract fun createCall(): LiveData<ApiResponse<RequestType>>
 }

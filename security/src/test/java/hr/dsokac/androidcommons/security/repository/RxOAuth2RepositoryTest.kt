@@ -236,11 +236,13 @@ class RxOAuth2RepositoryTest {
 
     @Test
     fun successfulLogout() {
-        Mockito.`when`(oAuth2Service.logout(ACCESS_TOKEN))
+        Mockito.`when`(oAuth2Service.logout("$TOKEN_TYPE $ACCESS_TOKEN"))
             .thenReturn(
                 Single.just(ResponseBody.create(null, ""))
             )
         Mockito.`when`(sharedPrefs.read(ACCESS_TOKEN_PREFS_KEY, null as String?)).thenReturn(ACCESS_TOKEN)
+        Mockito.`when`(sharedPrefs.read(TOKEN_TYPE_PREFS_KEY, null as String?))
+            .thenReturn(TOKEN_TYPE)
 
         authRepository.logout().blockingAwait()
 
@@ -252,11 +254,13 @@ class RxOAuth2RepositoryTest {
 
     @Test
     fun unsuccessfulLogout() {
-        Mockito.`when`(oAuth2Service.logout(ACCESS_TOKEN))
+        Mockito.`when`(oAuth2Service.logout("$TOKEN_TYPE $ACCESS_TOKEN"))
             .thenReturn(
                 Single.error(BadRequest())
             )
         Mockito.`when`(sharedPrefs.read(ACCESS_TOKEN_PREFS_KEY, null as String?)).thenReturn(ACCESS_TOKEN)
+        Mockito.`when`(sharedPrefs.read(TOKEN_TYPE_PREFS_KEY, null as String?))
+            .thenReturn(TOKEN_TYPE)
 
         val throwable = authRepository.logout().blockingGet()
 

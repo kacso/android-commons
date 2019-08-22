@@ -6,5 +6,9 @@
     <string name="error_no_internet">No internet connection. Please connect to the Internet and try again.</string>
     <string name="error_wrong_credentials">Wrong username and/or password</string>
     <string name="error_unexpected">Unexpected error occurred, please try again later.</string>
-    <string name="dialog_msg_session_expired">Overrided message</string>
+    <string name="menu_item_profile">Profile</string>
+    <string name="menu_item_view_pager">View pager</string>
+    <string name="user_greeting">Hello %1$s!</string>
+    <string name="btn_logout">Logout</string>
+    <string name="error_network_request_failed">Network request failed, showing cached values.</string>
 </resources>

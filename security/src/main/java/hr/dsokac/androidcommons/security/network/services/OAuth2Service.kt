@@ -5,7 +5,10 @@ import hr.dsokac.androidcommons.security.AUTHORIZATION_HEADER
 import hr.dsokac.androidcommons.security.network.models.OAuth2LoginResponse
 import io.reactivex.Single
 import okhttp3.ResponseBody
-import retrofit2.http.*
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Header
+import retrofit2.http.POST
 
 /**
  * Network service which handles user authorization requests
@@ -58,6 +61,6 @@ interface OAuth2Service {
      *
      * @return [ResponseBody] representing server response
      */
-    @GET("logout")
+    @POST("logout")
     suspend fun logout(@Header(AUTHORIZATION_HEADER) token: String): ResponseBody
 }

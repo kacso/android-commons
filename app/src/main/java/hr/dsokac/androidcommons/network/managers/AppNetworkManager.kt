@@ -1,14 +1,17 @@
 package hr.dsokac.androidcommons.network.managers
 
 import com.google.gson.GsonBuilder
+import hr.dsokac.androidcommons.BuildConfig
+import hr.dsokac.androidcommons.core.BaseApplication
+import hr.dsokac.androidcommons.network.calladapters.LiveDataCallAdapterFactory
 import hr.dsokac.androidcommons.network.factories.NetworkExceptionFactory
-import hr.dsokac.androidcommons.network.interceptors.NetworkExceptionInterceptor
 import hr.dsokac.androidcommons.network.services.AppService
-import io.reactivex.schedulers.Schedulers
+import hr.dsokac.androidcommons.security.factories.SecurityRepositoryFactory
+import hr.dsokac.androidcommons.security.network.interceptors.OAuth2Interceptor
+import hr.dsokac.androidcommons.serialization.extensions.registerJavaTimeTypeAdapters
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -23,8 +26,15 @@ object AppNetworkManager {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         httpBuilder.addInterceptor(httpLoggingInterceptor)
-
-        httpBuilder.addInterceptor(NetworkExceptionInterceptor(NetworkExceptionFactory()))
+            .addInterceptor(
+                OAuth2Interceptor(
+                    SecurityRepositoryFactory.getOAuth2Repository(
+                        BaseApplication.appContext,
+                        BuildConfig.AUTH_ENDPOINT,
+                        BuildConfig.AUTHORIZATION_KEY
+                    )
+                )
+            )
 
         httpBuilder.connectTimeout(10L, TimeUnit.SECONDS)
             .readTimeout(10L, TimeUnit.SECONDS)
@@ -34,15 +44,15 @@ object AppNetworkManager {
 
     private val restBuilder by lazy {
         Retrofit.Builder()
-            .baseUrl("https://reqres.in/")
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
+            .baseUrl(BuildConfig.APP_ENDPOINT)
+            .addCallAdapterFactory(LiveDataCallAdapterFactory(NetworkExceptionFactory()))
             .addConverterFactory(
                 GsonConverterFactory.create(gson)
             )
     }
 
     private val gson = GsonBuilder()
-//        .registerJavaTimeTypeAdapters()
+        .registerJavaTimeTypeAdapters()
         .create()
 
     private val retrofit by lazy {

@@ -183,7 +183,7 @@ fun ViewGroup.animateMarginChange(topMargin: Int?, bottomMargin: Int?, leftMargi
  *                      Default is true.
  */
 fun View.hide(shouldAnimate: Boolean = true) {
-    if (shouldAnimate) {
+    if (shouldAnimate && visibility == View.VISIBLE) {
         val initialHeight = measuredHeight
 
         val a = object : Animation() {
@@ -215,7 +215,7 @@ fun View.hide(shouldAnimate: Boolean = true) {
  *                      Default is true.
  */
 fun View.show(shouldAnimate: Boolean = true) {
-    if (shouldAnimate) {
+    if (shouldAnimate && visibility != View.VISIBLE) {
         measure(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         val targetHeight = measuredHeight
 

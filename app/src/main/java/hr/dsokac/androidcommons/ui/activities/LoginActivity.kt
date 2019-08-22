@@ -35,7 +35,7 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun onLoginSuccess() {
-        startActivity(NetworkActivity.getIntent(this))
+        startActivity(MainActivity.getIntent(this))
         finish()
     }
 

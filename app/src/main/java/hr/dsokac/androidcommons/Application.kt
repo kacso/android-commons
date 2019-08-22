@@ -1,6 +1,7 @@
 package hr.dsokac.androidcommons
 
 import hr.dsokac.androidcommons.core.BaseApplication
+import hr.dsokac.androidcommons.db.AppDatabase
 import hr.dsokac.androidcommons.logger.LOGGER
 import hr.dsokac.androidcommons.logger.Logger
 import hr.dsokac.androidcommons.ui.activities.LoginActivity
@@ -14,6 +15,7 @@ class Application : BaseApplication() {
     }
 
     override fun startLogin() {
+        AppDatabase.resetInstance()
         startActivity(LoginActivity.getIntent(this))
     }
 

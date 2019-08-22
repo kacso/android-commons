@@ -16,8 +16,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
 
-        buildConfigField "String", "AUTH_ENDPOINT", "\"http://192.168.0.106:8080/auth/\""
-        buildConfigField "String", "APP_ENDPOINT", "\"http://192.168.0.106:8080/mobile/\""
+        buildConfigField "String", "AUTH_ENDPOINT", "\"http://192.168.220.10:8080/auth/\""
+        buildConfigField "String", "APP_ENDPOINT", "\"http://192.168.220.10:8080/mobile/\""
         buildConfigField "String", "AUTHORIZATION_KEY", "\"Basic VGVzdDoxMjM0\""
     }
     buildTypes {
@@ -59,6 +59,11 @@ dependencies {
     implementation retrofit.converter_gson
     implementation retrofit.adapter_rxjava2
     implementation retrofit.logging_interceptor
+
+    implementation room.runtime
+    implementation room.ktx
+    kapt room.compiler
+    androidTestImplementation room.testing
 
     testImplementation _test_.junit_api
     testRuntimeOnly _test_.junit_engine

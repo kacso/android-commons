@@ -3,11 +3,7 @@ package hr.dsokac.androidcommons.core.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.reset
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
-import hr.dsokac.androidcommons.data.ErrorHolder
+import com.nhaarman.mockitokotlin2.*
 import hr.dsokac.androidcommons.data.Resource
 import hr.dsokac.androidcommons.network.exceptions.RequestFailedException
 import hr.dsokac.androidcommons.network.models.ApiResponse
@@ -15,13 +11,17 @@ import hr.dsokac.androidcommons.network.models.ApiSuccessResponse
 import hr.dsokac.androidcommons.network.utils.ApiUtil
 import hr.dsokac.androidcommons.test.extensions.InstantTaskExecutorExtension
 import hr.dsokac.androidcommons.test.models.Foo
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.TestCoroutineScope
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import java.util.concurrent.atomic.AtomicBoolean
 import java.util.concurrent.atomic.AtomicReference
+import kotlin.coroutines.suspendCoroutine
 
+@ExperimentalCoroutinesApi
 @ExtendWith(InstantTaskExecutorExtension::class)
 class NetworkBoundResourceTest {
     private lateinit var handleSaveCallResult: (Foo) -> Unit
@@ -38,24 +38,27 @@ class NetworkBoundResourceTest {
 
     @BeforeEach
     fun init() {
-        networkBoundResource = object : NetworkBoundResource<Foo, Foo>() {
-            override fun saveCallResult(item: Foo) {
-                handleSaveCallResult(item)
-            }
+        networkBoundResource =
+            object : NetworkBoundResource<Foo, Foo>(TestCoroutineScope()) {
+                override suspend fun saveCallResult(item: Foo) {
+                    return suspendCoroutine {
+                        handleSaveCallResult(item)
+                    }
+                }
 
-            override fun shouldFetch(data: Foo?): Boolean {
-                // since test methods don't handle repetitive fetching, call it only once
-                return handleShouldMatch(data) && fetchedOnce.compareAndSet(false, true)
-            }
+                override fun shouldFetch(data: Foo?): Boolean {
+                    // since test methods don't handle repetitive fetching, call it only once
+                    return handleShouldMatch(data) && fetchedOnce.compareAndSet(false, true)
+                }
 
-            override fun loadFromDb(): LiveData<Foo> {
-                return dbData
-            }
+                override fun loadFromDb(): LiveData<Foo> {
+                    return dbData
+                }
 
-            override fun createCall(): LiveData<ApiResponse<Foo>> {
-                return handleCreateCall()
+                override fun createCall(): LiveData<ApiResponse<Foo>> {
+                    return handleCreateCall()
+                }
             }
-        }
     }
 
     @Test
@@ -95,7 +98,7 @@ class NetworkBoundResourceTest {
         reset(observer)
         dbData.value = null
         Assertions.assertFalse(saved.get())
-        verify(observer).onChanged(Resource.Error(ErrorHolder(cause = error), null))
+        verify(observer).onChanged(argThatResource(null, error))
         verifyNoMoreInteractions(observer)
     }
 
@@ -143,12 +146,21 @@ class NetworkBoundResourceTest {
         val error = RequestFailedException()
         apiResponseLiveData.value = ApiResponse.create(error)
         Assertions.assertFalse(saved.get())
-        verify(observer).onChanged(Resource.Error(ErrorHolder(cause = error), dbValue))
+        verify(observer).onChanged(argThatResource(dbValue, error))
 
         val dbValue2 = Foo(2)
         dbData.value = dbValue2
-        verify(observer).onChanged(Resource.Error(ErrorHolder(cause = error), dbValue2))
+        verify(observer).onChanged(argThatResource(dbValue2, error))
         verifyNoMoreInteractions(observer)
+    }
+
+    private fun argThatResource(
+        value: Foo?,
+        exception: RequestFailedException?
+    ): Resource<Foo> {
+        return argThat {
+            this.data == value && this.error?.cause == exception
+        }
     }
 
     @Test

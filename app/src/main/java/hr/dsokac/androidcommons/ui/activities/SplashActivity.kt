@@ -24,7 +24,7 @@ class SplashActivity : BaseActivity() {
         supportActionBar?.hide()
 
         viewModel.persistLogin().observe(this, Observer {
-            startActivity(NetworkActivity.getIntent(this))
+            startActivity(MainActivity.getIntent(this))
             finish()
         })
     }

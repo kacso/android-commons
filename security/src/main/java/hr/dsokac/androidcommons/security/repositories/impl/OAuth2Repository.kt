@@ -82,7 +82,7 @@ open class OAuth2Repository(
     @Throws(NullPointerException::class, IOException::class)
     override suspend fun logout() {
         runCatching {
-            service.logout(getAccessToken()!!)
+            service.logout(getAuthorizationHeader())
         }.onSuccess {
             log(LOG_TAG, "Logout completed successfully.")
             log(LOG_TAG, "Clearing session...")

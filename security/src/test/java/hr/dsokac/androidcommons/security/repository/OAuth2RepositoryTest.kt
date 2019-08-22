@@ -252,11 +252,13 @@ class OAuth2RepositoryTest {
     @Test
     fun successfulLogout() {
         runBlocking {
-            Mockito.`when`(oAuth2Service.logout(ACCESS_TOKEN))
+            Mockito.`when`(oAuth2Service.logout("$TOKEN_TYPE $ACCESS_TOKEN"))
                 .thenReturn(
                     ResponseBody.create(null, "")
                 )
             Mockito.`when`(sharedPrefs.read(ACCESS_TOKEN_PREFS_KEY, null as String?)).thenReturn(ACCESS_TOKEN)
+            Mockito.`when`(sharedPrefs.read(TOKEN_TYPE_PREFS_KEY, null as String?))
+                .thenReturn(TOKEN_TYPE)
 
             authRepository.logout()
 
@@ -270,9 +272,11 @@ class OAuth2RepositoryTest {
     @Test
     fun unsuccessfulLogout() {
         runBlocking {
-            Mockito.`when`(oAuth2Service.logout(ACCESS_TOKEN))
+            Mockito.`when`(oAuth2Service.logout("$TOKEN_TYPE $ACCESS_TOKEN"))
                 .then { throw BadRequest() }
             Mockito.`when`(sharedPrefs.read(ACCESS_TOKEN_PREFS_KEY, null as String?)).thenReturn(ACCESS_TOKEN)
+            Mockito.`when`(sharedPrefs.read(TOKEN_TYPE_PREFS_KEY, null as String?))
+                .thenReturn(TOKEN_TYPE)
 
             Assertions.assertThrows(BadRequest::class.java) { runBlocking { authRepository.logout() } }
 

@@ -79,4 +79,9 @@ interface IRxOAuth2Repository {
      * @return [Completable] which will indicate if logout was successful or not
      */
     fun logout(): Completable
+
+    /**
+     * Generates authorization header value by combining token type and token value
+     */
+    fun getAuthorizationHeader(): String = "${getTokenType()} ${getAccessToken()}"
 }

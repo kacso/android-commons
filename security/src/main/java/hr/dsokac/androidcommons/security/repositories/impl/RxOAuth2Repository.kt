@@ -83,7 +83,7 @@ open class RxOAuth2Repository(
 
     @Throws(NullPointerException::class, IOException::class)
     override fun logout(): Completable {
-        return service.logout(getAccessToken()!!)
+        return service.logout(getAuthorizationHeader())
             .map {
                 log(LOG_TAG, "Logout completed successfully.")
                 log(LOG_TAG, "Clearing session...")

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigationViewPager"
+            android:icon="@drawable/book_open_page_variant"
+            android:title="@string/menu_item_view_pager" />
+
+    <item
+            android:id="@+id/navigationUserProfile"
+            android:icon="@drawable/account"
+            android:title="@string/menu_item_profile" />
+</menu>

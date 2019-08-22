@@ -73,4 +73,9 @@ interface IOAuth2Repository {
      * Notify server that user wants to logout from system
      */
     suspend fun logout()
+
+    /**
+     * Generates authorization header value by combining token type and token value
+     */
+    fun getAuthorizationHeader(): String = "${getTokenType()} ${getAccessToken()}"
 }

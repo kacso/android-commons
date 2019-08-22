@@ -52,7 +52,7 @@ abstract class BaseFragment : Fragment(), BaseView {
     /**
      * View model associated with this fragment
      */
-    protected abstract val viewModel: IBaseViewModel
+    protected abstract val viewModel: IBaseViewModel?
 
     /**
      * Reference to layout resource of current fragment.
@@ -130,13 +130,13 @@ abstract class BaseFragment : Fragment(), BaseView {
      * Function which will start observing [LiveData] objects from [IBaseViewModel]
      */
     protected open fun initViewModelListeners() {
-        viewModel.getError().observe(this, Observer {
+        viewModel?.getError()?.observe(this, Observer {
             onError(it)
         })
-        viewModel.getMessage().observe(this, Observer {
+        viewModel?.getMessage()?.observe(this, Observer {
             showMessage(it)
         })
-        viewModel.getIsProgressActive().observe(this, Observer {
+        viewModel?.getIsProgressActive()?.observe(this, Observer {
             if (it) {
                 showProgress()
             } else {
