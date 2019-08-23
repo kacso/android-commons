@@ -12,7 +12,9 @@ class ViewPagerFragment : PagerFragment() {
     }
 
     private val pageFragments by lazy {
-        listOf<PageFragment>()
+        listOf<PageFragment>(
+            EntryListFragment.newInstance()
+        )
     }
 
     override val viewModel: IBaseViewModel? = null

@@ -30,7 +30,10 @@ abstract class PagerFragment : BaseFragment(), PagerView {
 
     private fun setupAdapter() {
         getPagerView().adapter =
-            object : FragmentStatePagerAdapter(childFragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+            object : FragmentStatePagerAdapter(
+                childFragmentManager,
+                BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+            ) {
                 override fun getItem(position: Int): Fragment {
                     return getFragments()[position]
                 }
@@ -38,7 +41,7 @@ abstract class PagerFragment : BaseFragment(), PagerView {
                 override fun getCount(): Int = getFragments().size
 
                 override fun getPageTitle(position: Int): CharSequence? {
-                    return getFragments()[position].getTitle()
+                    return getString(getFragments()[position].getTitleRes())
                 }
             }
     }

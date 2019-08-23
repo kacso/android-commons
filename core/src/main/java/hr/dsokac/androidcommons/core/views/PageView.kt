@@ -1,5 +1,7 @@
 package hr.dsokac.androidcommons.core.views
 
+import androidx.annotation.StringRes
+
 /**
  * Interface which defines basic functionalities of single page of [PagerView]
  *
@@ -11,5 +13,6 @@ interface PageView {
      *
      * @return string representing page title
      */
-    fun getTitle(): String
+    @StringRes
+    fun getTitleRes(): Int
 }

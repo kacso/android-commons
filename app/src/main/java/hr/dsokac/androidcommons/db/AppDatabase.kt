@@ -5,12 +5,14 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import hr.dsokac.androidcommons.core.BaseApplication
+import hr.dsokac.androidcommons.db.dao.EntryDao
 import hr.dsokac.androidcommons.db.dao.UserDao
+import hr.dsokac.androidcommons.db.entities.EntryEntity
 import hr.dsokac.androidcommons.db.entities.UserEntity
 
 @Database(
     entities = [
-        UserEntity::class
+        UserEntity::class, EntryEntity::class
     ], version = 1
 )
 @TypeConverters(value = [CustomTypeConverters::class])
@@ -45,4 +47,5 @@ abstract class AppDatabase : RoomDatabase() {
     }
 
     abstract fun getUserDao(): UserDao
+    abstract fun getEntryDao(): EntryDao
 }

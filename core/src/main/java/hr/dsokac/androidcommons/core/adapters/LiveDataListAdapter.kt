@@ -42,8 +42,8 @@ abstract class LiveDataListAdapter<T : Any, VH : BaseViewHolder<T>>(
     /**
      * Returns layout to be used for displaying list item
      */
-    @LayoutRes
-    abstract fun getItemLayout(): Int
+    @get:LayoutRes
+    abstract val itemLayoutRes: Int
 
     override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
         super.onAttachedToRecyclerView(recyclerView)
@@ -55,7 +55,7 @@ abstract class LiveDataListAdapter<T : Any, VH : BaseViewHolder<T>>(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val v = LayoutInflater.from(parent.context).inflate(getItemLayout(), parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(itemLayoutRes, parent, false)
 
         return createViewHolder(v)
     }

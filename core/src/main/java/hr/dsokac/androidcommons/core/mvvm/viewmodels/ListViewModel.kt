@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
 abstract class ListViewModel<T> : BaseViewModel() {
-    protected val liveData = MutableLiveData<List<T>>()
+    protected open val liveData = MutableLiveData<List<T>>()
 
     /**
      * Default implementation will refresh data using [refreshData] function and return [liveData]

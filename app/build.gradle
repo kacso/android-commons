@@ -16,8 +16,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
 
-        buildConfigField "String", "AUTH_ENDPOINT", "\"http://192.168.220.10:8080/auth/\""
-        buildConfigField "String", "APP_ENDPOINT", "\"http://192.168.220.10:8080/mobile/\""
+        buildConfigField "String", "AUTH_ENDPOINT", "\"http://192.168.0.109:8080/auth/\""
+        buildConfigField "String", "APP_ENDPOINT", "\"http://192.168.0.109:8080/mobile/\""
         buildConfigField "String", "AUTHORIZATION_KEY", "\"Basic VGVzdDoxMjM0\""
     }
     buildTypes {
@@ -44,6 +44,7 @@ dependencies {
     implementation androidx.coreKtx
     implementation androidx.fragmentKtx
     implementation androidx.constraintLayout
+    implementation androidx.paging
     implementation lifecycle.extensions
     implementation lifecycle.viewmodel
     implementation lifecycle.livedata
@@ -64,6 +65,8 @@ dependencies {
     implementation room.ktx
     kapt room.compiler
     androidTestImplementation room.testing
+
+    implementation javaTime
 
     testImplementation _test_.junit_api
     testRuntimeOnly _test_.junit_engine

@@ -1,6 +1,7 @@
 package hr.dsokac.androidcommons.network.services
 
 import androidx.lifecycle.LiveData
+import hr.dsokac.androidcommons.models.network.ApiEntry
 import hr.dsokac.androidcommons.models.network.ApiUser
 import hr.dsokac.androidcommons.network.models.ApiResponse
 import io.reactivex.Single
@@ -23,4 +24,7 @@ interface AppService {
 
     @GET("users/active")
     fun getUserInfo(): LiveData<ApiResponse<ApiUser>>
+
+    @GET("entries/list")
+    fun getEntries(): LiveData<ApiResponse<List<ApiEntry>>>
 }

@@ -3,7 +3,7 @@ package hr.dsokac.androidcommons.core.adapters.utils
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 
-class DefaultDiffUtilsItemCallback<T> : DiffUtil.ItemCallback<T>() {
+open class DefaultDiffUtilsItemCallback<T> : DiffUtil.ItemCallback<T>() {
     /**
      * Default implementation, equality is checked by reference
      */

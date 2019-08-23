@@ -5,17 +5,21 @@ import hr.dsokac.androidcommons.BuildConfig
 import hr.dsokac.androidcommons.core.BaseApplication
 import hr.dsokac.androidcommons.network.calladapters.LiveDataCallAdapterFactory
 import hr.dsokac.androidcommons.network.factories.NetworkExceptionFactory
+import hr.dsokac.androidcommons.network.interceptors.NetworkExceptionInterceptor
 import hr.dsokac.androidcommons.network.services.AppService
 import hr.dsokac.androidcommons.security.factories.SecurityRepositoryFactory
 import hr.dsokac.androidcommons.security.network.interceptors.OAuth2Interceptor
 import hr.dsokac.androidcommons.serialization.extensions.registerJavaTimeTypeAdapters
+import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object AppNetworkManager {
+    private val networkExceptionFactory = NetworkExceptionFactory()
     private val httpClient by lazy {
         setupHttpClient()
     }
@@ -34,7 +38,7 @@ object AppNetworkManager {
                         BuildConfig.AUTHORIZATION_KEY
                     )
                 )
-            )
+            ).addInterceptor(NetworkExceptionInterceptor(networkExceptionFactory))
 
         httpBuilder.connectTimeout(10L, TimeUnit.SECONDS)
             .readTimeout(10L, TimeUnit.SECONDS)
@@ -45,7 +49,8 @@ object AppNetworkManager {
     private val restBuilder by lazy {
         Retrofit.Builder()
             .baseUrl(BuildConfig.APP_ENDPOINT)
-            .addCallAdapterFactory(LiveDataCallAdapterFactory(NetworkExceptionFactory()))
+            .addCallAdapterFactory(LiveDataCallAdapterFactory(networkExceptionFactory))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .addConverterFactory(
                 GsonConverterFactory.create(gson)
             )
