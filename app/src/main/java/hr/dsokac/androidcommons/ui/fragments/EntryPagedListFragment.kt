@@ -10,15 +10,16 @@ import hr.dsokac.androidcommons.models.ui.Entry
 import hr.dsokac.androidcommons.ui.adapters.EntryPageListAdapter
 import hr.dsokac.androidcommons.viewmodel.EntryPagedListViewModel
 
-class EntryPageListFragment : PageListFragment<Entry>() {
+class EntryPagedListFragment : PageListFragment<Entry>() {
     companion object {
-        fun newInstance(): EntryListFragment {
-            return EntryListFragment()
+        fun newInstance(): EntryPagedListFragment {
+            return EntryPagedListFragment()
         }
     }
 
     private val adapter by lazy {
-        EntryPageListAdapter(viewModel.getData() as LiveData<PagedList<Entry>>, viewLifecycleOwner)
+        val data = viewModel.getData()
+        EntryPageListAdapter(data as LiveData<PagedList<Entry>>, viewLifecycleOwner)
     }
 
     override val viewModel: EntryPagedListViewModel by viewModels()

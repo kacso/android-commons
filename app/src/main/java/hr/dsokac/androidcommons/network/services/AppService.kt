@@ -7,6 +7,7 @@ import hr.dsokac.androidcommons.network.models.ApiResponse
 import io.reactivex.Single
 import okhttp3.ResponseBody
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface AppService {
 
@@ -27,4 +28,10 @@ interface AppService {
 
     @GET("entries/list")
     fun getEntries(): LiveData<ApiResponse<List<ApiEntry>>>
+
+    @GET("entries/list")
+    suspend fun getEntriesSuspend(): List<ApiEntry>
+
+    @GET("entries/paged")
+    suspend fun getPagedEntries(@Query("page") page: Int, @Query("size") pageSize: Int): List<ApiEntry>
 }
