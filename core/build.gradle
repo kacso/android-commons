@@ -81,6 +81,9 @@ dependencies {
     implementation project(":commondata")
 }
 
+sourceCompatibility = "8"
+targetCompatibility = "8"
+
 afterEvaluate {
     assembleDebug.dependsOn testDebugUnitTest
     assembleRelease.dependsOn testReleaseUnitTest

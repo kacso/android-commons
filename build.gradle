@@ -5,7 +5,7 @@ buildscript {
 
     ext {
         lib = [
-                group      : 'hr.dsokac.androidcommons',
+                group      : 'com.github.kacso.android-commons',
                 version    : '0.0.1',
                 versionCode: 1
         ]

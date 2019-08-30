@@ -15,9 +15,8 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-
-        buildConfigField "String", "AUTH_ENDPOINT", "\"http://192.168.0.109:8080/auth/\""
-        buildConfigField "String", "APP_ENDPOINT", "\"http://192.168.0.109:8080/mobile/\""
+        buildConfigField "String", "AUTH_ENDPOINT", "\"https://android-commons.herokuapp.com/auth/\""
+        buildConfigField "String", "APP_ENDPOINT", "\"https://android-commons.herokuapp.com/mobile/\""
         buildConfigField "String", "AUTHORIZATION_KEY", "\"Basic VGVzdDoxMjM0\""
     }
     buildTypes {
@@ -30,10 +29,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -85,6 +80,9 @@ dependencies {
     implementation project (":serialization")
     implementation project (":preferences")
 }
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
 
 afterEvaluate {
     assembleDebug.dependsOn testDebugUnitTest
