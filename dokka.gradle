@@ -1,0 +1,13 @@
+apply plugin: 'org.jetbrains.dokka'
+
+dokka {
+    moduleName = "$project.name"
+    outputFormat = 'gfm'
+    outputDirectory = "docs"
+    jdkVersion = 8
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+    main.java.srcDirs += 'src/main/java'
+}
