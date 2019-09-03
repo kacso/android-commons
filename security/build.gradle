@@ -32,6 +32,11 @@ android {
         }
     }
 
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+
     testOptions {
         unitTests {
             includeAndroidResources = true
@@ -74,9 +79,6 @@ dependencies {
     testImplementation project(":test")
     implementation project(':logger')
 }
-
-sourceCompatibility = "8"
-targetCompatibility = "8"
 
 afterEvaluate {
     assembleDebug.dependsOn testDebugUnitTest

@@ -34,6 +34,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
 
     testOptions {
         unitTests {
@@ -72,9 +76,6 @@ dependencies {
 
     testImplementation project(":test")
 }
-
-sourceCompatibility = "8"
-targetCompatibility = "8"
 
 afterEvaluate {
     assembleDebug.dependsOn testDebugUnitTest
