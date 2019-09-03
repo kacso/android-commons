@@ -1,2 +1,1 @@
-<manifest
-        package="hr.dsokac.androidcommons.data"/>
+<manifest package="com.github.kacso.androidcommons.data" />

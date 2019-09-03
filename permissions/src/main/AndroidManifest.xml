@@ -1,2 +1,1 @@
-<manifest
-        package="hr.dsokac.androidcommons.permissions"/>
+<manifest package="com.github.kacso.androidcommons.permissions" />

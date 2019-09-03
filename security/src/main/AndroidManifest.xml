@@ -1,2 +1,1 @@
-<manifest
-        package="hr.dsokac.androidcommons.security"/>
+<manifest package="com.github.kacso.androidcommons.security" />
