@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply from: rootProject.file('exclude.gradle')
 
 android {
     compileSdkVersion 28
@@ -14,7 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-222
+
         buildConfigField "String", "AUTH_ENDPOINT", "\"https://android-commons.herokuapp.com/auth/\""
         buildConfigField "String", "APP_ENDPOINT", "\"https://android-commons.herokuapp.com/mobile/\""
         buildConfigField "String", "AUTHORIZATION_KEY", "\"Basic VGVzdDoxMjM0\""
