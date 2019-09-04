@@ -47,7 +47,8 @@
                     android:inputType="textEmailAddress"
                     android:drawableTint="?android:textColorPrimary"
                     android:textColor="?android:textColorPrimary"
-                    android:drawablePadding="16dp"/>
+                    android:drawablePadding="16dp"
+                    android:text="admin" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
@@ -76,7 +77,8 @@
                     android:drawableTint="?android:textColorPrimary"
                     android:textColor="?android:textColorPrimary"
                     android:drawableStart="@drawable/lock"
-                    android:drawablePadding="16dp"/>
+                    android:drawablePadding="16dp"
+                    android:text="1234" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton android:layout_width="match_parent"

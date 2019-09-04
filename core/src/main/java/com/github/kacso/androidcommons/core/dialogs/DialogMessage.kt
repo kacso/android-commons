@@ -1,6 +1,8 @@
 package com.github.kacso.androidcommons.core.dialogs
 
 import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -83,6 +85,9 @@ class DialogMessage : BaseDialog() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
+
+        //Set background to transparent in order to make corners visible
+        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         if (titleValue == null) {
             rootView.title.visibility = View.GONE
