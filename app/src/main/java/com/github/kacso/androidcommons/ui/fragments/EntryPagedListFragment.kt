@@ -10,10 +10,10 @@ import com.github.kacso.androidcommons.models.ui.Entry
 import com.github.kacso.androidcommons.ui.adapters.EntryPageListAdapter
 import com.github.kacso.androidcommons.viewmodel.EntryPagedListViewModel
 
-class EntryPageListFragment : PageListFragment<Entry>() {
+class EntryPagedListFragment : PageListFragment<Entry>() {
     companion object {
-        fun newInstance(): EntryListFragment {
-            return EntryListFragment()
+        fun newInstance(): EntryPagedListFragment {
+            return EntryPagedListFragment()
         }
     }
 

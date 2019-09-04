@@ -13,7 +13,8 @@ class ViewPagerFragment : PagerFragment() {
 
     private val pageFragments by lazy {
         listOf<PageFragment>(
-            EntryListFragment.newInstance()
+            EntryListFragment.newInstance(),
+            EntryPagedListFragment.newInstance()
         )
     }
 
