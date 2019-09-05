@@ -28,7 +28,8 @@ object AppNetworkManager {
 
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        httpBuilder.addInterceptor(httpLoggingInterceptor)
+        httpBuilder
+            .addInterceptor(NetworkExceptionInterceptor(networkExceptionFactory))
             .addInterceptor(
                 OAuth2Interceptor(
                     SecurityRepositoryFactory.getOAuth2Repository(
@@ -37,7 +38,9 @@ object AppNetworkManager {
                         com.github.kacso.androidcommons.BuildConfig.AUTHORIZATION_KEY
                     )
                 )
-            ).addInterceptor(NetworkExceptionInterceptor(networkExceptionFactory))
+            )
+            .addInterceptor(httpLoggingInterceptor)
+
 
         httpBuilder.connectTimeout(10L, TimeUnit.SECONDS)
             .readTimeout(10L, TimeUnit.SECONDS)

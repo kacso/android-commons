@@ -51,7 +51,7 @@ class RxOAuth2Interceptor(
                     throw Unauthorized()
                 }
 
-
+                response.close()
                 response = chain.proceed(setHeaders(request))
             } else {
                 log(LOG_TAG, "Refresh token is empty. Throwing UnauthorizedException.")

@@ -9,10 +9,7 @@ import com.nhaarman.mockitokotlin2.doAnswer
 import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import io.reactivex.Completable
-import okhttp3.Interceptor
-import okhttp3.Protocol
-import okhttp3.Request
-import okhttp3.Response
+import okhttp3.*
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -119,6 +116,7 @@ class RxOAuth2InterceptorTest {
                 defaultResponse.newBuilder()
                     .request(it.arguments[0] as Request)
                     .code(401)
+                    .body(ResponseBody.create(MediaType.parse("json"), ""))
                     .build()
 
             } else {
@@ -166,6 +164,7 @@ class RxOAuth2InterceptorTest {
                 defaultResponse.newBuilder()
                     .request(it.arguments[0] as Request)
                     .code(403)
+                    .body(ResponseBody.create(MediaType.parse("json"), ""))
                     .build()
 
             } else {
@@ -202,6 +201,7 @@ class RxOAuth2InterceptorTest {
             defaultResponse.newBuilder()
                 .request(it.arguments[0] as Request)
                 .code(401)
+                .body(ResponseBody.create(MediaType.parse("json"), ""))
                 .build()
         }
 
@@ -226,6 +226,7 @@ class RxOAuth2InterceptorTest {
             defaultResponse.newBuilder()
                 .request(it.arguments[0] as Request)
                 .code(401)
+                .body(ResponseBody.create(MediaType.parse("json"), ""))
                 .build()
         }
 
