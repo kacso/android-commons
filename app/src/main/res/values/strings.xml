@@ -13,4 +13,5 @@
     <string name="error_network_request_failed">Network request failed, showing cached values.</string>
     <string name="title_entry_paged_list_fragment">Paged list</string>
     <string name="title_entry_list_fragment">Entry list</string>
+    <string name="menu_item_searchable_list">Searchable list</string>
 </resources>

@@ -16,5 +16,10 @@ abstract class ListViewModel<T> : BaseViewModel() {
         return liveData
     }
 
-    abstract fun refreshData()
+    /**
+     * Refresh [liveData] with latest value.
+     *
+     * @param forceRefresh If false, cached value is valid to be used, otherwise refresh data from original source (e.g. fetch from network on swipe to refresh)
+     */
+    abstract fun refreshData(forceRefresh: Boolean = false)
 }

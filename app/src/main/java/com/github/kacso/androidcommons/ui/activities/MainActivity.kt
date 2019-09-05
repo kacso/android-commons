@@ -11,6 +11,8 @@ import com.github.kacso.androidcommons.core.fragments.BaseFragment
 import com.github.kacso.androidcommons.extensions.attachFragment
 import com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators.FadeAnimation
 import com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators.SlideRightInPlaceAnimation
+import com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators.SlideUpToDownAnimation
+import com.github.kacso.androidcommons.ui.fragments.EntryFilterableListFragment
 import com.github.kacso.androidcommons.ui.fragments.ProfileFragment
 import com.github.kacso.androidcommons.ui.fragments.ViewPagerFragment
 import com.github.kacso.androidcommons.viewmodel.MainViewModel
@@ -53,6 +55,7 @@ class MainActivity : BaseActivity() {
     }
 
     private var viewPagerFragment: BaseFragment? = null
+    private var entryFilterableListFragment: EntryFilterableListFragment? = null
     private var profileFragment: BaseFragment? = null
 
     private val onNavigationItemSelectedListener =
@@ -67,6 +70,17 @@ class MainActivity : BaseActivity() {
                         viewPagerFragment!!,
                         "ViewPagerFragment",
                         FadeAnimation
+                    )
+                }
+                R.id.navigationEntrySearchableList -> {
+                    if (entryFilterableListFragment == null) {
+                        entryFilterableListFragment = EntryFilterableListFragment.newInstance()
+                    }
+                    attachFragment(
+                        R.id.fragmentHolder,
+                        entryFilterableListFragment!!,
+                        "EntryFilterableListFragment",
+                        SlideUpToDownAnimation
                     )
                 }
                 R.id.navigationUserProfile -> {

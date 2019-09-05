@@ -7,6 +7,11 @@
             android:title="@string/menu_item_view_pager" />
 
     <item
+            android:id="@+id/navigationEntrySearchableList"
+            android:icon="@drawable/book_search"
+            android:title="@string/menu_item_searchable_list" />
+
+    <item
             android:id="@+id/navigationUserProfile"
             android:icon="@drawable/account"
             android:title="@string/menu_item_profile" />

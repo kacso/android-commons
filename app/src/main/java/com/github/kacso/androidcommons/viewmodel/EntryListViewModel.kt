@@ -18,7 +18,7 @@ class EntryListViewModel : ListViewModel<Entry>() {
 
     override val liveData: MediatorLiveData<List<Entry>> = MediatorLiveData()
 
-    override fun refreshData() {
+    override fun refreshData(forceRefresh: Boolean) {
         entryResourceLiveData?.let {
             liveData.removeSource(it)
         }

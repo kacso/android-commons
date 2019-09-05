@@ -50,7 +50,7 @@ abstract class ListFragment<T> : BaseFragment() {
         setupList()
 
         getSwipeRefreshView()?.setOnRefreshListener {
-            viewModel.refreshData()
+            viewModel.refreshData(true)
         }
     }
 

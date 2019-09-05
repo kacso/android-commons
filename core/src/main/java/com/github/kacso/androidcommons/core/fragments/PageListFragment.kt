@@ -50,7 +50,7 @@ abstract class PageListFragment<T> : PageFragment(), PageView {
         setupList()
 
         getSwipeRefreshView()?.setOnRefreshListener {
-            viewModel.refreshData()
+            viewModel.refreshData(true)
         }
     }
 

@@ -14,7 +14,7 @@ class EntryPagedListViewModel : ListViewModel<Entry>() {
 
     override val liveData: MediatorLiveData<List<Entry>> = MediatorLiveData()
 
-    override fun refreshData() {
+    override fun refreshData(forceRefresh: Boolean) {
         isProgressActive.postValue(true)
         entryResourceLiveData?.let {
             liveData.removeSource(it)

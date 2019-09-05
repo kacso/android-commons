@@ -35,7 +35,7 @@ class ProfileFragment : BaseFragment() {
             when (it) {
                 is Resource.Success -> {
                     hideProgress()
-                    displayGreeting(it.data!!)
+                    it.data?.let { displayGreeting(it) }
                 }
                 is Resource.Error -> {
                     hideProgress()
