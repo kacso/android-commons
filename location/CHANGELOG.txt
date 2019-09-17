@@ -1,0 +1,2 @@
+v0.0.2
+* Using Looper.getMainLooper() in when requesting location updates for all providers

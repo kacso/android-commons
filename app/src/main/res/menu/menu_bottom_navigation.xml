@@ -10,6 +10,10 @@
             android:id="@+id/navigationEntrySearchableList"
             android:icon="@drawable/book_search"
             android:title="@string/menu_item_searchable_list" />
+    <item
+            android:id="@+id/navigationLocation"
+            android:icon="@drawable/map_marker"
+            android:title="@string/menu_item_location" />
 
     <item
             android:id="@+id/navigationUserProfile"

@@ -3,6 +3,7 @@ package com.github.kacso.androidcommons.location
 import android.Manifest
 import android.content.Context
 import android.location.Location
+import android.os.Looper
 import androidx.annotation.RequiresPermission
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -30,7 +31,11 @@ class LocationProvider(
         override fun onActive() {
             super.onActive()
             if (started.compareAndSet(false, true)) {
-                provider.requestLocationUpdates(locationRequest, locationCallback, null)
+                provider.requestLocationUpdates(
+                    locationRequest,
+                    locationCallback,
+                    Looper.getMainLooper()
+                )
             }
         }
 

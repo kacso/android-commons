@@ -14,4 +14,9 @@
     <string name="title_entry_paged_list_fragment">Paged list</string>
     <string name="title_entry_list_fragment">Entry list</string>
     <string name="menu_item_searchable_list">Searchable list</string>
+    <string name="error_location_permissions_missing">Location permissions missing</string>
+    <string name="single_shot_location">SingleShotLocation: %1$.7f, %2$.7f</string>
+    <string name="live_data_location">LiveDataLocation: %1$.7f, %2$.7f</string>
+    <string name="rxjava_location">RxJavaLocation: %1$.7f, %2$.7f</string>
+    <string name="menu_item_location">Location</string>
 </resources>

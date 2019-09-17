@@ -3,6 +3,7 @@ package com.github.kacso.androidcommons.location
 import android.Manifest
 import android.content.Context
 import android.location.Location
+import android.os.Looper
 import androidx.annotation.RequiresPermission
 import com.github.kacso.androidcommons.location.exceptions.LocationDisabledException
 import com.google.android.gms.location.*
@@ -34,6 +35,7 @@ class RXLocationProvider(
         override fun onLocationAvailability(availability: LocationAvailability?) {
             if (availability?.isLocationAvailable == false) {
                 locationObservable.onError(LocationDisabledException())
+                provider.removeLocationUpdates(this)
             }
         }
     }
@@ -48,7 +50,11 @@ class RXLocationProvider(
         return locationObservable.doOnDispose {
             provider.removeLocationUpdates(locationCallback)
         }.doOnSubscribe {
-            provider.requestLocationUpdates(locationRequest, locationCallback, null)
+            provider.requestLocationUpdates(
+                locationRequest,
+                locationCallback,
+                Looper.getMainLooper()
+            )
         }
     }
 }

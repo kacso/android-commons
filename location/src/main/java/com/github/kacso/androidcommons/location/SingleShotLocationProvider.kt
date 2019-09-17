@@ -7,6 +7,7 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.os.Looper
 import androidx.annotation.RequiresPermission
 import com.github.kacso.androidcommons.location.exceptions.LocationDisabledException
 import kotlin.coroutines.resume
@@ -40,7 +41,7 @@ object SingleShotLocationProvider {
                     override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
                     override fun onProviderEnabled(provider: String) {}
                     override fun onProviderDisabled(provider: String) {}
-                }, null)
+                }, Looper.getMainLooper())
             } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
                 //use this to retrieve location from network instead of GPS (more battery friendly)
                 val criteria = Criteria()

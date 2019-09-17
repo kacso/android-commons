@@ -67,6 +67,7 @@ dependencies {
     androidTestImplementation room.testing
 
     implementation javaTime
+    implementation playServices.location
 
     testImplementation _test_.junit_api
     testRuntimeOnly _test_.junit_engine
