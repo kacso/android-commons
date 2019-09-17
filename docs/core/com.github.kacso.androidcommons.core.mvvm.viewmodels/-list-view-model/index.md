@@ -29,7 +29,7 @@
 | Name | Summary |
 |---|---|
 | [getData](get-data.md) | `open fun getData(): <ERROR CLASS><List<T>>`<br>Default implementation will refresh data using [refreshData](refresh-data.md) function and return [liveData](live-data.md) |
-| [refreshData](refresh-data.md) | `abstract fun refreshData(): Unit` |
+| [refreshData](refresh-data.md) | `abstract fun refreshData(forceRefresh: Boolean = false): Unit`<br>Refresh [liveData](live-data.md) with latest value. |
 
 ### Inherited Functions
 
@@ -38,3 +38,9 @@
 | [getError](../-base-view-model/get-error.md) | `open fun getError(): <ERROR CLASS><<ERROR CLASS>>` |
 | [getIsProgressActive](../-base-view-model/get-is-progress-active.md) | `open fun getIsProgressActive(): <ERROR CLASS><Boolean>` |
 | [getMessage](../-base-view-model/get-message.md) | `open fun getMessage(): <ERROR CLASS><<ERROR CLASS>>` |
+
+### Inheritors
+
+| Name | Summary |
+|---|---|
+| [FilterableListViewModel](../-filterable-list-view-model/index.md) | `abstract class FilterableListViewModel<T, S> : ListViewModel<T>`<br>ListViewModel which handles filtering |

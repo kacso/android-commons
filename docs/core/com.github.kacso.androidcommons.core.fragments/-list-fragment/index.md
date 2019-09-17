@@ -64,3 +64,9 @@ This function will work with any [View](#) returned from [getEmptyListView](get-
 | [redirectToLogin](../-base-fragment/redirect-to-login.md) | `open fun redirectToLogin(forceRedirect: Boolean): Unit`<br>Redirect user to login.
 Should be used in case of long inactivity or when token/session has expired |
 | [showMessage](../-base-fragment/show-message.md) | `open fun showMessage(msg: <ERROR CLASS>): Unit`<br>By default, it will display [msg](../-base-fragment/show-message.md#com.github.kacso.androidcommons.core.fragments.BaseFragment$showMessage()/msg) in [Snackbar](#) with duration set to [Snackbar.LENGTH_LONG](#) |
+
+### Inheritors
+
+| Name | Summary |
+|---|---|
+| [FilterableListFragment](../-filterable-list-fragment/index.md) | `abstract class FilterableListFragment<T> : ListFragment<T>`<br>This class provides default implementation for fragments with [RecyclerView](#) and search field |

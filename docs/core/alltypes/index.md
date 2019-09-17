@@ -21,6 +21,8 @@ most common tasks in Fragment. |
 | [com.github.kacso.androidcommons.core.dialogs.DateTimePickerDialog](../com.github.kacso.androidcommons.core.dialogs/-date-time-picker-dialog/index.md) | Dialog class which combines DatePickerDialog and TimePickerDialog in one logic sequence |
 | [com.github.kacso.androidcommons.core.adapters.utils.DefaultDiffUtilsItemCallback](../com.github.kacso.androidcommons.core.adapters.utils/-default-diff-utils-item-callback/index.md) |  |
 | [com.github.kacso.androidcommons.core.dialogs.DialogMessage](../com.github.kacso.androidcommons.core.dialogs/-dialog-message/index.md) | Dialog for displaying actionable messages to user |
+| [com.github.kacso.androidcommons.core.fragments.FilterableListFragment](../com.github.kacso.androidcommons.core.fragments/-filterable-list-fragment/index.md) | This class provides default implementation for fragments with [RecyclerView](#) and search field |
+| [com.github.kacso.androidcommons.core.mvvm.viewmodels.FilterableListViewModel](../com.github.kacso.androidcommons.core.mvvm.viewmodels/-filterable-list-view-model/index.md) | [ListViewModel](../com.github.kacso.androidcommons.core.mvvm.viewmodels/-list-view-model/index.md) which handles filtering |
 | [com.github.kacso.androidcommons.core.mvvm.viewmodels.IBaseViewModel](../com.github.kacso.androidcommons.core.mvvm.viewmodels/-i-base-view-model/index.md) |  |
 | [com.github.kacso.androidcommons.core.fragments.ListFragment](../com.github.kacso.androidcommons.core.fragments/-list-fragment/index.md) | This class provides default implementation for fragments with [RecyclerView](#) |
 | [com.github.kacso.androidcommons.core.mvvm.viewmodels.ListViewModel](../com.github.kacso.androidcommons.core.mvvm.viewmodels/-list-view-model/index.md) |  |
