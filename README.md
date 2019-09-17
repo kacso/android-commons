@@ -1,6 +1,7 @@
 Android library which implements common functionalities in Android apps
 =======================================================================
-[![](https://jitpack.io/v/kacso/android-commons/svg)](https://jitpack.io/#kacso/android-commons)       [![](https://jitci.com/gh/kacso/android-commons/svg)](https://jitci.com/gh/kacso/android-commons)
+[![](https://jitpack.io/v/kacso/android-commons.svg)](https://jitpack.io/#kacso/android-commons)
+       [![](https://jitci.com/gh/kacso/android-commons/svg)](https://jitci.com/gh/kacso/android-commons)
 
 Configure your gradle as follows in order to use this lib:
 
