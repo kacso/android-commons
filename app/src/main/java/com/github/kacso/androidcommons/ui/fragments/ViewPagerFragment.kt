@@ -14,7 +14,8 @@ class ViewPagerFragment : PagerFragment() {
     private val pageFragments by lazy {
         listOf<PageFragment>(
             EntryListFragment.newInstance(),
-            EntryPagedListFragment.newInstance()
+            EntryPagedListFragment.newInstance(),
+            SectionListFragment.newInstance()
         )
     }
 

@@ -19,4 +19,5 @@
     <string name="live_data_location">LiveDataLocation: %1$.7f, %2$.7f</string>
     <string name="rxjava_location">RxJavaLocation: %1$.7f, %2$.7f</string>
     <string name="menu_item_location">Location</string>
+    <string name="title_section_list_fragment">Section list</string>
 </resources>
