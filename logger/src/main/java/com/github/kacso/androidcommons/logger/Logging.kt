@@ -34,7 +34,7 @@ fun log(tag: String, message: String) {
  * @param message The message you would like logged.
  */
 fun log(message: String) {
-    log(Log.DEBUG, "", message)
+    log(Log.DEBUG, "LOGGER", message)
 }
 
 /**
@@ -45,6 +45,6 @@ fun log(message: String) {
  *        the class or activity where the log call occurs.
  * @param message The message you would like logged.
  */
-fun log(logLevel: Int = Log.DEBUG, tag: String = "", message: String) {
+fun log(logLevel: Int = Log.DEBUG, tag: String = "LOGGER", message: String) {
     LOGGER?.log(logLevel, tag, message)
 }
