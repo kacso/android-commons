@@ -45,7 +45,7 @@ abstract class BaseFragment : Fragment(), BaseView {
         ProgressDialog.newInstance()
     }
 
-    protected open val permissionManager: IPermissionManager by lazy {
+    open val permissionManager: IPermissionManager by lazy {
         FragmentPermissionManager(WeakReference(this))
     }
 

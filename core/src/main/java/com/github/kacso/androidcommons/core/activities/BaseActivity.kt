@@ -55,7 +55,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         ProgressDialog.newInstance()
     }
 
-    protected open val permissionManager: IPermissionManager by lazy {
+    open val permissionManager: IPermissionManager by lazy {
         ActivityPermissionManager(WeakReference(this))
     }
 
