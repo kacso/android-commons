@@ -1,4 +1,4 @@
-[preferences](../index.md) / [com.github.kacso.androidcommons.preferences.impl](.)
+[preferences](../index.md) / [com.github.kacso.androidcommons.preferences.impl](./index.md)
 
 ## Package com.github.kacso.androidcommons.preferences.impl
 

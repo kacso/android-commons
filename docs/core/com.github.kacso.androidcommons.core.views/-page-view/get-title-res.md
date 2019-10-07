@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.views](../index.md) / [PageView](index.md) / [getTitleRes](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.views](../index.md) / [PageView](index.md) / [getTitleRes](./get-title-res.md)
 
 # getTitleRes
 
-`abstract fun getTitleRes(): Int`
+`@StringRes abstract fun getTitleRes(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Function to retrieve title of page
 

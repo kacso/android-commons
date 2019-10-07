@@ -1,4 +1,4 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.network.managers](../index.md) / [OAuth2NetworkManager](index.md) / [rxService](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.network.managers](../index.md) / [OAuth2NetworkManager](index.md) / [rxService](./rx-service.md)
 
 # rxService
 

@@ -1,4 +1,4 @@
-[extensions](../../index.md) / [com.github.kacso.androidcommons.extensions.fragments](../index.md) / [IExtendedFragment](.)
+[extensions](../../index.md) / [com.github.kacso.androidcommons.extensions.fragments](../index.md) / [IExtendedFragment](./index.md)
 
 # IExtendedFragment
 
@@ -8,5 +8,4 @@
 
 | Name | Summary |
 |---|---|
-| [onChildFragmentBack](on-child-fragment-back.md) | `abstract fun onChildFragmentBack(): Unit`<br>Called when child fragment is popped from backstack. Override this method if any additional
-actions are required by parent fragment |
+| [onChildFragmentBack](on-child-fragment-back.md) | `abstract fun onChildFragmentBack(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Called when child fragment is popped from backstack. Override this method if any additional actions are required by parent fragment |

@@ -1,4 +1,4 @@
-[extensions](.)
+[extensions](./index.md)
 
 ### Packages
 

@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [isAppForegrounded](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [isAppForegrounded](./is-app-foregrounded.md)
 
 # isAppForegrounded
 

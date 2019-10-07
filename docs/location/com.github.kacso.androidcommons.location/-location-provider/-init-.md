@@ -1,8 +1,8 @@
-[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [LocationProvider](index.md) / [&lt;init&gt;](.)
+[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [LocationProvider](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 
-`LocationProvider(context: <ERROR CLASS>, locationRequest: <ERROR CLASS> = LocationRequest.create())`
+`LocationProvider(context: Context, locationRequest: LocationRequest = LocationRequest.create())`
 
 Use this class to retrieve real-time location updates.
 Location updates are emitted through [LiveData](#) inside [Resource](#) model.

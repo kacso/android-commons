@@ -1,11 +1,11 @@
-[extensions](../../index.md) / [com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators](../index.md) / [SlideUpToDownAnimation](.)
+[extensions](../../index.md) / [com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators](../index.md) / [SlideUpToDownAnimation](./index.md)
 
 # SlideUpToDownAnimation
 
-`object SlideUpToDownAnimation`
+`object SlideUpToDownAnimation : `[`FragmentTransactionDecorator`](../../com.github.kacso.androidcommons.extensions/-fragment-transaction-decorator.md)
 
 ### Functions
 
 | Name | Summary |
 |---|---|
-| [invoke](invoke.md) | `fun invoke(ft: <ERROR CLASS>): Unit` |
+| [invoke](invoke.md) | `fun invoke(ft: FragmentTransaction): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |

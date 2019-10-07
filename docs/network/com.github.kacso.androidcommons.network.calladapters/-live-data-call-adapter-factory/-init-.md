@@ -1,4 +1,4 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.calladapters](../index.md) / [LiveDataCallAdapterFactory](index.md) / [&lt;init&gt;](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.calladapters](../index.md) / [LiveDataCallAdapterFactory](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

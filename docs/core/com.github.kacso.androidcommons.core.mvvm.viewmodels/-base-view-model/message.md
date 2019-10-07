@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.mvvm.viewmodels](../index.md) / [BaseViewModel](index.md) / [message](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.mvvm.viewmodels](../index.md) / [BaseViewModel](index.md) / [message](./message.md)
 
 # message
 
-`protected val message: <ERROR CLASS><<ERROR CLASS>>`
+`protected val message: MutableLiveData<MessageHolder>`

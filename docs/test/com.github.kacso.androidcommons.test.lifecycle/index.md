@@ -1,4 +1,4 @@
-[test](../index.md) / [com.github.kacso.androidcommons.test.lifecycle](.)
+[test](../index.md) / [com.github.kacso.androidcommons.test.lifecycle](./index.md)
 
 ## Package com.github.kacso.androidcommons.test.lifecycle
 
@@ -6,11 +6,10 @@
 
 | Name | Summary |
 |---|---|
-| [TestLifecycleOwner](-test-lifecycle-owner/index.md) | `class TestLifecycleOwner` |
+| [TestLifecycleOwner](-test-lifecycle-owner/index.md) | `class TestLifecycleOwner : LifecycleOwner` |
 
-### Functions
+### Extensions for External Classes
 
 | Name | Summary |
 |---|---|
-| [getTestValue](get-test-value.md) | `fun <T> <ERROR CLASS><T>.getTestValue(): T`<br>Get value from LiveData by waiting up to 2 seconds until it is emitted |
-| [test](test.md) | `fun <T> <ERROR CLASS><T>.test(expected: T): Unit`<br>Test value from LiveData by waiting up to 2 seconds until it is emitted |
+| [androidx.lifecycle.LiveData](androidx.lifecycle.-live-data/index.md) |  |

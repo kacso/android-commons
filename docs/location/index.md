@@ -1,4 +1,4 @@
-[location](.)
+[location](./index.md)
 
 ### Packages
 

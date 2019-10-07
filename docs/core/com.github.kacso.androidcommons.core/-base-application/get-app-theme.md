@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [getAppTheme](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [getAppTheme](./get-app-theme.md)
 
 # getAppTheme
 
-`open fun getAppTheme(): Int?`
+`@StyleRes open fun getAppTheme(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`?`
 
 This method returns theme which will be used across all activities.
 In case that theme defined in AndroidManifest would like to be used, returned value

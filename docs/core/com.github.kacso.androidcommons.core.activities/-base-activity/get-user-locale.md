@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [getUserLocale](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [getUserLocale](./get-user-locale.md)
 
 # getUserLocale
 
-`open fun getUserLocale(context: <ERROR CLASS>): `[`Locale`](http://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+`open fun getUserLocale(context: Context): `[`Locale`](http://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
 
 Returns locale defined by user in settings, if such option does not exist, return device default locale.
 

@@ -1,8 +1,8 @@
-[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [RXLocationProvider](index.md) / [&lt;init&gt;](.)
+[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [RXLocationProvider](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 
-`RXLocationProvider(context: <ERROR CLASS>, locationRequest: <ERROR CLASS> = LocationRequest.create())`
+`RXLocationProvider(context: Context, locationRequest: LocationRequest = LocationRequest.create())`
 
 Use this class to retrieve real-time location updates.
 Location updates are emitted through [Observable](#).

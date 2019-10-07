@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.repository](../index.md) / [NetworkBoundResource](index.md) / [createCall](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.repository](../index.md) / [NetworkBoundResource](index.md) / [createCall](./create-call.md)
 
 # createCall
 
-`protected abstract fun createCall(): <ERROR CLASS><<ERROR CLASS><RequestType>>`
+`protected abstract fun createCall(): LiveData<ApiResponse<`[`RequestType`](index.md#RequestType)`>>`
 
 Perform network call which will retrieve data
 

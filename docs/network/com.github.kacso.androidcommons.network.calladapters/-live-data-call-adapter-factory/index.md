@@ -1,8 +1,8 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.calladapters](../index.md) / [LiveDataCallAdapterFactory](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.calladapters](../index.md) / [LiveDataCallAdapterFactory](./index.md)
 
 # LiveDataCallAdapterFactory
 
-`class LiveDataCallAdapterFactory`
+`class LiveDataCallAdapterFactory : Factory`
 
 Retrofit CallAdapter factory used to enable [LiveData](#) return type of [ApiResponse](../../com.github.kacso.androidcommons.network.models/-api-response/index.md)
 
@@ -20,4 +20,4 @@ Retrofit CallAdapter factory used to enable [LiveData](#) return type of [ApiRes
 
 | Name | Summary |
 |---|---|
-| [get](get.md) | `fun get(returnType: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`, annotations: Array<Annotation>, retrofit: <ERROR CLASS>): <ERROR CLASS><out <ERROR CLASS>, out <ERROR CLASS>>?` |
+| [get](get.md) | `fun get(returnType: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`, annotations: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`Annotation`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-annotation/index.html)`>, retrofit: Retrofit): CallAdapter<*, *>?` |

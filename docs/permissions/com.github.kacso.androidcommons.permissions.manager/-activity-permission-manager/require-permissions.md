@@ -1,8 +1,8 @@
-[permissions](../../index.md) / [com.github.kacso.androidcommons.permissions.manager](../index.md) / [ActivityPermissionManager](index.md) / [requirePermissions](.)
+[permissions](../../index.md) / [com.github.kacso.androidcommons.permissions.manager](../index.md) / [ActivityPermissionManager](index.md) / [requirePermissions](./require-permissions.md)
 
 # requirePermissions
 
-`fun requirePermissions(permissions: Array<String>, callback: `[`PermissionCallback`](../../com.github.kacso.androidcommons.permissions.callbacks/-permission-callback/index.md)`): Int`
+`fun requirePermissions(permissions: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>, callback: `[`PermissionCallback`](../../com.github.kacso.androidcommons.permissions.callbacks/-permission-callback/index.md)`): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Overrides [IPermissionManager.requirePermissions](../-i-permission-manager/require-permissions.md)
 

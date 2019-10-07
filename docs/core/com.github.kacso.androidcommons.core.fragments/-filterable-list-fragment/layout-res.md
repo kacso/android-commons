@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [layoutRes](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [layoutRes](./layout-res.md)
 
 # layoutRes
 
-`protected open val layoutRes: Int`
+`protected open val layoutRes: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Overrides [ListFragment.layoutRes](../-list-fragment/layout-res.md)
 

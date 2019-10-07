@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [getListView](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [getListView](./get-list-view.md)
 
 # getListView
 
-`open fun getListView(): <ERROR CLASS>`
+`open fun getListView(): RecyclerView`
 
 Overrides [ListFragment.getListView](../-list-fragment/get-list-view.md)
 

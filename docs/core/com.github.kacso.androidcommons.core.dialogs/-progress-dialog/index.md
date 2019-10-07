@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [ProgressDialog](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [ProgressDialog](./index.md)
 
 # ProgressDialog
 
@@ -17,19 +17,19 @@ Dialog which indicates that long running task is executing.
 
 | Name | Summary |
 |---|---|
-| [onCreateView](on-create-view.md) | `open fun onCreateView(inflater: <ERROR CLASS>, container: <ERROR CLASS>?, savedInstanceState: <ERROR CLASS>?): <ERROR CLASS>` |
+| [onCreateView](on-create-view.md) | `open fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View` |
 
 ### Inherited Functions
 
 | Name | Summary |
 |---|---|
-| [dismiss](../-abstract-progress-dialog/dismiss.md) | `open fun dismiss(): Unit` |
-| [dismissAllowingStateLoss](../-abstract-progress-dialog/dismiss-allowing-state-loss.md) | `open fun dismissAllowingStateLoss(): Unit` |
-| [isShown](../-abstract-progress-dialog/is-shown.md) | `fun isShown(): Boolean` |
-| [show](../-abstract-progress-dialog/show.md) | `open fun show(manager: <ERROR CLASS>, tag: String?): Unit` |
+| [dismiss](../-abstract-progress-dialog/dismiss.md) | `open fun dismiss(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [dismissAllowingStateLoss](../-abstract-progress-dialog/dismiss-allowing-state-loss.md) | `open fun dismissAllowingStateLoss(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+| [isShown](../-abstract-progress-dialog/is-shown.md) | `fun isShown(): `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html) |
+| [show](../-abstract-progress-dialog/show.md) | `open fun show(manager: FragmentManager, tag: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 
 ### Companion Object Functions
 
 | Name | Summary |
 |---|---|
-| [newInstance](new-instance.md) | `fun newInstance(): ProgressDialog` |
+| [newInstance](new-instance.md) | `fun newInstance(): `[`ProgressDialog`](./index.md) |

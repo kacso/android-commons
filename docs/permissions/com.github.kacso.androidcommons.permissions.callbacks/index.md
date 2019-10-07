@@ -1,4 +1,4 @@
-[permissions](../index.md) / [com.github.kacso.androidcommons.permissions.callbacks](.)
+[permissions](../index.md) / [com.github.kacso.androidcommons.permissions.callbacks](./index.md)
 
 ## Package com.github.kacso.androidcommons.permissions.callbacks
 

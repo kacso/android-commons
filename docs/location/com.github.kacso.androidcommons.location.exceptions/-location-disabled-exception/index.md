@@ -1,8 +1,8 @@
-[location](../../index.md) / [com.github.kacso.androidcommons.location.exceptions](../index.md) / [LocationDisabledException](.)
+[location](../../index.md) / [com.github.kacso.androidcommons.location.exceptions](../index.md) / [LocationDisabledException](./index.md)
 
 # LocationDisabledException
 
-`class LocationDisabledException : `[`RuntimeException`](http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html)
+`class LocationDisabledException : `[`RuntimeException`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html)
 
 An Exception which is thrown when app does not have access to user location
 

@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.views](../index.md) / [PagerView](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.views](../index.md) / [PagerView](./index.md)
 
 # PagerView
 
@@ -13,10 +13,10 @@ Danijel Sokač
 
 | Name | Summary |
 |---|---|
-| [getFragments](get-fragments.md) | `abstract fun getFragments(): List<`[`PageFragment`](../../com.github.kacso.androidcommons.core.fragments/-page-fragment/index.md)`>`<br>Function to retrieve fragments for [ViewPager](#) |
+| [getFragments](get-fragments.md) | `abstract fun getFragments(): `[`List`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html)`<`[`PageFragment`](../../com.github.kacso.androidcommons.core.fragments/-page-fragment/index.md)`>`<br>Function to retrieve fragments for [ViewPager](#) |
 
 ### Inheritors
 
 | Name | Summary |
 |---|---|
-| [PagerFragment](../../com.github.kacso.androidcommons.core.fragments/-pager-fragment/index.md) | `abstract class PagerFragment : `[`BaseFragment`](../../com.github.kacso.androidcommons.core.fragments/-base-fragment/index.md)`, PagerView`<br>Abstract class with common functionalities which are used in fragment with [ViewPager](#) |
+| [PagerFragment](../../com.github.kacso.androidcommons.core.fragments/-pager-fragment/index.md) | `abstract class PagerFragment : `[`BaseFragment`](../../com.github.kacso.androidcommons.core.fragments/-base-fragment/index.md)`, `[`PagerView`](./index.md)<br>Abstract class with common functionalities which are used in fragment with [ViewPager](#) |

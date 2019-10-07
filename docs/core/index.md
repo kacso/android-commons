@@ -1,4 +1,4 @@
-[core](.)
+[core](./index.md)
 
 ### Packages
 
@@ -7,6 +7,7 @@
 | [com.github.kacso.androidcommons.core](com.github.kacso.androidcommons.core/index.md) |  |
 | [com.github.kacso.androidcommons.core.activities](com.github.kacso.androidcommons.core.activities/index.md) |  |
 | [com.github.kacso.androidcommons.core.adapters](com.github.kacso.androidcommons.core.adapters/index.md) |  |
+| [com.github.kacso.androidcommons.core.adapters.models](com.github.kacso.androidcommons.core.adapters.models/index.md) |  |
 | [com.github.kacso.androidcommons.core.adapters.utils](com.github.kacso.androidcommons.core.adapters.utils/index.md) |  |
 | [com.github.kacso.androidcommons.core.adapters.viewholders](com.github.kacso.androidcommons.core.adapters.viewholders/index.md) |  |
 | [com.github.kacso.androidcommons.core.dialogs](com.github.kacso.androidcommons.core.dialogs/index.md) |  |

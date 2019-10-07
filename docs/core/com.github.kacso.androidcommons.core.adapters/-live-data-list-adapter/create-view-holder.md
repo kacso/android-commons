@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.adapters](../index.md) / [LiveDataListAdapter](index.md) / [createViewHolder](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.adapters](../index.md) / [LiveDataListAdapter](index.md) / [createViewHolder](./create-view-holder.md)
 
 # createViewHolder
 
-`abstract fun createViewHolder(view: <ERROR CLASS>): VH`
+`abstract fun createViewHolder(view: View): `[`VH`](index.md#VH)
 
 Method called when new ViewHolder needs to be created
 

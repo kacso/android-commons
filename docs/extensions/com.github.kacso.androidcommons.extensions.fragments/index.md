@@ -1,4 +1,4 @@
-[extensions](../index.md) / [com.github.kacso.androidcommons.extensions.fragments](.)
+[extensions](../index.md) / [com.github.kacso.androidcommons.extensions.fragments](./index.md)
 
 ## Package com.github.kacso.androidcommons.extensions.fragments
 

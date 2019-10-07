@@ -1,5 +1,5 @@
-[test](../../index.md) / [com.github.kacso.androidcommons.test.models](../index.md) / [Foo](index.md) / [value](.)
+[test](../../index.md) / [com.github.kacso.androidcommons.test.models](../index.md) / [Foo](index.md) / [value](./value.md)
 
 # value
 
-`val value: Int`
+`val value: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)

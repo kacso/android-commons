@@ -1,4 +1,4 @@
-[permissions](.)
+[permissions](./index.md)
 
 ### Packages
 

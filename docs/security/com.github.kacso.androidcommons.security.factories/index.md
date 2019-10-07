@@ -1,4 +1,4 @@
-[security](../index.md) / [com.github.kacso.androidcommons.security.factories](.)
+[security](../index.md) / [com.github.kacso.androidcommons.security.factories](./index.md)
 
 ## Package com.github.kacso.androidcommons.security.factories
 

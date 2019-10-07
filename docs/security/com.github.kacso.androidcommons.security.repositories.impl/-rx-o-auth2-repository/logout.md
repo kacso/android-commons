@@ -1,8 +1,8 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories.impl](../index.md) / [RxOAuth2Repository](index.md) / [logout](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories.impl](../index.md) / [RxOAuth2Repository](index.md) / [logout](./logout.md)
 
 # logout
 
-`open fun logout(): <ERROR CLASS>`
+`open fun logout(): Completable`
 
 Overrides [IRxOAuth2Repository.logout](../../com.github.kacso.androidcommons.security.repositories/-i-rx-o-auth2-repository/logout.md)
 

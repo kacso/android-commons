@@ -1,4 +1,4 @@
-[security](../index.md) / [com.github.kacso.androidcommons.security.network.services](.)
+[security](../index.md) / [com.github.kacso.androidcommons.security.network.services](./index.md)
 
 ## Package com.github.kacso.androidcommons.security.network.services
 

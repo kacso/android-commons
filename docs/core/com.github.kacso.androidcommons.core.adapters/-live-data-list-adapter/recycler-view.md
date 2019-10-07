@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.adapters](../index.md) / [LiveDataListAdapter](index.md) / [recyclerView](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.adapters](../index.md) / [LiveDataListAdapter](index.md) / [recyclerView](./recycler-view.md)
 
 # recyclerView
 
-`protected lateinit var recyclerView: <ERROR CLASS>`
+`protected lateinit var recyclerView: RecyclerView`

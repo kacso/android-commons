@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [progressDialog](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [progressDialog](./progress-dialog.md)
 
 # progressDialog
 

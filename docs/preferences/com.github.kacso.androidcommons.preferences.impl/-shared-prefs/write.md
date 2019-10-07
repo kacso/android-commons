@@ -1,8 +1,8 @@
-[preferences](../../index.md) / [com.github.kacso.androidcommons.preferences.impl](../index.md) / [SharedPrefs](index.md) / [write](.)
+[preferences](../../index.md) / [com.github.kacso.androidcommons.preferences.impl](../index.md) / [SharedPrefs](index.md) / [write](./write.md)
 
 # write
 
-`fun write(key: String, value: String): Unit`
+`fun write(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ISharedPrefs.write](../../com.github.kacso.androidcommons.preferences/-i-shared-prefs/write.md)
 
@@ -12,9 +12,7 @@ Writes a string value into [SharedPreferences](#)
 
 `key` - preference key for identification
 
-`value` - value to write
-
-`fun write(key: String, value: Set<String>): Unit`
+`value` - value to write`fun write(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`Set`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ISharedPrefs.write](../../com.github.kacso.androidcommons.preferences/-i-shared-prefs/write.md)
 
@@ -24,9 +22,7 @@ Writes a set of strings into [SharedPreferences](#)
 
 `key` - preference key for identification
 
-`value` - value to write
-
-`fun write(key: String, value: Boolean): Unit`
+`value` - value to write`fun write(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ISharedPrefs.write](../../com.github.kacso.androidcommons.preferences/-i-shared-prefs/write.md)
 
@@ -36,9 +32,7 @@ Writes a boolean value into [SharedPreferences](#)
 
 `key` - preference key for identification
 
-`value` - value to write
-
-`fun write(key: String, value: Int): Unit`
+`value` - value to write`fun write(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ISharedPrefs.write](../../com.github.kacso.androidcommons.preferences/-i-shared-prefs/write.md)
 
@@ -48,9 +42,7 @@ Writes an integer value into [SharedPreferences](#)
 
 `key` - preference key for identification
 
-`value` - value to write
-
-`fun write(key: String, value: Long): Unit`
+`value` - value to write`fun write(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ISharedPrefs.write](../../com.github.kacso.androidcommons.preferences/-i-shared-prefs/write.md)
 
@@ -60,9 +52,7 @@ Writes an long value into [SharedPreferences](#)
 
 `key` - preference key for identification
 
-`value` - value to write
-
-`fun write(key: String, value: Float): Unit`
+`value` - value to write`fun write(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`Float`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html)`): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ISharedPrefs.write](../../com.github.kacso.androidcommons.preferences/-i-shared-prefs/write.md)
 

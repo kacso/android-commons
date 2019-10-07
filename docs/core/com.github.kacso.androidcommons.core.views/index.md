@@ -1,4 +1,4 @@
-[core](../index.md) / [com.github.kacso.androidcommons.core.views](.)
+[core](../index.md) / [com.github.kacso.androidcommons.core.views](./index.md)
 
 ## Package com.github.kacso.androidcommons.core.views
 

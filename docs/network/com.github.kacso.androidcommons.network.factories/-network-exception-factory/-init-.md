@@ -1,4 +1,4 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.factories](../index.md) / [NetworkExceptionFactory](index.md) / [&lt;init&gt;](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.factories](../index.md) / [NetworkExceptionFactory](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

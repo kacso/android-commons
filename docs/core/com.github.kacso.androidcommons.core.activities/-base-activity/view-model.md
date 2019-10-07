@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [viewModel](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [viewModel](./view-model.md)
 
 # viewModel
 

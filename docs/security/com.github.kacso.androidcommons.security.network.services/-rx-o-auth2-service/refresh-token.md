@@ -1,8 +1,8 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.network.services](../index.md) / [RxOAuth2Service](index.md) / [refreshToken](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.network.services](../index.md) / [RxOAuth2Service](index.md) / [refreshToken](./refresh-token.md)
 
 # refreshToken
 
-`abstract fun refreshToken(refreshToken: String, grantType: String = "refresh_token", authorizationKey: String): <ERROR CLASS><`[`OAuth2LoginResponse`](../../com.github.kacso.androidcommons.security.network.models/-o-auth2-login-response/index.md)`>`
+`@FormUrlEncoded @POST("oauth/token") abstract fun refreshToken(@Field("refresh_token") refreshToken: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, @Field("grant_type") grantType: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)` = "refresh_token", @Header("Authorization") authorizationKey: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): Single<`[`OAuth2LoginResponse`](../../com.github.kacso.androidcommons.security.network.models/-o-auth2-login-response/index.md)`>`
 
 Performs access token refresh. If successful, it will return new tokens, otherwise
 [NetworkException](#) will be thrown.

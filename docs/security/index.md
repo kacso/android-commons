@@ -1,4 +1,4 @@
-[security](.)
+[security](./index.md)
 
 ### Packages
 

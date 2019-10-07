@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [layoutRes](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [layoutRes](./layout-res.md)
 
 # layoutRes
 
-`protected abstract val layoutRes: Int`
+`protected abstract val layoutRes: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Reference to layout resource of current activity.
 

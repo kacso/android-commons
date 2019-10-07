@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [ListFragment](index.md) / [onViewCreated](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [ListFragment](index.md) / [onViewCreated](./on-view-created.md)
 
 # onViewCreated
 
-`open fun onViewCreated(view: <ERROR CLASS>, savedInstanceState: <ERROR CLASS>?): Unit`
+`open fun onViewCreated(view: View, savedInstanceState: Bundle?): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)

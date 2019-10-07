@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [&lt;init&gt;](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

@@ -1,15 +1,14 @@
 Android library which implements common functionalities in Android apps
 =======================================================================
-[![](https://jitpack.io/v/kacso/android-commons.svg)](https://jitpack.io/#kacso/android-commons)
-       [![](https://jitci.com/gh/kacso/android-commons/svg)](https://jitci.com/gh/kacso/android-commons)
+[ ![Download](https://api.bintray.com/packages/kacso/android-commons/android-commons/images/download.svg) ](https://bintray.com/kacso/android-commons/android-commons/_latestVersion)
 
 Configure your gradle as follows in order to use this lib:
 
-**Step 1.** Add the JitPack repository to your build file
+**Step 1.** Add the bintray repository to your build file
 ```groovy
     allProjects {
-        repositories {
-            maven {url 'https://jitpack.io'}
+        maven {
+            url  "https://dl.bintray.com/kacso/android-commons" 
         }
     }
 ```
@@ -17,7 +16,7 @@ Configure your gradle as follows in order to use this lib:
 **Step 2.** Add the dependency
 ```groovy
     dependencies {
-        implementation 'com.github.kacso:android-commons:{latest_version}'
+        implementation 'com.github.kacso.android-commons:{module_name}:{latest_version}'
     }
 ```
 
@@ -102,14 +101,3 @@ Lib is modularized in following modules which can be used independently:
     - `StaticMock` mock SDK version during test execution or mock any other static final field
     - `InstantTaskExecutorExtension` Junit5 extension used to test LiveData
     - `LiveDataExtensions` verify value in LiveData
-
-
-
-
-
-To use only one of the modules you need to specify only desired modules in your gradle:
-```groovy
-    dependencies {
-        implementation 'com.github.kacso.android-commons:{module_name}:{latest_version}'
-    }
-```

@@ -1,4 +1,4 @@
-[logger](../index.md) / [com.github.kacso.androidcommons.logger](index.md) / [LOGGER](.)
+[logger](../index.md) / [com.github.kacso.androidcommons.logger](index.md) / [LOGGER](./-l-o-g-g-e-r.md)
 
 # LOGGER
 

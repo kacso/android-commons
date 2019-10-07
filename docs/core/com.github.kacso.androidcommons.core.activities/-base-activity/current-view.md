@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [currentView](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [currentView](./current-view.md)
 
 # currentView
 

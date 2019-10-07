@@ -1,4 +1,4 @@
-[serialization](.)
+[serialization](./index.md)
 
 ### Packages
 

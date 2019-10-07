@@ -1,8 +1,8 @@
-[extensions](../../index.md) / [com.github.kacso.androidcommons.extensions](../index.md) / [kotlin.Double](index.md) / [format](.)
+[extensions](../../index.md) / [com.github.kacso.androidcommons.extensions](../index.md) / [kotlin.Double](index.md) / [format](./format.md)
 
 # format
 
-`fun Double.format(digits: Int): String`
+`fun `[`Double`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html)`.format(digits: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
 
 Format double value to string with predefined number of decimal digits displayed
 

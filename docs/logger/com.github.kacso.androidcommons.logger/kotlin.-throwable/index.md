@@ -1,7 +1,7 @@
-[logger](../../index.md) / [com.github.kacso.androidcommons.logger](../index.md) / [kotlin.Throwable](.)
+[logger](../../index.md) / [com.github.kacso.androidcommons.logger](../index.md) / [kotlin.Throwable](./index.md)
 
 ### Extensions for kotlin.Throwable
 
 | Name | Summary |
 |---|---|
-| [log](log.md) | `fun Throwable.log(): Unit`<br>Logs [Throwable](#) using [LOGGER](../-l-o-g-g-e-r.md) instance |
+| [log](log.md) | `fun `[`Throwable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)`.log(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>Logs [Throwable](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html) using [LOGGER](../-l-o-g-g-e-r.md) instance |

@@ -1,8 +1,8 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.exceptions](../index.md) / [NetworkException](index.md) / [response](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.exceptions](../index.md) / [NetworkException](index.md) / [response](./response.md)
 
 # response
 
-`val response: <ERROR CLASS><out <ERROR CLASS>>?`
+`val response: Response<*>?`
 
 response returned from server if exist
 

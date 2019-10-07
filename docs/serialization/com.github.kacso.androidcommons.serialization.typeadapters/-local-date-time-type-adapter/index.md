@@ -1,8 +1,8 @@
-[serialization](../../index.md) / [com.github.kacso.androidcommons.serialization.typeadapters](../index.md) / [LocalDateTimeTypeAdapter](.)
+[serialization](../../index.md) / [com.github.kacso.androidcommons.serialization.typeadapters](../index.md) / [LocalDateTimeTypeAdapter](./index.md)
 
 # LocalDateTimeTypeAdapter
 
-`class LocalDateTimeTypeAdapter`
+`class LocalDateTimeTypeAdapter : JsonSerializer<LocalDateTime?>, JsonDeserializer<LocalDateTime?>`
 
 ### Constructors
 
@@ -14,5 +14,5 @@
 
 | Name | Summary |
 |---|---|
-| [deserialize](deserialize.md) | `fun deserialize(json: <ERROR CLASS>?, typeOfT: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`?, context: <ERROR CLASS>?): <ERROR CLASS>?` |
-| [serialize](serialize.md) | `fun serialize(src: <ERROR CLASS>?, typeOfSrc: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`?, context: <ERROR CLASS>?): <ERROR CLASS>?` |
+| [deserialize](deserialize.md) | `fun deserialize(json: JsonElement?, typeOfT: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`?, context: JsonDeserializationContext?): LocalDateTime?` |
+| [serialize](serialize.md) | `fun serialize(src: LocalDateTime?, typeOfSrc: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`?, context: JsonSerializationContext?): JsonElement?` |

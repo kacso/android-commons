@@ -1,4 +1,4 @@
-[preferences](.)
+[preferences](./index.md)
 
 ### Packages
 

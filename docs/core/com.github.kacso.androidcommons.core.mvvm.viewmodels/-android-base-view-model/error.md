@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.mvvm.viewmodels](../index.md) / [AndroidBaseViewModel](index.md) / [error](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.mvvm.viewmodels](../index.md) / [AndroidBaseViewModel](index.md) / [error](./error.md)
 
 # error
 
-`protected val error: <ERROR CLASS><<ERROR CLASS>>`
+`protected val error: MutableLiveData<ErrorHolder>`

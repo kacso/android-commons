@@ -1,9 +1,9 @@
-[serialization](../index.md) / [com.github.kacso.androidcommons.serialization.extensions](.)
+[serialization](../index.md) / [com.github.kacso.androidcommons.serialization.extensions](./index.md)
 
 ## Package com.github.kacso.androidcommons.serialization.extensions
 
-### Functions
+### Extensions for External Classes
 
 | Name | Summary |
 |---|---|
-| [registerJavaTimeTypeAdapters](register-java-time-type-adapters.md) | `fun <ERROR CLASS>.registerJavaTimeTypeAdapters(): <ERROR CLASS>` |
+| [com.google.gson.GsonBuilder](com.google.gson.-gson-builder/index.md) |  |

@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [getDialogTheme](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [getDialogTheme](./get-dialog-theme.md)
 
 # getDialogTheme
 
-`open fun getDialogTheme(): Int?`
+`@StyleRes open fun getDialogTheme(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)`?`
 
 This method returns theme which will be used across all dialogs.
 In case that theme defined in AndroidManifest would like to be used, returned value

@@ -1,4 +1,4 @@
-[permissions](../index.md) / [com.github.kacso.androidcommons.permissions.manager](.)
+[permissions](../index.md) / [com.github.kacso.androidcommons.permissions.manager](./index.md)
 
 ## Package com.github.kacso.androidcommons.permissions.manager
 

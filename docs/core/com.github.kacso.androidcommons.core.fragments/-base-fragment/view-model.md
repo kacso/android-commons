@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [BaseFragment](index.md) / [viewModel](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [BaseFragment](index.md) / [viewModel](./view-model.md)
 
 # viewModel
 

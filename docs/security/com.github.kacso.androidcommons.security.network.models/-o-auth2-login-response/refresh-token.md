@@ -1,5 +1,5 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.network.models](../index.md) / [OAuth2LoginResponse](index.md) / [refreshToken](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.network.models](../index.md) / [OAuth2LoginResponse](index.md) / [refreshToken](./refresh-token.md)
 
 # refreshToken
 
-`val refreshToken: String?`
+`@Expose @SerializedName("refresh_token") val refreshToken: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`?`

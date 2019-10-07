@@ -1,4 +1,4 @@
-[commondata](.)
+[commondata](./index.md)
 
 ### Packages
 

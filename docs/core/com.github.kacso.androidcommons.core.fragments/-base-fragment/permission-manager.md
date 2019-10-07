@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [BaseFragment](index.md) / [permissionManager](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [BaseFragment](index.md) / [permissionManager](./permission-manager.md)
 
 # permissionManager
 
-`protected open val permissionManager: <ERROR CLASS>`
+`open val permissionManager: IPermissionManager`

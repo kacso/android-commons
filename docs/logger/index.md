@@ -1,4 +1,4 @@
-[logger](.)
+[logger](./index.md)
 
 ### Packages
 

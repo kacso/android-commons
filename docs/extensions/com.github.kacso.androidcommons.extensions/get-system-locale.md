@@ -1,4 +1,4 @@
-[extensions](../index.md) / [com.github.kacso.androidcommons.extensions](index.md) / [getSystemLocale](.)
+[extensions](../index.md) / [com.github.kacso.androidcommons.extensions](index.md) / [getSystemLocale](./get-system-locale.md)
 
 # getSystemLocale
 

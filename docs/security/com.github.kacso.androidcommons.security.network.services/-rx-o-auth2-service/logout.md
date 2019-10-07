@@ -1,8 +1,8 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.network.services](../index.md) / [RxOAuth2Service](index.md) / [logout](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.network.services](../index.md) / [RxOAuth2Service](index.md) / [logout](./logout.md)
 
 # logout
 
-`abstract fun logout(token: String): <ERROR CLASS><<ERROR CLASS>>`
+`@POST("logout") abstract fun logout(@Header("Authorization") token: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): Single<ResponseBody>`
 
 Performs logout of authorized user.
 

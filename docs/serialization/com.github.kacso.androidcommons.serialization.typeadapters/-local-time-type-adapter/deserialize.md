@@ -1,5 +1,5 @@
-[serialization](../../index.md) / [com.github.kacso.androidcommons.serialization.typeadapters](../index.md) / [LocalTimeTypeAdapter](index.md) / [deserialize](.)
+[serialization](../../index.md) / [com.github.kacso.androidcommons.serialization.typeadapters](../index.md) / [LocalTimeTypeAdapter](index.md) / [deserialize](./deserialize.md)
 
 # deserialize
 
-`fun deserialize(json: <ERROR CLASS>?, typeOfT: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`?, context: <ERROR CLASS>?): <ERROR CLASS>?`
+`fun deserialize(json: JsonElement?, typeOfT: `[`Type`](http://docs.oracle.com/javase/8/docs/api/java/lang/reflect/Type.html)`?, context: JsonDeserializationContext?): LocalTime?`

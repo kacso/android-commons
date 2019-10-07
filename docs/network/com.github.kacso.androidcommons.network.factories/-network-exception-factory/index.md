@@ -1,4 +1,4 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.factories](../index.md) / [NetworkExceptionFactory](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.factories](../index.md) / [NetworkExceptionFactory](./index.md)
 
 # NetworkExceptionFactory
 
@@ -19,5 +19,5 @@ Danijel Sokač
 
 | Name | Summary |
 |---|---|
-| [fromHttpResponse](from-http-response.md) | `open fun fromHttpResponse(response: <ERROR CLASS><out <ERROR CLASS>>): `[`NetworkException`](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md)<br>Generates [NetworkException](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md) from [response](from-http-response.md#com.github.kacso.androidcommons.network.factories.NetworkExceptionFactory$fromHttpResponse((()))/response) |
-| [toNetworkException](to-network-exception.md) | `open fun toNetworkException(throwable: Throwable): `[`NetworkException`](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md)<br>Transforms [throwable](to-network-exception.md#com.github.kacso.androidcommons.network.factories.NetworkExceptionFactory$toNetworkException(kotlin.Throwable)/throwable) into [NetworkException](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md) |
+| [fromHttpResponse](from-http-response.md) | `open fun fromHttpResponse(response: Response<*>): `[`NetworkException`](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md)<br>Generates [NetworkException](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md) from [response](../-i-network-exception-factory/from-http-response.md#com.github.kacso.androidcommons.network.factories.INetworkExceptionFactory$fromHttpResponse(retrofit2.Response((kotlin.Any)))/response) |
+| [toNetworkException](to-network-exception.md) | `open fun toNetworkException(throwable: `[`Throwable`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html)`): `[`NetworkException`](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md)<br>Transforms [throwable](../-i-network-exception-factory/to-network-exception.md#com.github.kacso.androidcommons.network.factories.INetworkExceptionFactory$toNetworkException(kotlin.Throwable)/throwable) into [NetworkException](../../com.github.kacso.androidcommons.network.exceptions/-network-exception/index.md) |

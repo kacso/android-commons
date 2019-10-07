@@ -1,4 +1,4 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.network.managers](../index.md) / [OAuth2NetworkManager](index.md) / [restService](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.network.managers](../index.md) / [OAuth2NetworkManager](index.md) / [restService](./rest-service.md)
 
 # restService
 

@@ -1,4 +1,4 @@
-[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [RXLocationProvider](.)
+[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [RXLocationProvider](./index.md)
 
 # RXLocationProvider
 
@@ -18,12 +18,10 @@ This class makes sure that location updates are stopped once source is disposed.
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `RXLocationProvider(context: <ERROR CLASS>, locationRequest: <ERROR CLASS> = LocationRequest.create())`<br>Use this class to retrieve real-time location updates.
-Location updates are emitted through [Observable](#).
-This class makes sure that location updates are stopped once source is disposed. |
+| [&lt;init&gt;](-init-.md) | `RXLocationProvider(context: Context, locationRequest: LocationRequest = LocationRequest.create())`<br>Use this class to retrieve real-time location updates. Location updates are emitted through [Observable](#). This class makes sure that location updates are stopped once source is disposed. |
 
 ### Functions
 
 | Name | Summary |
 |---|---|
-| [getLocationObservable](get-location-observable.md) | `fun getLocationObservable(): <ERROR CLASS><<ERROR CLASS>>` |
+| [getLocationObservable](get-location-observable.md) | `fun getLocationObservable(): Observable<Location>`<br>Retrieve [Observable](#) object on which [Location](#) updates will be emitted |

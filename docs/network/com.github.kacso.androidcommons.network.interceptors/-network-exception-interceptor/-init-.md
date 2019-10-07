@@ -1,4 +1,4 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.interceptors](../index.md) / [NetworkExceptionInterceptor](index.md) / [&lt;init&gt;](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.interceptors](../index.md) / [NetworkExceptionInterceptor](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

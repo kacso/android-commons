@@ -1,5 +1,5 @@
-[commondata](../../index.md) / [com.github.kacso.androidcommons.data](../index.md) / [Resource](index.md) / [hashCode](.)
+[commondata](../../index.md) / [com.github.kacso.androidcommons.data](../index.md) / [Resource](index.md) / [hashCode](./hash-code.md)
 
 # hashCode
 
-`open fun hashCode(): Int`
+`open fun hashCode(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)

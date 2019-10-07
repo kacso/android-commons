@@ -1,4 +1,4 @@
-[location](../index.md) / [com.github.kacso.androidcommons.location.exceptions](.)
+[location](../index.md) / [com.github.kacso.androidcommons.location.exceptions](./index.md)
 
 ## Package com.github.kacso.androidcommons.location.exceptions
 
@@ -6,4 +6,4 @@
 
 | Name | Summary |
 |---|---|
-| [LocationDisabledException](-location-disabled-exception/index.md) | `class LocationDisabledException : `[`RuntimeException`](http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html)<br>An Exception which is thrown when app does not have access to user location |
+| [LocationDisabledException](-location-disabled-exception/index.md) | `class LocationDisabledException : `[`RuntimeException`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-runtime-exception/index.html)<br>An Exception which is thrown when app does not have access to user location |

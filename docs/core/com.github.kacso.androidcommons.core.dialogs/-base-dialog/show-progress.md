@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [BaseDialog](index.md) / [showProgress](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [BaseDialog](index.md) / [showProgress](./show-progress.md)
 
 # showProgress
 
-`open fun showProgress(): Unit`
+`open fun showProgress(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [BaseView.showProgress](../../com.github.kacso.androidcommons.core.views/-base-view/show-progress.md)
 

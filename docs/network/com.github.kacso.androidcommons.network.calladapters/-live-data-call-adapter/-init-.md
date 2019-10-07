@@ -1,4 +1,4 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.calladapters](../index.md) / [LiveDataCallAdapter](index.md) / [&lt;init&gt;](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.calladapters](../index.md) / [LiveDataCallAdapter](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 
@@ -11,6 +11,6 @@ A Retrofit adapter that converts the Call into a [LiveData](#) of [ApiResponse](
 `R` - type of response
 
 `responseType` - value type that this adapter uses when converting the HTTP response body to a Java
-object.
+    object.
 
 `networkExceptionFactory` - Implementation of [INetworkExceptionFactory](../../com.github.kacso.androidcommons.network.factories/-i-network-exception-factory/index.md) which will handle network errors

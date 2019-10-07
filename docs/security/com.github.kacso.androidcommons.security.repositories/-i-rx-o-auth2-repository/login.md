@@ -1,8 +1,8 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories](../index.md) / [IRxOAuth2Repository](index.md) / [login](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories](../index.md) / [IRxOAuth2Repository](index.md) / [login](./login.md)
 
 # login
 
-`abstract fun login(username: String, password: String): <ERROR CLASS>`
+`abstract fun login(username: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, password: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): Completable`
 
 Authorize user according to provided credentials
 

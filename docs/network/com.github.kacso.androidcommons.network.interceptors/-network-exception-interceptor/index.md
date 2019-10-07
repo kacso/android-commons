@@ -1,8 +1,8 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.interceptors](../index.md) / [NetworkExceptionInterceptor](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.interceptors](../index.md) / [NetworkExceptionInterceptor](./index.md)
 
 # NetworkExceptionInterceptor
 
-`class NetworkExceptionInterceptor`
+`class NetworkExceptionInterceptor : Interceptor`
 
 OkHttp interceptor which which throws appropriate exceptions base on HTTP status code if there was ony error
 during network call. Otherwise, server response is returned.
@@ -11,11 +11,10 @@ during network call. Otherwise, server response is returned.
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `NetworkExceptionInterceptor(networkExceptionFactory: `[`INetworkExceptionFactory`](../../com.github.kacso.androidcommons.network.factories/-i-network-exception-factory/index.md)`)`<br>OkHttp interceptor which which throws appropriate exceptions base on HTTP status code if there was ony error
-during network call. Otherwise, server response is returned. |
+| [&lt;init&gt;](-init-.md) | `NetworkExceptionInterceptor(networkExceptionFactory: `[`INetworkExceptionFactory`](../../com.github.kacso.androidcommons.network.factories/-i-network-exception-factory/index.md)`)`<br>OkHttp interceptor which which throws appropriate exceptions base on HTTP status code if there was ony error during network call. Otherwise, server response is returned. |
 
 ### Functions
 
 | Name | Summary |
 |---|---|
-| [intercept](intercept.md) | `fun intercept(chain: <ERROR CLASS>): <ERROR CLASS>` |
+| [intercept](intercept.md) | `fun intercept(chain: Chain): Response` |

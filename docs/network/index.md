@@ -1,9 +1,10 @@
-[network](.)
+[network](./index.md)
 
 ### Packages
 
 | Name | Summary |
 |---|---|
+| [com.github.kacso.androidcommons.network](com.github.kacso.androidcommons.network/index.md) |  |
 | [com.github.kacso.androidcommons.network.calladapters](com.github.kacso.androidcommons.network.calladapters/index.md) |  |
 | [com.github.kacso.androidcommons.network.exceptions](com.github.kacso.androidcommons.network.exceptions/index.md) |  |
 | [com.github.kacso.androidcommons.network.extensions](com.github.kacso.androidcommons.network.extensions/index.md) |  |

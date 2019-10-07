@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [BaseDialog](index.md) / [viewModel](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [BaseDialog](index.md) / [viewModel](./view-model.md)
 
 # viewModel
 

@@ -1,8 +1,8 @@
-[test](../../index.md) / [com.github.kacso.androidcommons.test.lifecycle](../index.md) / [TestLifecycleOwner](.)
+[test](../../index.md) / [com.github.kacso.androidcommons.test.lifecycle](../index.md) / [TestLifecycleOwner](./index.md)
 
 # TestLifecycleOwner
 
-`class TestLifecycleOwner`
+`class TestLifecycleOwner : LifecycleOwner`
 
 ### Constructors
 
@@ -14,4 +14,4 @@
 
 | Name | Summary |
 |---|---|
-| [getLifecycle](get-lifecycle.md) | `fun getLifecycle(): <ERROR CLASS>` |
+| [getLifecycle](get-lifecycle.md) | `fun getLifecycle(): Lifecycle` |

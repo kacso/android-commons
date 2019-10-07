@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [getEmptyListView](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [getEmptyListView](./get-empty-list-view.md)
 
 # getEmptyListView
 
-`open fun getEmptyListView(): <ERROR CLASS>?`
+`open fun getEmptyListView(): View?`
 
 Overrides [ListFragment.getEmptyListView](../-list-fragment/get-empty-list-view.md)
 
@@ -14,5 +14,5 @@ Override this method if you would like to display more complex view to the user.
 
 **Return**
 [View](#) that will be displayed if there is no data in [RecyclerView](#), if null
-nothing will be displayed in such situation
+    nothing will be displayed in such situation
 

@@ -1,4 +1,4 @@
-[network](../../index.md) / [com.github.kacso.androidcommons.network.models](../index.md) / [ApiErrorResponse](index.md) / [error](.)
+[network](../../index.md) / [com.github.kacso.androidcommons.network.models](../index.md) / [ApiErrorResponse](index.md) / [error](./error.md)
 
 # error
 

@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [showProgress](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.fragments](../index.md) / [FilterableListFragment](index.md) / [showProgress](./show-progress.md)
 
 # showProgress
 
-`open fun showProgress(): Unit`
+`open fun showProgress(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Overrides [ListFragment.showProgress](../-list-fragment/show-progress.md)
 

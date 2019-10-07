@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [AbstractProgressDialog](index.md) / [&lt;init&gt;](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [AbstractProgressDialog](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 

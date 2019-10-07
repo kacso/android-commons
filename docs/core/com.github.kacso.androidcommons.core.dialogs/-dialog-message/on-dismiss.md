@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [DialogMessage](index.md) / [onDismiss](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.dialogs](../index.md) / [DialogMessage](index.md) / [onDismiss](./on-dismiss.md)
 
 # onDismiss
 
-`fun onDismiss(dialog: <ERROR CLASS>): Unit`
+`fun onDismiss(dialog: DialogInterface): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)

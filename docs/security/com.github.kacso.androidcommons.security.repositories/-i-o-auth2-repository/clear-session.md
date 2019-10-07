@@ -1,8 +1,8 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories](../index.md) / [IOAuth2Repository](index.md) / [clearSession](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories](../index.md) / [IOAuth2Repository](index.md) / [clearSession](./clear-session.md)
 
 # clearSession
 
-`abstract fun clearSession(): Unit`
+`abstract fun clearSession(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
 Clears all session data (such as access token, username, etc.) when user has been logged out
 

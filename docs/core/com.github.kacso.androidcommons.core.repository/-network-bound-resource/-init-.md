@@ -1,8 +1,8 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.repository](../index.md) / [NetworkBoundResource](index.md) / [&lt;init&gt;](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.repository](../index.md) / [NetworkBoundResource](index.md) / [&lt;init&gt;](./-init-.md)
 
 # &lt;init&gt;
 
-`NetworkBoundResource(scope: <ERROR CLASS> = CoroutineScope(Dispatchers.IO))`
+`NetworkBoundResource(scope: CoroutineScope = CoroutineScope(Dispatchers.IO))`
 
 Abstract class which implements network retrieval and DB caching by using local database as
 single source of truth as recommended by Google.

@@ -1,8 +1,8 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories.impl](../index.md) / [RxOAuth2Repository](index.md) / [login](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.repositories.impl](../index.md) / [RxOAuth2Repository](index.md) / [login](./login.md)
 
 # login
 
-`open fun login(username: String, password: String): <ERROR CLASS>`
+`open fun login(username: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, password: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`): Completable`
 
 Overrides [IRxOAuth2Repository.login](../../com.github.kacso.androidcommons.security.repositories/-i-rx-o-auth2-repository/login.md)
 

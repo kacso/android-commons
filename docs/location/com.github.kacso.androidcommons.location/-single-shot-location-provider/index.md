@@ -1,4 +1,4 @@
-[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [SingleShotLocationProvider](.)
+[location](../../index.md) / [com.github.kacso.androidcommons.location](../index.md) / [SingleShotLocationProvider](./index.md)
 
 # SingleShotLocationProvider
 
@@ -10,4 +10,4 @@ Class which is used to retrieve current user location with one request.
 
 | Name | Summary |
 |---|---|
-| [requestSingleUpdate](request-single-update.md) | `fun requestSingleUpdate(context: <ERROR CLASS>): <ERROR CLASS>` |
+| [requestSingleUpdate](request-single-update.md) | `suspend fun requestSingleUpdate(context: Context): Location`<br>Function to retrieve single location update. |

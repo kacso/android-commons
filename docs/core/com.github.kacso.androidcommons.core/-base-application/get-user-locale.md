@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [getUserLocale](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core](../index.md) / [BaseApplication](index.md) / [getUserLocale](./get-user-locale.md)
 
 # getUserLocale
 

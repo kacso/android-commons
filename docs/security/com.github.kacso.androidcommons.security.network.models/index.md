@@ -1,4 +1,4 @@
-[security](../index.md) / [com.github.kacso.androidcommons.security.network.models](.)
+[security](../index.md) / [com.github.kacso.androidcommons.security.network.models](./index.md)
 
 ## Package com.github.kacso.androidcommons.security.network.models
 

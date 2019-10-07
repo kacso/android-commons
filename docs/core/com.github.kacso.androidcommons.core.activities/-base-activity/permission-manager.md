@@ -1,5 +1,5 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [permissionManager](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.activities](../index.md) / [BaseActivity](index.md) / [permissionManager](./permission-manager.md)
 
 # permissionManager
 
-`protected open val permissionManager: <ERROR CLASS>`
+`open val permissionManager: IPermissionManager`

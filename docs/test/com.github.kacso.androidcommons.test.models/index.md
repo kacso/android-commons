@@ -1,4 +1,4 @@
-[test](../index.md) / [com.github.kacso.androidcommons.test.models](.)
+[test](../index.md) / [com.github.kacso.androidcommons.test.models](./index.md)
 
 ## Package com.github.kacso.androidcommons.test.models
 

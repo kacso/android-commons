@@ -1,8 +1,8 @@
-[permissions](../../index.md) / [com.github.kacso.androidcommons.permissions.manager](../index.md) / [IPermissionManager](index.md) / [requirePermissions](.)
+[permissions](../../index.md) / [com.github.kacso.androidcommons.permissions.manager](../index.md) / [IPermissionManager](index.md) / [requirePermissions](./require-permissions.md)
 
 # requirePermissions
 
-`abstract fun requirePermissions(permissions: Array<String>, callback: `[`PermissionCallback`](../../com.github.kacso.androidcommons.permissions.callbacks/-permission-callback/index.md)`): Int`
+`abstract fun requirePermissions(permissions: `[`Array`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html)`<`[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`>, callback: `[`PermissionCallback`](../../com.github.kacso.androidcommons.permissions.callbacks/-permission-callback/index.md)`): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
 Method to be called when permission check needs to be performed
 

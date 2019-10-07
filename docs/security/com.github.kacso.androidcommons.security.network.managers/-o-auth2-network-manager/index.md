@@ -1,4 +1,4 @@
-[security](../../index.md) / [com.github.kacso.androidcommons.security.network.managers](../index.md) / [OAuth2NetworkManager](.)
+[security](../../index.md) / [com.github.kacso.androidcommons.security.network.managers](../index.md) / [OAuth2NetworkManager](./index.md)
 
 # OAuth2NetworkManager
 
@@ -22,8 +22,7 @@ Danijel Sokač
 
 | Name | Summary |
 |---|---|
-| [&lt;init&gt;](-init-.md) | `OAuth2NetworkManager(baseUrl: String, connectTimeoutSecs: Long, readTimeoutSecs: Long, networkExceptionInterceptor: <ERROR CLASS>? = null)`<br>Class which configures Retrofit service in order to perform
-authorization requests according to oAuth2 standard |
+| [&lt;init&gt;](-init-.md) | `OAuth2NetworkManager(baseUrl: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, connectTimeoutSecs: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`, readTimeoutSecs: `[`Long`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html)`, networkExceptionInterceptor: NetworkExceptionInterceptor? = null)`<br>Class which configures Retrofit service in order to perform authorization requests according to oAuth2 standard |
 
 ### Properties
 

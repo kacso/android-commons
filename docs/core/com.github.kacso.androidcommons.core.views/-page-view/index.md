@@ -1,4 +1,4 @@
-[core](../../index.md) / [com.github.kacso.androidcommons.core.views](../index.md) / [PageView](.)
+[core](../../index.md) / [com.github.kacso.androidcommons.core.views](../index.md) / [PageView](./index.md)
 
 # PageView
 
@@ -13,11 +13,11 @@ Danijel Sokač
 
 | Name | Summary |
 |---|---|
-| [getTitleRes](get-title-res.md) | `abstract fun getTitleRes(): Int`<br>Function to retrieve title of page |
+| [getTitleRes](get-title-res.md) | `abstract fun getTitleRes(): `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Function to retrieve title of page |
 
 ### Inheritors
 
 | Name | Summary |
 |---|---|
-| [PageFragment](../../com.github.kacso.androidcommons.core.fragments/-page-fragment/index.md) | `abstract class PageFragment : `[`BaseFragment`](../../com.github.kacso.androidcommons.core.fragments/-base-fragment/index.md)`, PageView`<br>Abstract class for fragments which are used in ViewPager. |
-| [PageListFragment](../../com.github.kacso.androidcommons.core.fragments/-page-list-fragment/index.md) | `abstract class PageListFragment<T> : `[`PageFragment`](../../com.github.kacso.androidcommons.core.fragments/-page-fragment/index.md)`, PageView`<br>Abstract class for fragments which are used in ViewPager and are displaying list in [RecyclerView](#). |
+| [PageFragment](../../com.github.kacso.androidcommons.core.fragments/-page-fragment/index.md) | `abstract class PageFragment : `[`BaseFragment`](../../com.github.kacso.androidcommons.core.fragments/-base-fragment/index.md)`, `[`PageView`](./index.md)<br>Abstract class for fragments which are used in ViewPager. |
+| [PageListFragment](../../com.github.kacso.androidcommons.core.fragments/-page-list-fragment/index.md) | `abstract class PageListFragment<T> : `[`PageFragment`](../../com.github.kacso.androidcommons.core.fragments/-page-fragment/index.md)`, `[`PageView`](./index.md)<br>Abstract class for fragments which are used in ViewPager and are displaying list in [RecyclerView](#). |

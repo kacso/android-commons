@@ -1,4 +1,4 @@
-[network](../index.md) / [com.github.kacso.androidcommons.network.utils](.)
+[network](../index.md) / [com.github.kacso.androidcommons.network.utils](./index.md)
 
 ## Package com.github.kacso.androidcommons.network.utils
 
