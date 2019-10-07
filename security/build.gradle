@@ -76,10 +76,10 @@ dependencies {
 
     implementation _kotlin_.coroutines
 
-    implementation project(":network")
-    implementation project(":preferences")
+    api project(":network")
+    api project(":preferences")
     testImplementation project(":test")
-    implementation project(':logger')
+    api project(':logger')
 }
 
 afterEvaluate {

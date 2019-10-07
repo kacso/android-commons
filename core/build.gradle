@@ -80,11 +80,11 @@ dependencies {
     testImplementation project(":test")
     testImplementation _test_.mockk
 
-    implementation project(":extensions")
-    implementation project(":logger")
-    implementation project(":permissions")
-    implementation project(":network")
-    implementation project(":commondata")
+    api project(":extensions")
+    api project(":logger")
+    api project(":permissions")
+    api project(":network")
+    api project(":commondata")
 }
 
 afterEvaluate {

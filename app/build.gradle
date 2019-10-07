@@ -76,11 +76,6 @@ dependencies {
     androidTestImplementation _test_.espresso
 
     implementation project (":core")
-    implementation project (":commondata")
-    implementation project (":logger")
-    implementation project (":extensions")
-    implementation project (":permissions")
-    implementation project (":network")
     implementation project (":location")
     implementation project (":security")
     implementation project (":serialization")

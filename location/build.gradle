@@ -53,10 +53,10 @@ dependencies {
 
     implementation _kotlin_.coroutines
 
-    implementation project(":logger")
-    implementation project(":permissions")
-    implementation project(":core")
-    implementation project(":commondata")
+    api project(":logger")
+    api project(":permissions")
+    api project(":core")
+    api project(":commondata")
 
     testImplementation _test_.junit_api
     testImplementation _test_.mockito_core
