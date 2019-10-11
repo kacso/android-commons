@@ -141,6 +141,7 @@ abstract class AbstractSectionListAdapter(
         displayedItems = ArrayList()
         extractSectionItems(items)
         submitList(displayedItems)
+        recyclerView.smoothScrollBy(0, 1)
     }
 
     private fun extractSectionItems(items: List<Any>) {

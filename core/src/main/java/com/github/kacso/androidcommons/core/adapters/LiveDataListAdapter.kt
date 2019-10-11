@@ -51,6 +51,7 @@ abstract class LiveDataListAdapter<T : Any, VH : BaseViewHolder<T>>(
 
         items.observe(lifecycleOwner, Observer {
             submitList(it)
+            recyclerView.smoothScrollBy(0, 1)
         })
     }
 
