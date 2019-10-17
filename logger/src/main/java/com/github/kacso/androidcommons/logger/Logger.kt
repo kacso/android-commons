@@ -31,6 +31,7 @@ open class Logger(private val isDebug: Boolean) : ILogger {
     override fun log(throwable: Throwable) {
         runCatching {
             if (isDebug) {
+                throwable.printStackTrace()
                 Log.e(throwable.javaClass.name, throwable.message ?: "Empty message")
             }
         }
