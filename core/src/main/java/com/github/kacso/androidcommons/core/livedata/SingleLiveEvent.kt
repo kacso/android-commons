@@ -53,7 +53,7 @@ class SingleLiveEvent<T> : MutableLiveData<T>() {
     @MainThread
     fun call() {
         @Suppress("UsePropertyAccessSyntax")
-        setValue(null)
+        postValue(null)
     }
 
     companion object {
