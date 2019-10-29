@@ -29,6 +29,7 @@
 | [androidx.fragment.app.FragmentActivity](androidx.fragment.app.-fragment-activity/index.md) |  |
 | [androidx.fragment.app.FragmentManager](androidx.fragment.app.-fragment-manager/index.md) |  |
 | [androidx.fragment.app.FragmentTransaction](androidx.fragment.app.-fragment-transaction/index.md) |  |
+| [androidx.lifecycle.LiveData](androidx.lifecycle.-live-data/index.md) |  |
 | [kotlin.ByteArray](kotlin.-byte-array/index.md) |  |
 | [kotlin.Double](kotlin.-double/index.md) |  |
 | [kotlin.String](kotlin.-string/index.md) |  |

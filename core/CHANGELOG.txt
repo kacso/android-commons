@@ -1,2 +1,7 @@
 v0.0.3
 * Added AbstractSectionListAdapter with sticky header capabilities
+* permission manager can be accessed outside of BaseActivity/Fragment/Dialog
+
+v1.0.0
+* Bugfix - list is not updated until scroll
+* DialogMessage content can be HTML formatted

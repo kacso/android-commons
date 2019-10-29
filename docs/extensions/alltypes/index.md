@@ -20,6 +20,7 @@
 | [com.github.kacso.androidcommons.extensions.fragments.IExtendedFragment](../com.github.kacso.androidcommons.extensions.fragments/-i-extended-fragment/index.md) |  |
 | [org.threeten.bp.Instant](../com.github.kacso.androidcommons.extensions/org.threeten.bp.-instant/index.md) (extensions in package com.github.kacso.androidcommons.extensions) |  |
 | [kotlin.collections.List](../com.github.kacso.androidcommons.extensions/kotlin.collections.-list/index.md) (extensions in package com.github.kacso.androidcommons.extensions) |  |
+| [androidx.lifecycle.LiveData](../com.github.kacso.androidcommons.extensions/androidx.lifecycle.-live-data/index.md) (extensions in package com.github.kacso.androidcommons.extensions) |  |
 | [org.threeten.bp.LocalDate](../com.github.kacso.androidcommons.extensions/org.threeten.bp.-local-date/index.md) (extensions in package com.github.kacso.androidcommons.extensions) |  |
 | [org.threeten.bp.LocalDateTime](../com.github.kacso.androidcommons.extensions/org.threeten.bp.-local-date-time/index.md) (extensions in package com.github.kacso.androidcommons.extensions) |  |
 | [com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators.SlideLeftToRightAnimation](../com.github.kacso.androidcommons.extensions.fragmenttransaction.decorators/-slide-left-to-right-animation/index.md) |  |
