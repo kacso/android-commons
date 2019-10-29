@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.github.kacso.androidcommons.core.Action
 import com.github.kacso.androidcommons.core.R
+import com.github.kacso.androidcommons.extensions.setHtmlText
 import kotlinx.android.synthetic.main.dialog_message.view.*
 
 /**
@@ -95,7 +96,7 @@ class DialogMessage : BaseDialog() {
             rootView.title.text = titleValue
         }
 
-        rootView.message.text = messageValue
+        rootView.message.setHtmlText(messageValue)
 
         isCancelable = dismissible
 
