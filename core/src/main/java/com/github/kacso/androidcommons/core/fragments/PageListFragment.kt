@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.github.kacso.androidcommons.core.R
 import com.github.kacso.androidcommons.core.mvvm.viewmodels.ListViewModel
 import com.github.kacso.androidcommons.core.views.PageView
+import com.github.kacso.androidcommons.logger.log
 import kotlinx.android.synthetic.main.fragment_list.view.*
 
 /**
@@ -87,7 +88,11 @@ abstract class PageListFragment<T> : PageFragment(), PageView {
         getListView().adapter = getAdapter()
         getListView().layoutManager = linearLayoutManager
 
-        getAdapter().registerAdapterDataObserver(adapterDataObserver)
+        try {
+            getAdapter().registerAdapterDataObserver(adapterDataObserver)
+        } catch (t: IllegalStateException) {
+            t.log()
+        }
     }
 
     /**
