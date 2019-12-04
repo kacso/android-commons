@@ -105,7 +105,7 @@ class DialogMessage : BaseDialog() {
         } else {
             rootView.negativeBtn.text = dismissLbl
             rootView.negativeBtn.setOnClickListener {
-                dismissAction?.invoke()
+                //                dismissAction?.invoke() // dismiss action will be called automatically
                 dismiss()
             }
         }
