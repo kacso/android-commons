@@ -4,8 +4,8 @@ buildscript {
     ext {
         lib = [
                 group      : 'com.github.kacso.android-commons',
-                version    : '1.0.1-alpha1',
-                versionCode: 5
+                version    : '1.0.1-alpha2',
+                versionCode: 6
         ]
         androidx = [
                 appCompat       : "androidx.appcompat:appcompat:1.1.0-beta01",
@@ -61,7 +61,7 @@ buildscript {
         firebase = [
                 ml         : "com.google.firebase:firebase-ml-vision:20.0.0",
                 core       : "com.google.firebase:firebase-core:17.0.0",
-                crashlytics: "com.crashlytics.sdk.android:crashlytics:2.9.8"
+                crashlytics: "com.google.firebase:firebase-crashlytics:17.1.0"
         ]
         retrofit = [
                 retrofit           : "com.squareup.retrofit2:retrofit:2.6.0",

@@ -1,6 +1,6 @@
 package com.github.kacso.androidcommons.logger
 
-import com.crashlytics.android.Crashlytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 
 /**
  * [CrashlyticsLogger] extends [Logger] implementation by additionally to logcat logging all messages to
@@ -15,9 +15,7 @@ class CrashlyticsLogger(isDebug: Boolean) : Logger(isDebug) {
         runCatching {
             super.log(logLevel, tag, message)
 
-            if (isCrashlyticsInitialized()) {
-                Crashlytics.log(message)
-            }
+            FirebaseCrashlytics.getInstance().log(message)
         }
     }
 
@@ -25,14 +23,9 @@ class CrashlyticsLogger(isDebug: Boolean) : Logger(isDebug) {
         runCatching {
             super.log(throwable)
 
-            if (isCrashlyticsInitialized()) {
-                Crashlytics.logException(throwable)
-            }
+            FirebaseCrashlytics.getInstance().recordException(throwable)
         }
-
     }
-
-    private fun isCrashlyticsInitialized(): Boolean = Crashlytics.getInstance() != null
 
 
 }
