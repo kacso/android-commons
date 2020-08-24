@@ -106,11 +106,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
      * could not be retrieved
      */
     open fun getUserLocale(context: Context): Locale {
-        val app = application
-        if (app is BaseApplication) {
-            return app.getUserLocale()
-        }
-        return getSystemLocale()
+        return BaseApplication.app?.getUserLocale(context) ?: getSystemLocale()
     }
 
     /**

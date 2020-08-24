@@ -4,8 +4,8 @@ buildscript {
     ext {
         lib = [
                 group      : 'com.github.kacso.android-commons',
-                version    : '1.0.1-alpha2',
-                versionCode: 6
+                version    : '1.0.1-alpha5',
+                versionCode: 9
         ]
         androidx = [
                 appCompat       : "androidx.appcompat:appcompat:1.1.0-beta01",

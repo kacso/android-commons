@@ -25,12 +25,18 @@ abstract class BaseApplication : Application(), LifecycleObserver {
          * Context of the application
          */
         lateinit var appContext: Context
+
+        /**
+         * Instance of application
+         */
+        var app: BaseApplication? = null
     }
 
     open var isAppForegrounded = AtomicBoolean(false)
 
     override fun onCreate() {
         super.onCreate()
+        app = this
         appContext = applicationContext
 
         //Setup application class as lifecycle observer. It is used to track if app is foregrounded or not
@@ -43,7 +49,7 @@ abstract class BaseApplication : Application(), LifecycleObserver {
     override fun attachBaseContext(base: Context) {
         appContext = base
         //Setup app locale to be used
-        super.attachBaseContext(base.toUserDefinedLocaleContext(getUserLocale()))
+        super.attachBaseContext(base.toUserDefinedLocaleContext(getUserLocale(base)))
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
@@ -61,7 +67,7 @@ abstract class BaseApplication : Application(), LifecycleObserver {
      *
      * Default behaviour, returns device default locale
      */
-    open fun getUserLocale(): Locale {
+    open fun getUserLocale(base: Context): Locale {
         return getSystemLocale()
     }
 
