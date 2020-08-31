@@ -63,6 +63,8 @@ class DialogMessage : BaseDialog() {
     private var positiveAction: Action? = null
     private var dismissAction: Action? = null
 
+    private var dismissActionCalled = false
+
     private fun init(
         title: String?,
         message: String,
@@ -105,7 +107,8 @@ class DialogMessage : BaseDialog() {
         } else {
             rootView.negativeBtn.text = dismissLbl
             rootView.negativeBtn.setOnClickListener {
-                //                dismissAction?.invoke() // dismiss action will be called automatically
+                dismissAction?.invoke() // dismiss action will be called automatically
+                dismissActionCalled = true
                 dismiss()
             }
         }
@@ -125,11 +128,15 @@ class DialogMessage : BaseDialog() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
-        dismissAction?.invoke()
+        if (dismissible && !dismissActionCalled) {
+            dismissAction?.invoke()
+        }
     }
 
     override fun dismissAllowingStateLoss() {
         super.dismissAllowingStateLoss()
-        dismissAction?.invoke()
+        if (dismissible && !dismissActionCalled) {
+            dismissAction?.invoke()
+        }
     }
 }
